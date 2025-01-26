@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		span{
+			background-color: aqua;
+            width: 100px;
+			height: 100px;
+			margin: 10px;
+
+			float: left;
+			/*
+			span 성격은 inline의 성격을 가지고 있기때문에 width, height, margin-top, margin-bottom 값이 적용되지 않음
+			float 속성이 부여되면 width, height, margin-top, margin-bottom 값이 적용이 됨.
+			제거 전후를 붙여 차이점을 확인!
+			*/
+		}
+	</style>
+</head>
+<body>
+	<span>inline 성격의 태그</span>
+	<span>inline 성격의 태그</span>
+</body>
+</html>

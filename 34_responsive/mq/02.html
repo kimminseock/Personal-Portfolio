@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		/*
+		화면 회전
+		orientation : 화면의 방향을 체크
+
+		orientation: portrait - 단말기 세로 방향. 세로(height 값)가 큰 경우
+        orientation: landscape - 단말기 가로로 방향. 가로(width 값)가 큰 경우
+		 */
+		body {background-color: #eee;}
+		@media screen and (orientation: landscape){
+			body {background-color: orange;}
+        }
+		@media screen and (orientation: portrait){
+			body{background-color: yellow;}
+        }
+	</style>
+</head>
+<body>
+	<h1>Media Query</h1>
+</body>
+</html>

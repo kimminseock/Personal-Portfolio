@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+		1. 기본 html 작성
+		2. firebase 라이브러리 추가
+		3. firebase 설정 및 초기화
+		 */
+	</script>
+</head>
+<body>
+	<h1>Firebase To-Do List</h1>
+	<label><input type="text" id="todoInput" placeholder="Enter a new to-do"></label>
+	<button>Add To-Do</button>
+	<ul id="todoList"></ul>
+
+	<!-- firebase SDK - 일반 스크립트 형식으로 불러오기 -->
+	<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const todoInput = document.getElementById('todoInput'); // 입력 폼
+            const todoList = document.getElementById('todoList'); // 목록 출력 영역
+            const button = document.querySelector('button'); // 등록 버튼
+			/* ------------------------------------- */
+           // 3. firebase 설정 및 초기화
+            /* ------------------------------------- */
+			// firebase 설정
+            const firebaseConfig = {
+                apiKey: "AIzaSyAgOIRcTNcFd3j4sFAfGoQpuzI6ei68kYQ",
+                authDomain: "js-sample-a8601.firebaseapp.com",
+                projectId: "js-sample-a8601",
+                storageBucket: "js-sample-a8601.firebasestorage.app",
+                messagingSenderId: "96991964334",
+                appId: "1:96991964334:web:c9e0e7a0ab36ffc232d13f",
+                databaseURL: 'https://js-sample-a8601-default-rtdb.asia-southeast1.firebasedatabase.app/',
+            };
+
+            // firebase 초기화
+			firebase.initializeApp(firebaseConfig);
+
+            // realtime database 참조 가져오기
+			const database = firebase.database(); // 참고를 가져오는 코드
+            // firebase realtime database에서 todo_first라는 경로를 참조하는 변수를 정의하는 코드
+            const ref = database.ref('todo_first');
+
+            /* ------------------------------------- */
+			/* 4. 기능 구현 - 등록 */
+            /* ------------------------------------- */
+			// 등록 함수
+			async function addTodo(text) {
+                if(!text.trim()) return
+				try {
+                    // 1) 새로운 키 생성
+					// push(): 고유한 키를 생성하고, 데이터베이스의 해당 위치에 세 빈 노드(공간)를 만듬.
+					// 고유한 키는 중복 방지 역할을 함.
+					const todoRef = ref.push();
+
+                    // 2) 등록
+					const data = {
+                        text: text,
+						completed: false,
+						addTime: firebase.database.ServerValue.TIMESTAMP // 데이터가 정장된 서버 시간을 기록.
+					}
+                    //  await를 사용하여 비동기 작업이 완료될 때까지 기다림.
+                    // set(): 특정 경로에 데이터를 저장하는 함수.
+					await todoRef.set(data)
+                    console.log('성공적으로 추가되었습니다.')
+
+                } catch (error) {
+                    console.error('Error adding todo: ', error);
+				}
+			}
+
+            button.addEventListener('click', ev => {
+               const text = todoInput.value.trim();
+               if(text){
+                   addTodo(text)
+	               todoInput.value = '';
+               }
+            });
+        });
+	</script>
+</body>
+</html>

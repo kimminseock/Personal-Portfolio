@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<h2>add todo</h2>
+	<div>
+		<label><input type="text" name="todo"></label>
+		<label><input type="date" name="dueDate"></label>
+		<button>등록</button>
+	</div>
+	<h2>todo list</h2>
+	<ul>
+
+	</ul>
+	<script>
+        /*
+		to do
+
+		* 필요한 기능
+		1) 추가 2) 삭제 3) 스트로지 저장
+
+		1. 추가
+		1) 등록시에 빈 값이 있는지 확인
+		2) 오늘 날짜 이전은 선택이 안되도록
+		 */
+        const todo = document.querySelector('[name=todo]');
+        const dueDate = document.querySelector('[name=dueDate]');
+        const btn = document.querySelector('button');
+        const todoList = document.querySelector('ul');
+
+        let todoArr = [];
+
+        // 오늘 날짜 이전은 선택이 안되도록
+        let today = new Date().toISOString().slice(0, 10); // toISOString() = 2024-01-01 14:24:59
+        dueDate.value = today;
+        dueDate.setAttribute('min', today);
+
+        // 출력을 함수화
+        const printItem = function (obj) {
+            const item = document.createElement('li');
+            // ex) <li><strong>할일</strong><span>날짜</span>></li>
+            item.innerHTML = `<li><strong>${obj.todo}</strong><span>${obj.dueDate}</span>
+					<button data-key="${obj.key}">삭제</button></li>`;
+
+            item.querySelector('button').addEventListener('click', ev => {
+                if(confirm('삭제?')){
+					// 배열 삭제
+					for(let i = 0; i < todoArr.length; i++){
+                        if(todoArr[i].key === obj.key){
+                            todoArr.splice(i, 1);
+                        }
+					}
+
+                    // html 삭제
+	                // item.parentNode.removeChild(item);
+                    printToDo();
+
+	                // 스토리지 업데이트
+                    localStorage.setItem('todoArr', JSON.stringify(todoArr));
+                }
+            });
+
+            todoList.appendChild(item); // html의 출력
+        };
+
+        const printToDo = function () {
+            todoList.innerHTML = ''; // todo리스트에 html안에 전부 삭제 할때는 ''이거 하면 전부 삭제.
+	        // 배열.sort(콜백함수) : 배열을 정렬
+	        // 콜백 함수는 배열의 요소를 정렬하기 위해 두 개의 인수를 받아 서로 비교하고, 정렬 순서를 결정
+	        // 이 콜백 함수의 반환값에 따라 정렬 순서가 결정
+	        // - 양수 반환 (a > b): a가 b보다 뒤에 있어야 함.
+	        // - 음수 반환 (a < b): a가 b보다 앞에 있어야 함.
+	        // - 반환 (a == b): a와 b의 순서를 변경하지 않음.
+
+	        // localeCompare() 메서드는 문자열을 지역(로케일) 규칙에 따라 비교할 수 있도록 하는 메서드
+	        // string1.localeCompare(string2)
+	        // 반환 값
+	        // - 음수: string1이 string2보다 사전순으로 앞에 올 때
+	        // - 0: string1이 string2가 같을 때
+	        // - 양수: string1이 string2보다 사전순으로 뒤에 올 때
+	        todoArr.sort((a, b) => a.todo.localeCompare(b.todo)); // 매개변수로 값 2개씩 비교해 가면서 정렬을 함
+            todoArr.forEach(value => {
+                //     // console.log(value.todo);
+                //     // console.log(value.dueDate);
+                printItem(value);
+                console.log(value);
+            });
+        };
+
+        // 스토로지에 저장된 값 가져오기, 독립적인 영역이면 1번만 사용하기 때문에 함수로 하면 2번이상 사용한다고 생각하고, 그냥 두자니 뭔가 애매해서 즉석실행 함수를 통해 읽기 편하게 보기 편하게 해준다.
+            (function () {
+                if(localStorage.getItem('todoArr')){
+                    // console.log(localStorage.getItem('todoArr').split(','));
+                    // console.log(JSON.parse(localStorage.getItem('todoArr')));
+                    todoArr = JSON.parse(localStorage.getItem('todoArr'));
+                    // todoArr.forEach(value => {
+                    // //     // console.log(value.todo);
+                    // //     // console.log(value.dueDate);
+                    //     printItem(value);
+                    //     console.log(value);
+                    // })
+                    // localStorage.clear();
+                    printToDo();
+                }
+            })();
+        // 스토리지에 저장된 값 가져오기
+        // 즉석 실행 함수 사용한 이유
+        // -> 코드가 독립적인 기능을 함
+        // -> 가독성을 위해 블록으로 나누면 좋음
+        // -> 함수를 만든 후 호출을 하면 다시 코드를 볼 때 재사용이 되는지 확인을 해야함
+        // -> 즉석 실행 함수 사용하면 블록으로 나누고, 재사용이 없다는 것을 알수 있음.
+
+        btn.addEventListener('click', ev => {
+            if(todo.value.trim() === ''){ // trim = 공백제거, ' 1 . ' => '1 .'
+                alert('이름!!!!');
+                todo.focus()
+                return;
+            } else if(dueDate.value.trim() === ''){
+                alert('날짜!!!');
+                dueDate.focus();
+                return;
+            }
+
+            // 1. 랜덤 문자열
+            const generateRandomString = () =>
+                window.btoa(Math.random()).slice(0,20);
+            // const customerKey = generateRandomString();
+            const key = generateRandomString();
+
+            const obj = {todo: todo.value, dueDate: dueDate.value, key: key};
+
+            todoArr.push(obj); // 배열의 추가
+            // console.log(todoArr);
+            // printItem(obj)
+	        printToDo()
+            const item = document.createElement('li');
+            // ex) <li><strong>할일</strong><span>날짜</span>></li>
+            item.innerHTML = `<li><strong>${todo.value}</strong><span>${dueDate.value}</span></li>`;
+
+            todoList.appendChild(item); // html의 출력
+
+            todo.value = ''; // 초기화
+            dueDate.value = today; // 초기화
+            // console.log(todoArr)
+
+            localStorage.setItem('todoArr', JSON.stringify(todoArr)); // 로컬스트로지에 저장 JSON.stringify => 객체가 들어가 있는 상태에서는 쓰임
+
+
+        })
+	</script>
+</body>
+</html>

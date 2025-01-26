@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="./css/f_11.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        $(function () {
+            $('#galleryImg').hide();
+            setInterval(function () {
+                $('.slide_container').animate({left: '-100%'}, function () {
+                    $('.slide_container').append($('.slide_block:eq(0)')).css({left: '0'});
+                })
+            }, 3000);
+
+            $('.sub').hide();
+			$('#bg').hide();
+            $('.main_menu').on({
+                mouseover: function () {
+                    $('.sub',this).stop().slideDown();
+                    $('#bg').stop().slideDown();
+                },
+                mouseout: function () {
+                    $('.sub',this).stop().slideUp();
+                    $('#bg').stop().slideUp();
+                }
+            })
+            $('#galleryImg').hide();
+            $('#btn a:eq(0)').on('click',function () {
+                $(this).addClass('on').removeClass('off');
+                $('#btn a:eq(1)').removeClass('on').addClass('off');
+                $('#import').show();
+                $('#galleryImg').hide();
+            });
+            $('#btn a:eq(1)').on('click', function () {
+                $(this).addClass('on').removeClass('off');
+                $('#btn a:eq(0)').removeClass('on').addClass('off');
+                $('#import').hide();
+                $('#galleryImg').show();
+            });
+            // 공지사항 / 갤러리 클릭 이벤트 종료
+            // 공지사항 첫번째 글 클릭 popup 이벤트 시작
+            $('#import p:eq(0)').on('click',function () {
+                $('#popup').show();
+                $('#stop').show();
+            });
+            $('#popup button').on('click', function () {
+                $('#popup').hide();
+                $('#stop').hide();
+            });
+        });
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="logo"><a href="#"><img src="images_f/logo.jpg" alt="#"></a></div>
+			<nav>
+				<ul class="main_menu">
+					<li>
+						<a href="#">조회</a>
+						<ul class="sub">
+							<li><a href="#">계좌조회</a></li>
+							<li><a href="#">거래내역조회</a></li>
+							<li><a href="#">휴먼계좌 조회</a></li>
+							<li><a href="#">수표/어음 조회</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">이체</a>
+						<ul class="sub">
+							<li><a href="#">계좌이체</a></li>
+							<li><a href="#">다계좌이체</a></li>
+							<li><a href="#">자동이체</a></li>
+							<li><a href="#">예약이체</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">공과금</a>
+						<ul class="sub">
+							<li><a href="#">지로/생활요금</a></li>
+							<li><a href="#">지방세</a></li>
+							<li><a href="#">국세/관세</a></li>
+							<li><a href="#">벌칙금/벌과금</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">외환</a>
+						<ul class="sub">
+							<li><a href="#">금리</a></li>
+							<li><a href="#">환율/외화예금</a></li>
+							<li><a href="#">글로벌뱅킹</a></li>
+							<li><a href="#">외화송금</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<div id="popup">
+				<div><h1>타이틀</h1></div>
+				<div id="center">
+					<p>
+						There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+					</p>
+				</div>
+				<button>닫기</button>
+			</div>
+		</header>
+		<div id="bg"></div>
+		<div class="slide">
+			<div class="slide_container">
+				<div class="slide_block">
+					<a href="#">
+						<img src="images_f/slide1.jpg" alt="#">
+						<span>Text01</span>
+					</a>
+				</div>
+				<div class="slide_block">
+					<a href="#">
+						<img src="images_f/slide2.jpg" alt="#">
+						<span>Text02</span>
+					</a>
+				</div>
+				<div class="slide_block">
+					<a href="#">
+						<img src="images_f/slide3.jpg" alt="#">
+						<span>Text03</span>
+					</a>
+				</div>
+			</div>
+			<div class="link">
+				<ul>
+					<li><a href="#"><img src="./images_f/link.png" alt="#"><p>link1</p></a></li>
+					<li><a href="#"><img src="./images_f/link.png" alt="#"><p>link2</p></a></li>
+					<li><a href="#"><img src="./images_f/link.png" alt="#"><p>link3</p></a></li>
+					<li><a href="#"><img src="./images_f/link.png" alt="#"><p>link4</p></a></li>
+					<li><a href="#"><img src="./images_f/link.png" alt="#"><p>link5</p></a></li>
+				</ul>
+			</div>
+		</div>
+		<section>
+			<article>
+				<div id="inner">
+					<a href="#"><img src="./images_f/banner.jpg" alt="#"></a>
+					<a href="#">
+						<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+							printer took</p>
+					</a>
+					<a href="#"><img  src="./images_f/arrow.png" alt="#"></a>
+				</div>
+			</article>
+			<article>
+				<div id="gallery">
+					<div id="btn">
+						<a class="on" href="#none">공지사항</a>
+						<a class="off" href="#none">갤러리</a>
+					</div>
+					<div id="import">
+						<p class="left">It is a long-established fact that a reader will be distracted by the readable content</p>
+						<p class="left">It is a long-established fact that a reader will be distracted by the readable content</p>
+						<p class="left">It is a long-established fact that a reader will be distracted by the readable content</p>
+						<p class="left">It is a long-established fact that a reader will be distracted by the readable content</p>
+					</div>
+					<div id="galleryImg">
+						<a href="#"><img src="./images_f/g1.jpg" alt="#"><p>It is a long-established</p></a>
+						<a href="#"><img src="./images_f/g2.jpg" alt="#"><p>It is a long-established</p></a>
+						<a href="#"><img src="./images_f/g3.jpg" alt="#"><p>It is a long-established</p></a>
+					</div>
+				</div>
+			</article>
+		</section>
+		<footer>
+			<div id="f_logo"><a href="#"><img src="images_f/flogo.jpg" alt="#"></a></div>
+			<div>
+				<div id="f_top">
+					<ul>
+						<li><a href="#">FOOTERMENU1</a></li>
+						<li><a href="#">FOOTERMENU2</a></li>
+						<li><a href="#">FOOTERMENU3</a></li>
+						<li><a href="#">FOOTERMENU4</a></li>
+						<li><a href="#">FOOTERMENU5</a></li>
+						<li><a href="#">FOOTERMENU6</a></li>
+					</ul>
+				</div>
+				<div id="f_bottom">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="stop">
+
+	</div>
+</body>
+</html>

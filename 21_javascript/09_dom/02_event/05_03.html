@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+        /*
+
+		* keyCode 속성 활용
+		keyCode 속성은 입력한 키를 숫자로 나타냄. 37, 38, 39, 40이 방향키 왼쪽, 위, 오른쪽, 아래를 나타냄.
+
+		기능추가
+		1) 방향키를 누를 때 방향 화살표로 변경
+		2) 화살표의 색과 크기가 변경되도롤
+		3) 브라우저 밖을 벋어나지 않도록
+		 */
+        document.addEventListener('DOMContentLoaded', () => {
+            // 별 초기 설정
+            const star = document.querySelector('h1');
+            star.style.position = 'absolute';
+            star.style.transitionDuration = '2s';
+            // 별의 이동을 출력하는 기능
+            let x = 0;
+            let y = 0;
+            const block = 20;
+
+
+            // 별 색깔, 크기를 변경하는 기능
+            const rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            const sizes = [10, 20, 30, 40, 50];
+            let idx = 0;
+            setInterval(() => {
+                star.style.color = rainbow[idx % rainbow.length];
+                star.style.fontSize = `${sizes[idx % sizes.length]}px`;
+                idx++;
+            }, 500);
+
+
+            // 별을 이동하는 기능
+            const [left, up, right, down] = [37, 38, 39, 40];
+            document.body.addEventListener('keydown', function (event) {
+                console.log(event.keyCode);
+                const minX = 0;
+                const maxX = window.screen.width - 50;
+                const minY = 0;
+                const maxY = window.screen.height - 270;
+
+                switch (event.keyCode) {
+                    case left:
+                        x--;
+                        x = (x <= minX) ? minX : x - block;
+                        star.textContent = '↤';
+                        break;
+                    case up :
+                        y--;
+                        y = (y <= minY) ? minY : y - block;
+                        star.textContent = '↥'
+                        break;
+                    case
+                    right :
+                        x++;
+                        x = (x >= maxX) ? maxX : x + block;
+                        star.textContent = '↦'
+                        break;
+                    case
+                    down :
+                        y++;
+                        y = (y >= maxY) ? maxY : y + block;
+                        star.textContent = '↧'
+                        break;
+                }
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+            });
+        });
+	</script>
+</head>
+<body>
+	<h1>★</h1>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		* keyCode 속성 활용
+		keyCode 속성은 입력한 키를 숫자로 나타냄. 37, 38, 39, 40이 방향키 왼쪽, 위, 오른쪽, 아래를 나타냄.
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+           // 별 초기 설정
+			const star = document.querySelector('h1');
+            star.style.position = 'absolute';
+			star.style.transitionDuration = '2s';
+            // 별의 이동을 출력하는 기능
+			let x = 0;
+            let y = 0;
+            const block = 20;
+
+            const print = function () {
+	            star.style.left = `${x * block}px`;
+                star.style.top = `${y * block}px`;
+            }
+            print();
+
+            // 별을 이동하는 기능
+			const [left, up, right, down] = [37, 38, 39, 40];
+			document.body.addEventListener('keydown', function (event){
+                console.log(event.keyCode);
+                // if(event.keyCode === 37){
+                //     x--;
+                // } else if(event.keyCode === 39){
+                //     x++;
+                // } else if(event.keyCode === 38){
+                //     y--;
+                // }else if(event.keyCode === 40) {
+                //     y++;
+                // }
+                switch (event.keyCode){
+	                case left: x--;
+                    break ;
+	                case up : y--;
+                    break;
+	                case right : x++;
+                    break;
+	                case down : y++;
+                    break;
+                }
+                print();
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>★</h1>
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+.box{
+    float: left;
+    width: 235px;
+    height: 200px;
+    border: solid 3px black;
+    margin: 12px;
+    padding: 6px;
+    box-sizing: content-box;
+}
+p{
+    clear: both;
+    padding: 6px;
+    margin: 12px;
+}
+

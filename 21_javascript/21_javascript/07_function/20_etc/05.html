@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 즉시 실행 함수 Immediately-invoked function expression
+		선언과 동시에 함수가 실행되며 보통은 함수명 없이 사용하기 때문에 재호출이 안됨.
+		변수의 출돌을 막기 위해 사용. 재사용을 위해서 함수를 만드는게 아니라
+		변수의 충돌을 막기 위해 블록화를 하는 목적으로 사용.
+
+		기본형:
+		(function () {})();
+		 */
+
+		// 1. 재호출이 안되는 형태
+        (function (){
+            life();
+        })();
+         function life() {
+            console.log(`즉시 실행 함수1`); // 즉시 실행 함수1
+        }
+
+        // 1) 익명함수처럼 보이니까 즉석 실행 함수를 변수에 저장한다면?
+		let instant = (function (){
+            console.log(`즉시 실행 함수2`); // 즉시 실행 함수2
+		})();
+
+        console.log(typeof instant); // undefined. 변수에 할당되지는 않고 실행만 됨.
+		// instant(); // instant is not a function
+
+		// 2) 선언적 함수처럼 이름을 지정하면 재실행이 되지 않을까?
+        let instant3rd = (function (){
+            console.log(`즉시 실행 함수3`); // 즉시 실행 함수3
+        })();
+        // 즉시 실행은 되지만 함수명으로 함수 호출은 안됨
+        // instant3rd(); // Uncaught ReferenceError: instant3rd is not defined
+
+		// 2. 재실행이 가능한 경우
+		let instant4th;
+        (instant4th = function (){
+            console.log(`즉시 실행 함수4`); // 즉시 실행 함수4
+        })();
+        console.log(typeof instant4th); // function
+        instant4th();
+	</script>
+</head>
+<body>
+
+</body>
+</html>

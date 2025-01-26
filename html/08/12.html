@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        /*
+		전체 선택자(*)를 지정해서 마진과 패딩 값을 0으로 초기화해서 사용하는 경우.
+		-> 브라우저마다 기본 패딩값과 마진 값이 달라서 0으로 초기화 해서 사용
+
+		* list-style-position 속성
+		항목 번호가 보이지 않는 경우 들여쓰기 스타일 사용
+
+		inside : 블릿이나 숫자를 안쪽으로 들여씀
+		outside : 블릿이나 숫자를 밖으로 내어씀
+		 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .style_num01 {
+            list-style-type: lower-alpha; /* 알파벳 소문자 */
+            list-style-position: inside; /* 블릿이나 숫자를 안쪽으로 들여씀 */
+            /*list-style-position: outside;*/
+
+        }
+
+	</style>
+</head>
+<body>
+	<ol class="style_num01">
+		<li>회사소개</li>
+		<li>생산설비</li>
+		<li>제품소개</li>
+		<li>온라인문의</li>
+		<li>커뮤니티</li>
+	</ol>
+</body>
+</html>

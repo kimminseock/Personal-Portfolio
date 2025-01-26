@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<script>
+    $(function () {
+        const swiper = new Swiper('.swiper-container', {
+            // 옵션 설정
+            direction: 'horizontal', // 슬라이드 방향: 'horizontal' 또는 'vertical'
+            loop: false, // 마지막 슬라이드에서 처음 슬라이드로 계속 반복
+
+            // 페이지네이션 (Pagination)
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // 네비게이션 버튼 (Navigation arrows)
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // 스크롤바 (Scrollbar) (Optional)
+            //scrollbar: {
+               // el: '.swiper-scrollbar',
+              //  draggable: true,
+          //  },
+        });
+
+    });
+</script>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <!-- 추가 슬라이드 -->
+    </div>
+
+    <!-- 네비게이션 버튼 (Optional) -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- 페이지네이션 (Optional) -->
+    <div class="swiper-pagination"></div>
+</div>
+
+</body>
+</html>

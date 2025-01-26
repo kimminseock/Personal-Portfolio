@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		numbers라는 배열이 있습니다. 이 배열에는 0부터 9까지의 숫자가 포함되어 있습니다.
+		이 배열에서 짝수만 필터링하여 새로운 배열을 만드는 함수를 만들고,
+		이 함수를 numbers 배열에 filter를 사용하여 적용하세요.
+		 */
+		const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
+
+        /* 필터의 콜백 함수이기 때문에 반환형이 bool형을 반환 */
+        /* 짝수만 필터링하는 함수*/
+		const isEvenNumber = function (num) {
+			return num % 2 === 0;
+        }
+        const evenNumbers = numbers.filter(isEvenNumber);
+        console.log(evenNumbers);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

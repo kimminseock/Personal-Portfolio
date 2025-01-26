@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		나머지 매개 변수와 일반 매개변수 조합하기
+
+		기본형
+		function 함수명 (매개변수, 매개변수, ...나머지 매개변수){}
+		일반 매개 변수를 먼저 선언하고 나머지 매개변수를 마지막에 선언.
+		 */
+		function sample(a,b, ...c) {
+            console.log(a,b,c);
+        }
+
+        sample(1,2); // 1 2 []
+		sample(1,2,3); // 1 2 [3]
+		sample(1, 2, 3, 4) // 1 2 [3, 4]
+	</script>
+</head>
+<body>
+
+</body>
+</html>

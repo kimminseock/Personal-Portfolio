@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+	<script>
+		/*
+		파이어베이스 사용
+		1. 초기 설정
+		1) 외부 라이브러리 추가
+		2) 파이어 환경 설정
+		3) 초기화
+		 */
+        const firebaseConfig = {
+            apiKey: "AIzaSyAgOIRcTNcFd3j4sFAfGoQpuzI6ei68kYQ",
+            authDomain: "js-sample-a8601.firebaseapp.com",
+            projectId: "js-sample-a8601",
+            storageBucket: "js-sample-a8601.firebasestorage.app",
+            messagingSenderId: "96991964334",
+            appId: "1:96991964334:web:c9e0e7a0ab36ffc232d13f",
+	        databaseURL: 'https://js-sample-a8601-default-rtdb.asia-southeast1.firebasedatabase.app/',
+        };
+
+        firebase.initializeApp(firebaseConfig); // Firebase 초기화
+
+        // Realtime Database 참조 가져오기
+        const database = firebase.database();
+        // Firebase Realtime Database에서 first라는 경로를 참조하는 변수를 정의하는 코드
+        const ref = database.ref('first');
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const input = document.querySelector('[name=todo]')
+            const button = document.querySelector('button')
+
+            const add = async function add(text) {
+                if (!text.trim()) return;
+
+                try {
+                    // 새로운 키 생성
+                    const newRef = ref.push();
+                    await newRef.set({
+                        text: text,
+                        completed: false,
+                        createdAt: firebase.database.ServerValue.TIMESTAMP
+                    });
+                    alert('성공적으로 추가되었습니다.');
+                } catch (error) {
+                    alert('Error adding todo: ', error);
+                }
+            }
+
+            button.addEventListener('click', function () {
+                const text = input.value.trim();
+
+                if (text) {
+                    add(text);
+                    input.value = '';
+                }
+            })
+        })
+	</script>
+
+</head>
+<body>
+	<h1>first</h1>
+	<label><input name="todo"></label>
+	<button>등록</button>
+</body>
+</html>

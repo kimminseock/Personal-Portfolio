@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+        /*
+        할 일 목록을 추가하는 간단한 웹 페이지를 만드세요.
+        사용자가 새로고침해도 이전에 추가한 할 일 목록이 유지되도록 localStorage를 활용하세요.
+
+        1. 할 일 추가: 사용자가 todoInput에 할 일을 입력하고 addButton을 클릭하면,
+        todoList에 새로운 할 일 항목이 추가됩니다.
+        할 일이 비어있지 않을 때만 추가되도록 하세요.
+	    3. 저장 및 불러오기: 추가된 할 일 목록은 localStorage에 저장되고,
+	    페이지를 새로고침하더라도 목록이 유지되도록 합니다.
+
+	    1) li가 추가
+	    2) a) 중복이 안되는 키를 생성해서 저장하거나 b) 배열로 저장
+         */
+        // 1) 요소 들고 오기
+        // 2) todoInput에 할 일을 입력
+        // 3) addButton을 클릭 -> todoList에 새로운 할 일 항목이 추가
+		document.addEventListener('DOMContentLoaded',() => {
+           // 1) 요소 들고오기
+            let ul = document.getElementById('todoList');
+            const addButton = document.getElementById('addButton');
+			let todoInput = document.getElementById('todoInput');
+            const clearButton = document.getElementById('clearButton')
+            let array = [];
+
+            const addTodo = function (item) {
+	            const li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+            }
+            // 4) 페이지 새로고침시 기능 추가
+			if(localStorage.getItem('save')){
+                // document.write(localStorage.getItem('save'));
+				array = localStorage.getItem('save').split(',');
+			}
+            console.log(array);
+            if(array.length > 0){
+                 array.forEach(item => {
+                     addTodo(item);
+                 })
+            }
+
+            // 2) 버튼 클릭 시 추가하기
+            addButton.addEventListener('click', function (evt) {
+                let li = document.createElement('li');
+                li.textContent = todoInput.value;
+                // console.log(todoInput.value);
+	            // array.push(ul.appendChild(li));
+	            ul.appendChild(li);
+	            array.push(li.textContent = todoInput.value);
+                todoInput.value = '';
+                // console.log(array);
+                // 3) 스토리지에 저장
+                console.log(array);
+	            localStorage.setItem('save', array.toString());
+            });
+		});
+
+	</script>
+</head>
+<body>
+	<h1>My To-Do List</h1>
+	<label for="todoInput"></label><input type="text" id="todoInput" placeholder="Add a new task">
+	<button id="addButton">Add</button>
+	<button id="clearButton">clear</button>
+	<ul id="todoList"></ul>
+</body>
+</html>

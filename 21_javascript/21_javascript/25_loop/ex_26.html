@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+			1부터 99사이의 모든 정수를 대상으로 369게임의 결과를 출력하는 프로그램을 구현하세요.
+
+		실행 예)
+		1         2         짝        4         5         짝        7         8         짝        10
+		11        12        짝        14        15        짝        17        18        짝        20
+		21        22        짝        24        25        짝        27        28        짝        짝
+		짝        짝        짝짝      짝        짝        짝짝      짝        짝        짝짝      40
+		41        42        짝        44        45        짝        47        48        짝        50
+		51        52        짝        54        55        짝        57        58        짝        짝
+		짝        짝        짝짝      짝        짝        짝짝      짝        짝        짝짝      70
+		71        72        짝        74        75        짝        77        78        짝        80
+		81        82        짝        84        85        짝        87        88        짝        짝
+		짝        짝        짝짝      짝        짝        짝짝      짝        짝        짝짝
+
+		step 1. for문의 범위는? 1 ~ 100
+		step 2. 줄바꿈 되는 기준은? 10의 배수 -> 나머지 연산자
+		step 3. 구현할때 적합한 css는? flex
+		strp 4. 박수 '짝'의 기준은? 3의 배수 -> 나머지 연산자
+		1) 짝짝 -> 33, 36, 39, 63, 66, 69, 93, 96, 99
+		-> 십의 자리와 일의 자리가 모두 3의 배수
+		2) 짝 -> i % 3 === 0
+		3) 숫자 출력 -> 1) 2)가 아닌 경우
+		 */
+
+        for (let i = 1; i<=99; i++){
+            if(i % 10 === 1){
+                document.write(`<div>`);
+            }
+            // 1) 십의 자리와 일의 자리를 분리
+            // let first = parseInt(String(i / 10)); // 십의 자리
+            // let second = i % 10; // 일의 자리
+	        let first = i > 10 ? Number(String(i)[0]) : 0; // 십의 자리
+            let second = i > 10 ? Number(String(i)[1]) : String(i)[0]; // 일의 자리
+
+	        // 2) 조건검사
+	        let condition1 = first % 3 === 0 && first !== 0;
+            let condition2 = second % 3 === 0 && second !== 0;
+
+            // 3) 출력
+            if(condition1 && condition2){
+	            document.write(`<span>짝짝</span>`);
+            } else if(condition1 || condition2){
+                document.write(`<span>짝</span>`);
+            }
+            else {
+                document.write(`<span>${i}</span>`);
+            }
+            if(i%10 === 0){
+                // document.write(`<br>`);
+                document.write(`</div>`);
+            }
+        }
+	</script>
+	<style>
+		div{display: flex;}
+		span{display: inline-block; width: 40px; text-align: center;}
+	</style>
+</head>
+<body>
+
+</body>
+</html>

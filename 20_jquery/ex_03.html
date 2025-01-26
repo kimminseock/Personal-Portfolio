@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			/*
+			버튼을 더블 클릭하면 p 태그를 숨기도록 하세요.
+			p태그를 $(this)를 이용해서 접근
+			 */
+			$('#hideText').on('dblclick', function () {
+                // $(this).next().css('display', 'none');
+				// $(this).next().hide();
+				//  $(this).next().toggle();
+				 $(this).next().slideUp();
+            });
+        });
+	</script>
+</head>
+<body>
+	<button id="hideText">Double Click to Hide</button>
+	<p id="text">This text will be hidden on double click.</p>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 300px;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+	</style>
+	<script>
+		/* 1번 수정.
+		* 분을 초과하지 않는 초만 카운팅 : 오십구 -> 영
+		* 초가 한글로 나오도록
+		*/
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        const rainbow = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+        // let idx = 0;
+        let count = 1;
+        const timer = function () {
+            document.querySelector('div p').style.color = rainbow[(count - 1) % rainbow.length];
+            document.querySelector('div p').innerText = String(count++);
+        }
+        // let id = setInterval(function () {
+        //     // document.querySelector('div').style.color = rainbow[idx++];
+        //     // document.querySelector('div p').style.color = rainbow[(count -1) % rainbow.length];
+        //     // if(idx === rainbow.length)
+        //     //     idx = 0;
+        //     // document.querySelector('div').style.color = 'red';
+        //     // document.querySelector('div p').innerText = String(count++); // 1뒤에 실행하기 때문에 addEvant없이도 실행이 됨. 1초 후에 실행이기 때문에 그 동안 html을 다 읽고 생성한 뒤라서 가능
+        // }, 1000);
+
+        let id = setInterval(timer, 1000);
+        const stopTimer = function () {
+            document.querySelector('div button:nth-of-type(1)').setAttribute('disabled', 'disabled');
+            document.querySelector('div button:nth-of-type(2)').removeAttribute('disabled');
+            clearInterval(id);
+        }
+        const restartTimer = function () {
+            // id = setInterval(function () {
+            //     // document.querySelector('div').style.color = rainbow[idx++];
+            //     document.querySelector('div p').style.color = rainbow[(count -1) % rainbow.length];
+            //     // if(idx === rainbow.length)
+            //     //     idx = 0;
+            //     // document.querySelector('div').style.color = 'red';
+            //     document.querySelector('div p').innerText = String(count++); // 1뒤에 실행하기 때문에 addEvant없이도 실행이 됨. 1초 후에 실행이기 때문에 그 동안 html을 다 읽고 생성한 뒤라서 가능
+            // }, 1000);
+            document.querySelector('div button:nth-of-type(2)').setAttribute('disabled', 'disabled');
+            document.querySelector('div button:nth-of-type(1)').removeAttribute('disabled');
+            id = setInterval(timer, 1000);
+        }
+        // });
+	</script>
+</head>
+<body>
+	<div>
+		<p>0</p>
+		<button onclick="stopTimer()">정지</button>
+		<button onclick="restartTimer()" disabled="disabled">재시작</button>
+	</div>
+</body>
+</html>

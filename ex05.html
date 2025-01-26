@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+		사용자에게 원화를 기반으로 사용자에게 입력받고 엔화나 달러로 변환해서 알려주는 프로그램을 만들어보세요.
+
+		예) 원화를 입력해주세요.
+		입력 -> 1000
+		환전할 외화를 선택해 주세요. 1) 엔화 2) 달러. 해당 숫자만 입력해 주세요.
+		입력 > 1
+		-> 출력 > 1000원는 110.54엔 입니다.
+		 */
+		let won = prompt('원화를 입력해주세요.');
+        won = parseFloat(won);
+        let choice = Number(prompt('1. 엔화 2. 달러. 해당 숫자만 입력해 주세요.'));
+        let dollarRate =  1350.50;
+        let enRate = 9.04;
+		let rusultEn = won / enRate;
+        let resultDollar = won / dollarRate;
+        if(choice === 1){
+            document.write(`${won}원은 ${rusultEn.toFixed(2)}엔 입니다.`)
+        } else {
+            document.write(`${won}원은 ${resultDollar.toFixed(2)}달러 입니다.`)
+        };
+	</script>
+</head>
+<body>
+
+</body>
+</html>

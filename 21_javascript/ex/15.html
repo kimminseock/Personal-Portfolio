@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+        * {margin: 0; padding: 0;}
+
+        #galleryZon {
+            text-align: center;
+        }
+	</style>
+	<script>
+        /*
+		1. 코드를 DOMContentLoaded 이벤트 발생시 실행이 되도록 수정.
+		2. 이벤트 핸들어 어트리뷰트 방식은 제거하고 이벤트 핸들러 메서드 방식으로 이벤트 처리.
+		3. 익명 함수만 사용할 것.
+		 */
+        document.addEventListener('DOMContentLoaded', () => {
+            const photo = document.getElementById('photo');
+            const btnBefore = document.querySelector('#galleryZon p button:nth-of-type(1)');
+            const btnNext = document.querySelector('#galleryZon p button:nth-of-type(2)');
+            let num = 1;
+
+            btnBefore.addEventListener('click', function () {
+                if (num === 1) {
+                    alert('첫 이미지입니다');
+                    return
+                }
+                num--;
+                photo.setAttribute('src', `images/pic_${num}.jpg`);
+            });
+            btnNext.addEventListener('click', function () {
+                if (num === 9) {
+                    alert('마지막 이미지입니다');
+                    return;
+                }
+                num++;
+                photo.setAttribute('src', `images/pic_${num}.jpg`);
+            });
+        });
+        // let num = 1;
+        // const showGallery = function (direction) {
+        //     /*
+        // 	다음을 클릭한 경우 pic_1.jpg -> pic_2.jpg : 번호가 증가
+        // 	이전을 클릭한 경우 pic_9.jpg -> pic_8.jpg : 번호가 감소
+        //
+        // 	* 종료 조건
+        // 	direction === 1 : num === 9
+        // 	direction === 0 : num === 1
+        // 	 */
+        //     if(direction === 1){ // 다음을 클릭
+        //         if(num === 9){
+        //             alert('마지막 이미지입니다');
+        //             return;
+        //         }
+        //         num++;
+        //     } else { // 이전을 클릭
+        //         if(num === 1){
+        //             alert('첫 이미지입니다');
+        //             return;
+        //         }
+        //         num--;
+        //     }
+        //     const imgTag = document.querySelector('#photo');
+        //     imgTag.setAttribute('src', `images/pic_${num}.jpg`);
+        // }
+	</script>
+</head>
+<body>
+	<div id="galleryZon">
+		<p><img src="images/pic_1.jpg" id="photo" alt=""></p>
+		<p>
+			<button onclick="showGallery(0)">이전</button>
+			<button onclick="showGallery(1)">다음</button>
+		</p>
+	</div>
+</body>
+</html>

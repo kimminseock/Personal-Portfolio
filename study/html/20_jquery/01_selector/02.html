@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* 직접 선택자 : 전체 선택자
+		전체(Universal) 선택할 때 사용.
+		즉 이 선택자를 사용하면 현재 HTML의 모든 태그를 선택.
+		*/
+		$(function () {// 문서가 다 로딩 된 후에 실행
+            $('*').css('border', '1px solid blue');
+        });
+	</script>
+</head>
+<body>
+	<h1>제이쿼리</h1>
+	<h2>선택자</h2>
+	<h3>직접 선택자</h3>
+</body>
+</html>

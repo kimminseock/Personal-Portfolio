@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		직접 선택자 : 그룹 선택자
+		한번에 여러 개의 요소를 선택할 때 사용.
+		기본형 : $('요소 선택1, 요소 선택2, .. 요소 선택 n.')
+		*/
+		$(function () {
+			$('h1,#tit3').css('background-color', 'cyan').css('border', '2px dashed black');
+
+        });
+	</script>
+</head>
+<body>
+	<h1>제이쿼리</h1>
+	<h2>선택자</h2>
+	<h3 id="tit3">직접 선택자</h3>
+	<h3>인접 선택자</h3>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		* 글자 조작하기
+		문서 내부의 글자를 조작할때는 textContent, innerHTML 속성 사용.
+
+		문서객체.textContent : 입력된 문자열을 그대로 넣어줌.
+		문서객체.innerHTML : 입력된 문자열을 HTML 형식으로 넣어줌.
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+           const a = document.querySelector('#a');
+           const b = document.getElementById('b');
+
+           a.textContent = '<h1>textContent 속성</h1>';
+           b.innerHTML = '<h1>innerHTML 속성</h1>';
+		});
+	</script>
+</head>
+<body>
+	<div id="a"></div>
+	<div id="b"></div>
+</body>
+</html>

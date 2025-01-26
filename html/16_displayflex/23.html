@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.container {
+			margin-bottom: 30px; border: 1px solid #222; background-color: #eee;
+		}
+
+		.box {
+			width: 80px; margin: 5px; padding: 5px 45px;
+		}
+
+		/*.box:nth-child(odd) {*/
+		/*	background-color: rgb(255, 187, 0);*/
+		/*}*/
+
+		/*.box:nth-child(even) {*/
+		/*	background-color: rgb(35, 220, 35);*/
+		/*}*/
+
+		p {
+			text-align: center; font-weight: bold;
+		}
+		/*
+		* flex-basis
+		플렉스 항목의 기본 크기를 지정.
+		플렉스 항목을 가로로 배치한다면 (flex-direction: row) 이 값은 플렉스 항목의 너비이고,
+		세로로 배치한다면 (flex-direction: colum) 이 값은 높이가 됨.
+
+		기본값은 auto
+		플렉스 항목에 width 속성이 지정되어 있다면 그 값을 flex-basis값으로 사용하고, 지정되어 있지 않으면 콘텐츠 영역만큼만 크기를 차지.
+		세로로 배치할 경우 height 값을 사용하고, height 값이 없다면 역시 콘텐츠 영역만큼 크기를 차지.
+		*/
+
+		.container {
+			display: flex; /* 플렉스 컨테이너 지정 */
+
+			width: 800px;
+			gap: 30px;
+
+		}
+		.box {width: auto; padding: 0; margin: 0; background-color: #000;
+            flex-basis: 150px; /* 플렉스 항목의 기본 크기 150px */}
+		p {color: #ffffff; font-weight: normal; font-size: 2rem;}
+	</style>
+</head>
+<body>
+	<div class="container" id="opt1">
+		<div class="box"><p>가나다라마</p></div>
+		<div class="box"><p>가나다라마바사</p></div>
+		<div class="box"><p>ABCDE</p></div>
+	</div>
+</body>
+</html>

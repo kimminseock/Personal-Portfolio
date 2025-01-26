@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+		<script>
+
+			document.addEventListener('DOMContentLoaded', () => {
+                // 1. 요소 들고오기
+				const input = document.querySelector('input');
+                const select = document.querySelector('select');
+                const span = document.querySelector('span');
+
+				// 2. 이벤트 리스너 등록
+				const calc = function () {
+					// span.textContent = (input.value * select.value).toString();
+                    span.textContent = (input.value * select.value).toFixed(2);
+                    // toFixed 소수점 이하 잘라내서 문자열로 반환. 소수점 2번째 자리까지 출력.
+                }
+				input.addEventListener('keyup', function () {
+                    // console.log(this.value);
+					// span.textContent = (this.value * select.value).toString();
+					calc();
+                });
+
+                select.addEventListener('change', function (e) {
+                    // console.log(e.target.value);
+                    // span.textContent = (input.value * e.target.value).toString();
+	                calc();
+                });
+			});
+		</script>
+</head>
+<body>
+	<label>
+		<input type="text">
+	</label> cm =
+	<span></span>
+	<label>
+		<select>
+			<option value="10">mm</option>
+			<option value="0.01">m</option>
+			<option value="0.393701">inch</option>
+		</select>
+	</label>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		/*
+		div 요소가 3초 동안 점점 사라지게 하는 애니메이션을 작성하세요.
+		 */
+		.box{
+			width: 200px; height: 200px; background-color: #4CAF50;
+
+			animation-name: fade;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			animation-direction: alternate;
+		}
+
+
+		@keyframes fade {
+			from{opacity: 1;}
+			to{opacity: 0;}
+        }
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

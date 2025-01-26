@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+            $('.si').on('click', function () {
+                $(this).hide();
+                $('.ex').show();
+            });
+            $('.ex').on('click', function () {
+                $(this).hide();
+                $('.si').show();
+            });
+        });
+
+	</script>
+	<style>
+		.ex{display: none;}
+	</style>
+</head>
+<style>
+	div{width: 499px; height: 365px; margin: 40px auto;}
+</style>
+<body>
+	<div class="si">
+		<a href="#"><img src="img/giphy.gif"></a>
+	</div>
+	<div class="ex">
+		<a href="#"><img src="img/fc6a23d89f4646df8551f7d3de152056f43ad912ad8dd55b04db6a64cddaf76d.gif"></a>
+	</div>
+</body>
+</html>

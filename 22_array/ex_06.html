@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		const numbers = [
+            [77, 29, 53],
+			[15, 200, 1969],
+			[7464, 5149, 8776]
+		]
+		let sum = 0;
+		for(let i = 0; i < numbers.length; i++){
+            for(let j = 0; j < numbers[i].length; j++){
+                sum += numbers[i][j];
+            }
+		}
+        document.write(`${sum}<br>`);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

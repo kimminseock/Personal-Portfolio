@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+		체크박스 활용하기
+		체크박스의 체크 상태를 확일할 땐느 입력양식의 checked 속성을 사용.
+
+		체크 상태일때만 타이머를 증가시키는 프로그램.
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+			// 1. 요소 들고오기
+			const input = document.querySelector('input');
+            const h1 = document.querySelector('h1');
+            let id;
+            let timer = 0;
+			// 2. 이벤트 리스너 등록
+			input.addEventListener('change', function (e) {
+                // console.log(e);
+                console.log(e.target.checked);
+
+                if(e.target.checked) { // 체크 상태
+	                id = setInterval(function () {
+	                    h1.textContent = `${timer++}초`;
+                    }, 1000)
+                } else { // 체크 해제 상태
+					clearInterval(id);
+                }
+            });
+		});
+	</script>
+</head>
+<body>
+	<label>
+		<input type="checkbox">
+	</label>
+	<span>타이머 활성화</span>
+	<h1></h1>
+</body>
+</html>

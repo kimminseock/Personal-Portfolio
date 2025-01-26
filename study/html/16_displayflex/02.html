@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh; /* vh : Vertical Height. 화면 기준 높이 */
+            background-color: lightcyan;
+        }
+        section {
+            border: 10px solid blue;
+        }
+        section article {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border: 1px solid #000;
+        }
+        /*
+
+        * flex-direction
+        -> 자식 요소의 정렬 방향 변경하기
+
+        flex-direction : row - flex의 기본축을 가로로 지정. 주축을 가로로, 교차측을 세로로 지정. 기본값
+        flex-direction : column - flex의 기본축을 세로로 지정. 주축을 세로로 교차축을 가로로 지정.
+        flex-direction : row-reverse - 자식 요소 콘텐츠를 가로 역순으로 정렬.
+        flex-direction : column-reverse - 자식 요소 콘텐츠를 세로 역순으로 정렬.
+        */
+        section{
+	        display: flex;
+	        flex-direction: row;
+        }
+	</style>
+</head>
+<body>
+	<main>
+		<section>
+			<article>1</article>
+			<article>2</article>
+			<article>3</article>
+			<article>4</article>
+			<article>5</article>
+		</section>
+	</main>
+</body>
+</html>

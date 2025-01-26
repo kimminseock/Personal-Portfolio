@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <h1>TodoList Test</h1>
+    <label><input type="text" id="todoInput" placeholder="Enter a new to-do"></label>
+    <button>Add To-Do</button>
+    <ul id="todoList"></ul>
+
+    <!-- firebase SDK - 일반 스크립트 형식으로 불러오기 -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-database-compat.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 요소 들고오기
+            const todoInput = document.getElementById('todoInput');
+            const btn = document.querySelector('button');
+            const ul = document.getElementById('todoList');
+
+            /* ------------------------------------- */
+            // 3. firebase 설정 및 초기화
+            /* ------------------------------------- */
+            const firebaseConfig = {
+                apiKey: "AIzaSyAgOIRcTNcFd3j4sFAfGoQpuzI6ei68kYQ",
+                authDomain: "js-sample-a8601.firebaseapp.com",
+                projectId: "js-sample-a8601",
+                storageBucket: "js-sample-a8601.firebasestorage.app",
+                messagingSenderId: "96991964334",
+                appId: "1:96991964334:web:c9e0e7a0ab36ffc232d13f",
+                databaseURL: 'https://js-sample-a8601-default-rtdb.asia-southeast1.firebasedatabase.app/',
+            };
+
+            // firebase 초기화
+            firebase.initializeApp(firebaseConfig);
+            // realtime database 참조 가져오기
+            const database = firebase.database(); // 참고를 가져오는 코드
+            // firebase realtime database에서 todo_first라는 경로를 참조하는 변수를 정의하는 코드
+            const ref = database.ref('todo_study');
+
+            /* ------------------------------------- */
+            /* 4. 기능 구현 - 등록 */
+            /* ------------------------------------- */
+            // 등록 함수
+            async function addTodo(text) {
+                if(!text.trim()) return
+                try {
+                    // 고유한 키 생성
+                    const todoRef = ref.push();
+
+                    // 등록
+                    const data = {
+                        text: text,
+                        completed: false,
+                        addTime: firebase.database.ServerValue.TIMESTAMP,
+                    }
+                    await  todoRef.set(data);
+                    console.log('성공했습니다.')
+                } catch (error){
+                    console.log('실패했습니다')
+                }
+            }
+
+            btn.addEventListener('click', ev => {
+                const text = todoInput.value.trim();
+                if(text){
+                    addTodo(text);
+                    todoInput.value = '';
+                }
+            })
+
+        });
+    </script>
+</body>
+</html>

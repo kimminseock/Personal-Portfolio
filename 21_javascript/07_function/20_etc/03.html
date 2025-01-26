@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 블록 스코프와 함수 스코프
+		 */
+		// 모든 변수는 스코프 (scope, 범위)가 있음.
+		// var은 함수 스코프, let은 블록 스코프를 가짐
+		// 변수의 경우 사용이 조심스러운 이유는 의도 하지 않은 곳에서 변수를 사용할 수 있음.
+		var animal = 'dog';
+        console.log(animal); // dog
+
+        {
+            var animal = 'cat';
+            console.log(animal); // cat
+        }
+        console.log(animal); // cat. 블럭에서 사용했지만 블럭 밖으로 변수 사용이됨.
+
+		// function f() {
+		// 	var num = 10;
+        // }
+        // console.log(num);
+
+		var animal = 'dog';
+        console.log(animal); // dog
+
+        (function () {
+            var animal = 'cat';
+            console.log(animal); // cat
+        })();
+
+        console.log(animal); // dog
+	</script>
+</head>
+<body>
+
+</body>
+</html>

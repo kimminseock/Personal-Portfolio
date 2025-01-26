@@ -1,0 +1,16 @@
+#slide {
+    position: relative;
+    overflow: hidden;
+}
+
+#slide>#slide_contents {
+    width: 1200px;
+    height: 900px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slide>#slide_contents>img {
+    display:block;
+}

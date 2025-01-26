@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js"></script>
+    <script>
+        $(function () {
+            const textElements = gsap.utils.toArray('#inc01 .b_txt');
+            textElements.forEach(text => {
+                gsap.to(text, {
+                    backgroundSize: '100%',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: text,
+                        start: 'center 90%',
+                        end: 'center 30%',
+                        scrub: true,
+                    },
+                });
+            });
+        });
+    </script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');/* regular-400, medium-500, semibold-600, bold-700 */
+
+        body,html {height:100%;margin:0;padding:0}
+        ul, li, dl, dt, dd, p, span{margin:0;padding:0}
+        a{text-decoration:none}
+        li{list-style:none}
+        a{text-decoration:none}
+        *, :after, :before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+
+        #inc01{padding-top:150px;height:700px;background:#111;font-family:'Pretendard'}
+        #inc01 .big_txt {
+            position: relative;
+            padding-left:50px;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: rgba(255,255,255,.2)
+        }
+
+        #inc01 .big_txt .b_txt {
+            position: relative;
+            width: max-content;
+            background: linear-gradient(to right, #fff, #fff) no-repeat;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 0%;
+            transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s
+        }
+
+        #inc01 .big_txt .brac_ket {
+            display: block;
+            position: absolute;
+            left: 300px;
+            bottom: -50px
+        }
+    </style>
+</head>
+<body>
+<section id="inc01">
+    <div class="big_txt">
+        <p class="b_txt">웹 디자인이 필요할 땐</p>
+        <p class="b_txt">디자인키트와 함께!</p>
+        <p class="b_txt">홈페이지 제작 경력 17년 이상</p>
+        <p class="b_txt">경험과 강력한 노하우</p>
+    </div>
+</section>
+</body>
+</html>

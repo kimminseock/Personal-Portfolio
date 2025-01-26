@@ -1,0 +1,8 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+#wrapper{width: 600px; margin: 20px auto;}
+#wrapper h2{text-align: center; margin-bottom: 20px;}
+#wrapper form{width: 600px; height: 100px; text-align: center; line-height: 100px; background-color: skyblue;}
+#wrapper #item{width: 400px; height: 40px; padding-top: 3px; margin-right: 10px; border: none;}
+#wrapper form label{border: none;}
+#wrapper form button{width: 50px; height: 40px; border: none;}

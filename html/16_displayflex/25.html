@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0; padding: 0;
+		}
+		.container {
+			margin-bottom: 30px; border: 1px solid #222; background-color: #eee;
+		}
+
+		.box {
+			/*width: 80px; margin: 5px; padding: 5px 45px;*/
+		}
+
+		.box:nth-child(odd) {
+			background-color: rgb(255, 187, 0);
+		}
+
+		.box:nth-child(even) {
+			background-color: rgb(35, 220, 35);
+		}
+
+		p {
+			text-align: center; font-weight: bold;
+		}
+		/*
+		* flex-shrink
+		플렉스 컨테이어의 너비가 줄어들 경우 그 안에 있는 플렉스 항목의 너비도 자연스럽게 줄어들도록 설정할 때 사용.
+		flex-shrink의 기본값은 1 1은 컨테이너에 맞춰 플렉스 항목을 축소, 0으로 지정하면 플렉스 항목을 축소하지 않음.
+		*/
+
+		/*
+		shrink 안썻을 경우 개방 박스의 넓이는 192.5px
+
+		컨테이너 넓이가 800px, 내부 요소는 (300px * 4) + (10px * 3) = 1230px, 부족한 공간은 1230 - 800 = 430px.
+		부족한 공간을 1 : 1 : 2 비율로 줄임.
+
+		430 / 4 = 107.5
+		#box1 : 300 - 107.5(430 * 1 / 4) = 192.5px
+		#box2 : 300
+		#box3 : 300 - 107.5(430 * 1 / 4) = 192.5px
+		#box4 : 300 - 215(430 * 2 / 4) = 85px
+		
+		192.5 + 300 + 192.5 + 85 + 30 = 800
+		*/
+		.container {
+			display: flex; /* 플렉스 컨테이너 지정 */
+			width: 800px;
+			height: 100px;
+			gap: 10px; /* 플렉스 항목 간의 간격 10px*/
+		}
+		.box {flex-basis: 300px;}
+		#box1{ flex-shrink: 1; }
+		#box2{ flex-shrink: 0; }
+		#box3{ flex-shrink: 1; }
+		#box4{ flex-shrink: 2; }
+	</style>
+</head>
+<body>
+	<div class="container" id="opt1">
+		<div class="box" id="box1"><p>1</p></div>
+		<div class="box" id="box2"><p>2</p></div>
+		<div class="box" id="box3"><p>3</p></div>
+		<div class="box" id="box4"><p>4</p></div>
+	</div>
+</body>
+</html>

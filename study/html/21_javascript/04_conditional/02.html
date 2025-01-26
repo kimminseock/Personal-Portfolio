@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		// 사용자에게 정수를 입력받아서 짝수인지 홀수인지 출력
+		// 1. 사용자에게 정수를 입력
+		// 1) 입력
+		// 2) 정수로 형변환
+		// 3) 콘솔에 입력한 숫자가 나오는지 확인
+
+		const user = Number(prompt('정수를 입력해주세요'));
+        console.log(user);
+        // 2) 입력받은 정수가 짝수이면 '입력하신 숫자는 짝수입니다.'
+		// , 홀수이면 '입력하신 숫자는 홀수입니다.' 출력
+        if(user % 2 === 0){
+            document.write(`${user}의 값은 짝수입니다.`);
+            alert(`${user}입력하신 숫자는 짝수입니다.`);
+        } else {
+            document.write(`${user}의 값은 홀수입니다.`);
+            alert(`${user}입력하신 숫자는 홀수입니다.`);
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

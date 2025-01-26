@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="./css/c_03.css">
+	<script>
+        $(function () {
+            $('header .menu li').on({
+                mouseover: function () {
+                    $('.submenu', this).stop().slideDown();
+                },
+                mouseout: function () {
+                    $('.submenu', this).stop().slideUp();
+                },
+            });
+            setInterval(function () {
+                $('.slide_container').animate({left: '-100%'}, function () {
+                    $('.slide_container').append($('.slide_block:eq(0)')).css({left: '0'})
+                });
+            }, 3000);
+            $('#popupcnt').on('click', function () {
+                $('#popup').show();
+                $('#stop').show();
+            });
+            $('#popup button').on('click', function () {
+                $('#popup').hide();
+                $('#stop').hide();
+            });
+        });
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="logo">
+				<a href="#"><img src="images01/logo.jpg" alt="#"></a>
+			</div>
+			<nav>
+				<ul class="menu">
+					<li>
+						<a href="#">MENU-1</a>
+						<ul class="submenu">
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">MENU-2</a>
+						<ul class="submenu">
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">MENU-3</a>
+						<ul class="submenu">
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">MENU-4</a>
+						<ul class="submenu">
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section id="sideWrap">
+			<div class="slide">
+				<div class="slide_container">
+					<div class="slide_block">
+						<a href="#">
+							<img src="images01/slide1.jpg" alt="#">
+							<span>slide_text01</span>
+						</a>
+					</div>
+					<div class="slide_block">
+						<a href="#">
+							<img src="images01/slide2.jpg" alt="#">
+							<span>slide_text02</span>
+						</a>
+					</div>
+					<div class="slide_block">
+						<a href="#">
+							<img src="images01/slide3.jpg" alt="#">
+							<span>slide_text03</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="content">
+				<div id="con1">
+					<div id="conTitle"><p>공지사항</p></div>
+					<div id="conText">
+						<p id="popupcnt">공지사항입니다.</p>
+						<p>공지사항입니다.</p>
+						<p>공지사항입니다.</p>
+						<p>공지사항입니다.</p>
+					</div>
+				</div>
+				<div id="con2">
+					<div id="gallery"><p>갤러리</p></div>
+					<div id="gallery1">
+						<a href="#"><img src="images01/g1.jpg" alt="#"></a>
+						<a href="#"><img src="images01/g2.jpg" alt="#"></a>
+						<a href="#"><img src="images01/g3.jpg" alt="#"></a>
+					</div>
+				</div>
+				<div id="con3">
+					<h3>바로가기</h3>
+					<a href="#"><img src="images01/banner.jpg" alt="#"></a>
+				</div>
+				<div id="stop">
+
+				</div>
+				<div id="popup">
+					<button>닫기</button>
+				</div>
+			</div>
+			<div id="footer">
+				<div id="logo1">
+					<a href="#"><img src="images01/flogo.jpg" alt="#"></a>
+				</div>
+				<div id="cp"></div>
+				<div id="fm">
+					<label>
+						<select>
+							<option>
+								패밀리사이트
+							</option>
+						</select>
+					</label>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		li{
+			border: solid 2px black;
+		}
+		.menu1{
+			display: inline;
+			background-color: yellowgreen;
+			width: 150px;
+			height: 40px; /* 너비, 높이를 지정하였으나 inline 속성이기에 너비, 높이가 적용되지 않음 */
+		}
+        .menu2{
+            display: inline-block;
+            background-color: yellow;
+            width: 150px;
+            height: 40px; /* 너비, 높이를 지정하였으나 inline 속성이기에 너비, 높이가 적용되지 않음 */
+        }
+        /*
+        * display: inline-block
+        인라인과 블록의 합성속성. 글자와 같이 옆으로 나열, 블럭과 같이 css에 대한 모든 적용이 이루어지는 성격.
+
+        inline의 경우 한줄로 배치할 수 있지만, 너비와 높이, 마진과 같은 정확한 값이 필요한 경우에는 적용이 힘듬.
+        inline 속성의 특성은 내부 콘텐츠만큼만 공간을 차지하고 있어서 너비와 높이의 스타일이 적용이 안됨.
+        inline-block을 사용하면 해당 요소들을 가로로 배치할 수 있고 각 요소의 너비와 높이 등 정확한 수치를 지정할 수 있음.
+        */
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="menu1">inline</li>
+		<li class="menu1">inline</li>
+		<li class="menu1">inline</li>
+		<li class="menu1">inline</li>
+	</ul>
+
+	<ul>
+		<li class="menu2">inline-block</li>
+		<li class="menu2">inline-block</li>
+		<li class="menu2">inline-block</li>
+		<li class="menu2">inline-block</li>
+	</ul>
+</body>
+</html>

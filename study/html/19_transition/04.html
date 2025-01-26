@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* transition : 변환 속성
+
+		transition : 모든 transition 속성을 한 번에 사용.
+		transition-delay : 이벤트 발생 후 몇 초 후에 재생할지 지정.
+		transition-duration : 몇 초 동안 재생할지 지정.
+		transition-property : 어떤 속성을 변형할지 지정.
+		transition-timing-function : 수치 변형 함수를 지정.
+		*/
+		* {
+			margin: 0; padding: 0;
+		}
+		/* .box를 포함하는 영역 아이디 graph 박스의 영역 */
+		#graph{
+			width: 700px; margin: 30px; border: 2px solid black; overflow: hidden;
+
+
+		}
+		/* 클래스 box의 기본 스타일 지정 */
+		.box{
+			width: 30px; height: 50px; margin: 10px; background-color: blue;
+			/* 반응하는 선택자에 지정 */
+			/* n초만큼 반응. 여기서 5s는 5초를 나타냄 */
+            transition-duration: 5s; /* 몇 초 동안 재생할지 지정 */
+		}
+		#graph:hover .box{
+			width: 500px;
+		}
+
+		/*
+		* transition-timing-function : 속도의 변화 지정. 수치를 변형하는 함수를 지정할 때 사용하는 속성.
+
+		linear : 시작부터 끝까지 같은 속도로 트랜지션을 진행
+		ease : 처음에는 천천히 시작하여 점점 빨라지면서 마지막에는 천천히 끝냄 (기본값)
+		ease-in : 속도의 시작을 느리게 함
+		ease-in-out : 느리게 시작하고 느리게 끝냄
+		ease-out : 속도를 느리게 끝냄
+		*/
+		.box:nth-of-type(1) {transition-timing-function: linear;}
+		.box:nth-of-type(2) {transition-timing-function: ease;}
+        .box:nth-of-type(3) {transition-timing-function: ease-in;}
+        .box:nth-of-type(4) {transition-timing-function: ease-in-out;}
+        .box:nth-of-type(5) {transition-timing-function: ease-out;}
+	</style>
+</head>
+<body>
+	<div id="graph">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>

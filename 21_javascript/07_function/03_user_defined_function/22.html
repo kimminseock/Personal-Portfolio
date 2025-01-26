@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+		/*
+
+		* 기본적인 사용자 정의 함수 예제 : 윤년을 확인하는 함수
+		윤년의 조건 :
+		1) 4로 나누어 떨어지는 해는 윤년.
+		2) 하지만 100으로 나누어 떨어지는 해는 윤년이 아님.
+		3) 하지만 400으로 나누어 떨어지는 해는 윤년
+		 */
+
+		// 함수 중에 is로 시작하는 함수는 1) 불린형을 반환 2) 함수이름 중 is 다음의 상태가 맞으면 true, 아니면 false 반환
+		// 윤년을 확인하는 함수를 정의 - 정수 연도를 입력받아서 윤년의 여부를 불린형으로 반환.
+		const isLeapYear = function (year) {
+            return ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0));
+        }
+
+        console.log(`2020년은 윤년일까? === ${isLeapYear(2020)}`); // true. 4의 배수
+        // true && true || false
+        console.log(`2020년은 윤년일까? === ${isLeapYear(2010)}`); // false. 4의 배수가 아님
+        // false && true || false
+        console.log(`2020년은 윤년일까? === ${isLeapYear(2000)}`); // true. 4의 배수, 400의 배수
+        // true && false || true
+        console.log(`2020년은 윤년일까? === ${isLeapYear(1900)}`); // false. 4의 배수이지만 100의 배수
+		// true && false || false
+	</script>
+</head>
+<body>
+
+</body>
+</html>

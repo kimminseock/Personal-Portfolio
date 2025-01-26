@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+        /*
+        1. id가 changeTextButton인 버튼을 클릭하면
+        id가 title인 요소의 텍스트가 "Hello, JavaScript!"로 변경되도록 구현하세요.
+	    2. id가 toggleButton인 버튼을 클릭할 때마다
+	    <body>의 배경색이 흰색과 회색으로 토글되도록 구현하세요.
+	    3. id가 addItemButton인 버튼을 클릭하면 id가 itemList인 ul 요소에 새로운 li 아이템이 추가되도록 구현하세요.
+	    새로 추가되는 li의 텍스트는 Item X 형식으로, 마지막 li 아이템의 순서 번호에 1을 더한 값이 되도록 합니다.
+	    예를 들어, 마지막 li가 Item 2일 경우, 새로운 li는 Item 3으로 추가됩니다.
+
+        모든 작업은 자바스크립트 코드에서 이루어지며, HTML은 수정하지 않습니다.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1
+            const changeText = document.getElementById('changeTextButton');
+            changeText.addEventListener('click', function () {
+	            const title = document.getElementById('title');
+                title.textContent = 'Hello, JavaScript!';
+            })
+            // 2
+	        // const toggle = document.getElementById('toggleButton');
+            // let ischangeColor = false;
+            // toggle.addEventListener('click', () =>{
+            //    if(ischangeColor === false){
+            //        document.querySelector('body').style.backgroundColor = '#666666';
+			//
+            //        ischangeColor = true;
+            //    } else if(ischangeColor === true){
+            //        document.querySelector('body').style.backgroundColor = 'white';
+			//
+            //        ischangeColor = false;
+            //    }
+            // });
+	        let idx = 0;
+	        document.querySelector('#toggleButton').addEventListener('click', function () {
+                // console.log(document.body.style.backgroundColor);
+                // if(document.body.style.backgroundColor === 'white'){
+                //     document.body.style.backgroundColor = 'gray';
+                // } else {
+                //     document.body.style.backgroundColor = 'white';
+                // }
+		        const  bg = ['gray', 'white', 'orange'];
+                document.body.style.backgroundColor = bg[idx++ % bg.length];
+            });
+            // 3
+            const addItem = document.getElementById('addItemButton');
+            addItem.addEventListener('click', () => {
+                const li = document.createElement('li');
+                li.textContent = `item ${document.querySelectorAll('#itemList li').length + 1}`;
+               document.querySelector('#itemList').appendChild(li);
+            });
+        });
+	</script>
+</head>
+<body>
+	<h1 id="title">Click Event Practice</h1>
+	<button id="changeTextButton">텍스트 변경</button>
+	<button id="toggleButton">토글 배경색</button>
+	<button id="addItemButton">아이템 추가</button>
+	<ul id="itemList">
+		<li class="item">Item 1</li>
+		<li class="item">Item 2</li>
+	</ul>
+</body>
+</html>

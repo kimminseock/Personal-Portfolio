@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>산술연산자</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		// % : 나머지 연산
+		const evenOdd = 2; // 변수 값을 변경해서 테스트.
+		const result = evenOdd % 10;
+		// result에 들어갈수 있는 숫자는 0부터 (나누는 숫자 - 1)까지
+
+		// const는 선언과 동시에 초기화.
+		let comment;
+        if(result === 0) { // 2로 나눈 나머지 값이 0인 경우
+            comment = evenOdd + '는(은) "짝수" 입니다.';
+        } else { // 2로 나눈 나머지 값이 0이 아닌 경우(1인 경우)
+            comment = evenOdd + '는(은) "홀수" 입니다.';
+        }
+        console.log(comment);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

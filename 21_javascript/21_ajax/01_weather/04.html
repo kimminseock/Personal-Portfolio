@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+
+		* 기본적인 ajax 통신 방식 함수화
+		 */
+		// ajax를 이용해 데이터 가져오기
+
+		const url = 'https://jsonplaceholder.typicode.com/posts/1';
+
+		function getJson(url, callBack) {
+            // 1. XMLHttpRequest 객체 생성
+            const xhr = new XMLHttpRequest()
+
+            // 2. HTTP 요청 초기화. 통신 방식과 url 설정
+            xhr.open('GET', url);
+
+            // 3.이벤트 등록
+            // XMLHttpRequest 객체의 readyState 프로퍼티 값이 변할 때마다 자동으로 호출
+            xhr.onreadystatechange = () => {
+                // readtState 프로퍼티의 값이 DONE : 요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨.
+                if(xhr.readyState !== XMLHttpRequest.DONE) return
+
+                if(xhr.status === 200){ // 서버(url)에 문서가 준재함
+                    console.log(xhr.responseText);
+                    callBack(JSON.parse(xhr.responseText));
+                } else {
+                    console.error('Error', xhr.status, xhr.statusText)
+                }
+            }
+
+            // 4. url에 요청을 보냄.
+            xhr.send()
+        }
+        function callBack(obj) {
+            console.log(obj);
+            document.write(obj.title);
+        }
+        getJson(url, callBack)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

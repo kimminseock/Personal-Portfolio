@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        * { margin: 0; padding: 0;}
+        nav { background-color: brown; height: 100px; display: flex; justify-content: center; }
+        nav span { padding: 20px; color: white; cursor: pointer;}
+        section { background-color: antiquewhite; height: 2000px; }
+        article { font-size: 20px; width: 800px; margin: 0 auto;}
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+           const navs = document.querySelectorAll('nav span');
+           const article = document.querySelector('article');
+
+            function getData(url, callBack) {
+                // 1. XMLHttpRequest 객체 생성
+                const xhr = new XMLHttpRequest()
+
+                // 2. HTTP 요청 초기화. 통신 방식과 url 설정
+                xhr.open('GET', url);
+
+                // 3.이벤트 등록
+                // XMLHttpRequest 객체의 readyState 프로퍼티 값이 변할 때마다 자동으로 호출
+                xhr.onreadystatechange = () => {
+                    // readtState 프로퍼티의 값이 DONE : 요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨.
+                    if(xhr.readyState !== XMLHttpRequest.DONE) return
+
+                    if(xhr.status === 200){ // 서버(url)에 문서가 준재함
+                        console.log(xhr.responseText);
+                        callBack(xhr.responseText);
+                    } else {
+                        console.error('Error', xhr.status, xhr.statusText)
+                    }
+                }
+
+                // 4. url에 요청을 보냄.
+                xhr.send()
+            }
+
+            function callBack(tag) {
+                console.log(tag);
+                article.innerHTML = tag
+	            
+            }
+
+           navs.forEach(item => {
+               item.addEventListener('click', evt => {
+                   console.log(evt.target.getAttribute('data-get'));
+                   const data_get = evt.target.getAttribute('data-get');
+
+                   getData(`${data_get}.html`, callBack);
+               });
+           });
+		});
+	</script>
+</head>
+<body>
+	<nav>
+		<span data-get="contents_01">메뉴 1</span>
+		<span data-get="contents_02">메뉴 2</span>
+	</nav>
+	<section>
+		<article></article>
+	</section>
+</body>
+</html>

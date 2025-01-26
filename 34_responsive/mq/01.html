@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script></script>
+	<style>
+		/*
+
+		미디어 쿼리 : CSS3 모듈 중 하나로 사이트에 접속하는 장치에 따라 특정한 CSS 스타일을 사용하도록 해줌
+
+		* 기본형
+		@media 속성을 사용해 특정 미디어에서 어떤 CSS를 적용할 것인지 지정해 줌
+		@media [only | not] 미디어 유형 [and 조건] * [and 조건]
+
+		* 사용예
+		미디어 유형이 'screen'이면서 최소 너비가 '200px'이고 최대 너비가 '360px'일 경우에 적용할 CSS정의
+		@media screen and (min-width:200px) and (max-width:360px) {
+
+		}
+
+		* 미디어 쿼리 구문에서 사용할 수 있는 연산자
+		1) and : 조건을 계속 추가 // 이것만 쓰고 다른건 쓰지 않는다
+		2) , (쉼표) : 동일한 스타일 유형을 사용할 미디어의 유형과 조건이 있다면 쉼표를 이용해 추가
+		3) only : 미디어 쿼리를 지원하는 웹 브라우저에서만 조건을 인식하게 함
+		이 키워드를 사용하면 미디어 쿼리를 지원하지 않는 웹 브라우저에서는 미디어 쿼리를 무시하고
+		실행하지 않음
+		not : not 다음에 지정하는 미디어 유형을 제외
+		예를 들어 'not tv'라고 지정한다면 TV를 제외한 미디어 유형에만 적용
+
+		* 미디어 유형의 종류
+		미디어 쿼리는 미디어 별로 적용할 CSS를 따로 작성하기 때문에 @media 속성 다음에
+		미디어 유형을 알려주어야 함
+		all : 모든 미디어 유형
+		print : 인쇄 장치
+		screen : 컴퓨터 스크린(스마트폰 스크린 포함)
+		tv : 음성과 영상이 동시 출력되는 TV
+		aural : 음성 합성 장치 (주로 화면을 읽어 소리로 출력해 주는 장치)
+		braille : 점자 표시 장치
+		handheld : 패드(pad)처럼 손에 들고 다니는 장치
+		projection : 프로젝터
+		tty : 디스플레이 기능이 제한된 장치(픽셀(px) 단위를 사용할 수 없음)
+		embossed : 점자 프린터
+		*/
+		/* 웹 문서의 가로 너비와 세로 높이
+
+		width, height : 웹 페이지의 가로 너비, 세로 높이
+		min-width, min-height : 최소 너비, 최소 높이
+		max-width, max-height : 최대 너비, 최대 높이
+		 */
+
+		/* 문서의 기본 배경 : 1025 ~ */
+		body{background: url("./images/bg0.jpg") no-repeat fixed; background-size: cover;}
+
+		/* 화면 너비 1024px 이하일 때의 배경 : 1 ~ 1024 */ /* 769 ~ 1024 */
+		@media screen and (max-width: 1024px){
+			body{background: url("./images/bg1.jpg") no-repeat fixed; background-size: cover;}
+        }
+
+		/* 화면 너비 768px 이하일 때의 배경 1 ~ 768 */ /* 321 ~ 768 */
+		@media screen and (max-width: 768px){
+			body{background: url("./images/bg2.jpg") no-repeat fixed; background-size: cover;}
+        }
+		/* 화면 너비 320px 이하일 때의 배경 */ /* 1 ~ 320 */
+		@media screen and (max-width: 320px){
+			body{background: url("./images/bg3.jpg") no-repeat fixed; background-size: cover;}
+        }
+	</style>
+</head>
+<body>
+
+</body>
+</html>

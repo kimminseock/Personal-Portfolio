@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+        /*
+
+		자바 스크립트로 개발을 하다보면 데이터를 저장해야 할 일이 생김.
+		보통은 서버의 데이터베이스나 클라우드 서비스를 이용해서 저장해야 함.
+
+		하지만, 1) 저장해야 하는 데이터가 중요하지 않거나, 유실이 되어도 큰 문제가 없는 경우,
+		2) 개발중 테스트 단계에서는 서버가 아닌 클라이언트에 저장할 수 있음.
+		즉 '브라우저' 상에서 데이터를 저장할 수 있는 기술인 웹 스토리지(Web Storage)를 사용할 수 있음.
+
+		웹 스토리지에는 로컬 스토리지(Local Storage)와 세션 스토리지(Session Storage)가 있음.
+		세션 스토리지는 세션 종료시 데이터가 삭제되지만, 로컬 스토리지는 사용자가 직접 삭제하지 않는 한 데이터가 영구적으로 보관됨.
+		하지만 로컬 스토리지는 같은 컴퓨터의 같은 브라우저에서만 접근 가능.
+
+		* localStorage 객체 : 웹 브라우저에 데이터를 저장.
+		기본적으로 키(key)와 값(value)으로 이루어진 데이터를 저장.
+
+		* 주요 메서드
+		1) localStorage.setItem(키, 값) :
+		값을 저장. 객체에 속성을 지정하는 일반적인 형태를 사용할 수도 있음.
+
+		2) localStorage.getItem(키) : 저장된 값을 추출. 없으면 undefined가 나옴.
+		객체의 속성을 추출하는 일반적인 형태로 localStorage.키 또는 localStorage[키] 형태로 사용할 수도 있음.
+
+		3) localStorage.removeItem(키) : 특정 키의 값을 제거
+
+		4) localStorage.clear() : 저장된 모든 값을 제거
+		 */
+        document.addEventListener('DOMContentLoaded', () => {
+            const p = document.querySelector('p');
+            const button = document.querySelector('button');
+            const input = document.querySelector('input');
+
+            // 1. 입력 양식에 입력시 스토리지에 저장
+            input.addEventListener('keyup', function () {
+                localStorage.setItem('text', this.value);
+            });
+            // 2. 로컬 스토리지에 저장된 데이터를 화면에 표시
+	        const savedData = localStorage.getItem('text');
+            if(savedData){
+                input.value = savedData;
+                p.textContent = `이전 실행 때의 마지막 값: ${savedData}`;
+            }
+
+            // 3. 지우기 버튼 클릭시 삭제
+	        button.addEventListener('click', function () {
+		       localStorage.removeItem('text');
+               input.value = '';
+               p.textContent = '';
+            });
+        });
+
+        // 읽기, 입력, 수정, 삭제
+	</script>
+</head>
+<body>
+	<p></p>
+	<button>지우기</button>
+	<label>
+		<input type="text">
+	</label>
+</body>
+</html>

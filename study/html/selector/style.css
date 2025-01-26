@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#w{
+    width: 1080px;
+    margin: 0 auto;
+}
+h1{
+    padding-top: 10px;
+    text-align: center;
+}
+h3{
+    text-align: center;
+    padding-bottom: 30px;
+    color: #cccccc;
+}
+h6{
+    padding-top: 10px;
+    font-size: 20px;
+}
+.cards{
+    float: left;
+    width: 250px;
+    height: 340px;
+    border: solid 3px #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    margin-top: 15px;
+}
+li{
+    list-style: none;
+}
+.travel-card > h6 {
+    padding-top: 20px;
+    text-align: center;
+}
+.travel-card > span{
+    float: left;
+    text-align: center;
+    padding-top: 20px ;
+    font-size: 14px;
+}

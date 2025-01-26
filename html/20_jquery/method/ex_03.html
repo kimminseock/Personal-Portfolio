@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		1) a 태그의 HTML 콘텐츠를 <strong>Visit Google!</strong>으로 변경하세요.
+		2) href 속성을 "https://www.google.com"으로 변경하세요.
+		 */
+		$(function () {
+			$('#myLink').html('<strong>Visit Google!</strong>');
+            $('#myLink').attr('href', 'https://www.google.com');
+        });
+	</script>
+</head>
+<body>
+	<a id="myLink" href="https://www.example.com">Click here</a>
+</body>
+</html>

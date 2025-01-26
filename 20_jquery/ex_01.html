@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			/*
+			버튼을 클릭할 때 #box의 배경색을 파란색으로 변경하세요.
+			 */
+            $('#changeColor').on('click', function () {
+	            $('#box').css({backgroundColor: 'blue'});
+                $('#box').toggleClass('on');
+            });
+        });
+	</script>
+	<style>
+		.on{background-color: blue;}
+	</style>
+</head>
+<body>
+	<button id="changeColor">Change Background Color</button>
+	<div id="box" style="width: 100px; height: 100px; background-color: lightgrey"></div>
+</body>
+</html>

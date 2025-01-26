@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+		참가 신청 명단 프로그램 만들기
+		1. 새 노드 추가하고 표시하기
+		-> input 태그에 문자열을 입력하고 [신청]버튼을 클릭하면, nameList에 문자열이 추가되고
+		input 태그에서는 문자열이 사라짐.
+
+		2. 추가시 맨위로 가도록 변경
+
+		3. 로컬스토로지 기능 추가
+		1) 이름을 저장할 배열 만들기
+		2) [신청]버튼을 클릭하면, 배열에 추가
+		로컬 스토로지에 배열 저장
+		3) 삭제시 배열에
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+            const userName = document.getElementById('userName');
+            const button = document.querySelector('button');
+            const nameList = document.getElementById('nameList');
+			let nameArr = []; // 이름을 저장할 배열
+
+			let makeP = function (name) {
+                const p = document.createElement('p')
+                // p.textContent = userName.value;
+                p.textContent = name;
+                const span = document.createElement('span');
+                span.textContent = 'X';
+                span.setAttribute('class', 'del');
+
+                // 새로 생성된 요소에 이벤트를 추가할 경우에는 생성될 때 마다 이벤트를 등록해야 함.
+                span.addEventListener('click', ev => {
+                    if(confirm('삭제하시겠어요?')){
+                        // ev.target.parentNode.parentNode.removeChild(ev.target.parentNode); // 1번 방법
+                        nameList.removeChild(ev.target.parentNode);
+
+                        // 1) 배열 삭제 2) 스트로지 업데이트
+	                    // 1)
+                        const name = ev.target.parentNode.textContent;
+                        console.log(name);
+                        const idx = nameArr.indexOf(name);
+                        console.log(idx);
+	                    // 2)
+                        localStorage.setItem('nameArr', nameArr.toString());
+                    }
+
+                    // nameList.insertBefore(p, nameList.childNodes[0]);
+	                p.appendChild(span)
+					return p;
+	                // nameList.appendChild(p);
+                });
+
+                p.appendChild(span);
+                // 4. 버튼 요소 생성후 item에 추가
+                // 1) span 태그 생성
+                // 2) span 태그에 X 문자열 포함
+                // 3) span 태그에 del이라는 클래스 추가
+                // 4) span 태그를 p 태그에 자식요소로 추가
+
+                // 2. nameList에 새로 만든 요소 추가하기
+                // nameList.appendChild(p); // 추가하기
+                nameList.insertBefore(p, nameList.childNodes[0]); // p 요소를 #nameList 맨 앞에 추가하기
+            };
+
+            (function () {
+	            if(localStorage.getItem('nameArr')){
+                    // console.log(localStorage.getItem('nameArr'));
+                    nameArr = localStorage.getItem('nameArr').split(',');
+                    console.log(nameArr);
+                    nameArr.forEach(value => {
+                        // printNames(value);
+                        nameList.appendChild(makeP(value));
+                    })
+
+	            }
+            })();
+
+            button.addEventListener('click', ev => {
+                ev.preventDefault();
+
+                // 배열처리
+	            nameArr.unshift(userName.value);
+                console.log(nameArr);
+                localStorage.setItem('nameArr', nameArr.toString());
+                // alert(userName.value);
+                // 1. 새로운 요소를 만들고, input태그에 있는 문자열을 추가.
+				nameList.insertBefore(makeP(userName.value), nameList.childNodes[0]);
+	            // start
+	            // const p = document.createElement('p')
+				// p.textContent = userName.value;
+                // const span = document.createElement('span');
+                // span.textContent = 'X';
+                // span.setAttribute('class', 'del');
+	            //
+                // // 새로 생성된 요소에 이벤트를 추가할 경우에는 생성될 때 마다 이벤트를 등록해야 함.
+	            // span.addEventListener('click', ev => {
+                //    if(confirm('삭제하시겠어요?')){
+				// 		// ev.target.parentNode.parentNode.removeChild(ev.target.parentNode); // 1번 방법
+	            //        nameList.removeChild(ev.target.parentNode);
+                //    }
+	            // });
+	            //
+                // p.appendChild(span);
+                // 4. 버튼 요소 생성후 item에 추가
+	            // 1) span 태그 생성
+	            // 2) span 태그에 X 문자열 포함
+	            // 3) span 태그에 del이라는 클래스 추가
+	            // 4) span 태그를 p 태그에 자식요소로 추가
+
+	            // 2. nameList에 새로 만든 요소 추가하기
+	            // nameList.appendChild(p); // 추가하기
+	            // nameList.insertBefore(p, nameList.childNodes[0]); // p 요소를 #nameList 맨 앞에 추가하기
+				
+	            // 3. input 태그에 있는 문자열 제거하기
+	            userName.value = '';
+            });
+		});
+	</script>
+	<style>
+        #container {
+            width: 500px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center
+        }
+
+        form {
+            margin-top: 50px;
+        }
+
+        input[type="text"] {
+            float: left;
+            width: 300px;
+            padding: 12px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-size: 20px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        button {
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            padding: 12px;
+            margin-left: 30px;
+            font-size: 20px;
+        }
+
+        button:hover {
+            background-color: #ccc;
+        }
+
+        hr {
+            clear: both;
+            visibility: hidden;
+        }
+
+        #nameList > p {
+            font-size: 20px;
+            text-indent: 50px;
+            line-height: 1.5;
+        }
+
+        .del {
+            font-size: 20px;
+            text-align: center;
+            color: #ccc;
+            background: transparent;
+            float: right;
+            margin-right: 10px;
+        }
+
+        .del:hover {
+            color: #222;
+            cursor: pointer;
+        }
+
+        .del:active {
+            outline: 0;
+        }
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>참가 신청</h1>
+		<form action="test.html">
+			<label><input type="text" id="userName" placeholder="이름" required></label>
+			<button>신청</button>
+		</form>
+		<hr>
+		<div id="nameList"></div>
+	</div>
+</body>
+</html>

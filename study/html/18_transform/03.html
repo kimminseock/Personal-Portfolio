@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* scale : 요소를 축의 중심으로 확대 혹은 축소의 변환
+		scale(X, Y) : 지정한 크기만큼 확대와 축소를 함.
+		값이 1보다 작으면 축소되고, 1보다 크면 확대 됨. 1 == 100%, 0.9 < 1 < 1.1
+		scaleX(X) : X축에 대한 확대, 축소.
+		scaleY(Y) : Y축에 대한 확대, 축소.
+		*/
+        * {
+            margin: 0; padding: 0;
+        }
+        section {
+            width: 300px; height: 300px; border: 5px solid black; margin: 100px;
+        }
+        div{
+            width: 300px; height: 300px; background-color: royalblue;
+            transition-duration: 2s;
+        }
+
+        div:hover{
+	        transform: scale(1.5, 1.5); /* X, Y 축으로 1.5배씩 커짐 */
+	        transform: scale(0.5, 0.5);/* X, Y 축으로 0.5배씩 작아짐*/
+            transform: scaleX(2); /* X축으로 2배만큼 확대 */
+            transform: scaleY(2); /* Y축으로 2배만큼 확대 */
+        }
+	</style>
+</head>
+<body>
+	<section>
+		<div></div>
+	</section>
+</body>
+</html>

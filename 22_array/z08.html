@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 이차원 배열
+		1) 이차원 배열이란 무엇인가?
+		1) 개별 요소를 접근할 때 인덱스는 어떻게 사용하는가? -> 2개의 인덱스가 필요. 행인덱스와 열인덱스
+		2) for문으로 출력할 때 어떻게 할 것인가? -> 이중 for문
+		 */
+		// 이차원 배열 : 요소로 배열이 들어가는 배열
+		const twoDimension = [
+            ['a', 'b', 'c'],
+			['d', 'e', 'f']
+		];
+
+        // 이차원 배열은 주로 표 모양의 이차원 데이터를 나타낼 때 사용.
+		// 앞의 코드는 2행 3열의 표를 나타냄.
+		// 행의 가로 줄 수를 의미하고, 열은 세로 줄 수를 의미.
+
+		// 2행 3열을 접근할 대 twoDimension[행 인덱스][열 인덱스]로 접근.
+		document.write(twoDimension[1][2] + '<br>'); // f
+        document.write(twoDimension[0][1] + '<br>'); // b
+
+		// 이차원 배열 요소를 전부 나열하고 싶다면 반복문을 중첩해서 사용.
+		// 변수 i는 행을 나타내고, 변수 j는 열을 나타냄.
+		for( let i = 0; i < twoDimension.length; i++){ // 행
+            for (let j = 0; j < twoDimension[i].length; j++){ // 열
+                document.write(twoDimension[i][j] + '<br>');
+            }
+        }
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

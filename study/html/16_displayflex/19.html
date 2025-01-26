@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.container {
+			margin-bottom: 30px; border: 1px solid #222; background-color: #eee;
+		}
+
+		.box {
+			width: 80px; margin: 5px; padding: 5px 45px;
+		}
+
+		.box:nth-child(odd) {
+			background-color: rgb(255, 187, 0);
+		}
+
+		.box:nth-child(even) {
+			background-color: rgb(35, 220, 35);
+		}
+
+		p {
+			text-align: center; font-weight: bold;
+		}
+		/*
+		* align-self
+		특정 플렉스 항목만 정렬 방법을 지정할 때 사용.
+		예를 들어 여러 이미지가 플렉스 컨테이너 안에 있을 때 align-self 속성을 사용해서 특정 이미지만 다르게 배치할 수 있음.
+
+		auto : 부모 요소의 align-items 값을 사용해서 정렬. 기본값.
+        normal : 레이아웃 형태나 사용하는 브라우저에 따라 다르게 정렬.
+        flex-start : 플렉스 컨테이너의 시작점에 맞춰 정렬.
+        flex-end : 플렉스 컨테이너의 끝점에 맞춰 정렬.
+        baseline : 플렉스 항목의 텍스트 기준선에 맞춰 정렬.
+        center : 플렉스 컨테이너의 중앙에 정렬.
+        stretch : 플렉스 컨테이너의 높이에 가득 차게 늘려서 정렬.
+		*/
+		.container {
+			display: flex; /* 플렉스 컨테이너 지정 */
+			align-items: center; /* 교차축의 중앙에 배치 */
+			width: 450px;
+			height: 150px;
+		}
+		#box1{align-self: flex-start;} /* 교차측의 시작점에 배치 */
+		#box3{align-self: stretch;} /* 교차측에 가득 차게 늘림 */
+	</style>
+</head>
+<body>
+	<div class="container" id="opt1">
+		<div class="box" id="box1"><p>1</p></div>
+		<div class="box"><p>2</p></div>
+		<div class="box" id="box3"><p>3</p></div>
+		<div class="box"><p>4</p></div>
+	</div>
+</body>
+</html>

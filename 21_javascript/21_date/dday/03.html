@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>D-Day for love</title>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+            // 1. 2020-01-01 부터 몇일이 지났는지 출력
+			// 2. firstDay에서 100일, 200일 지난 날짜 구하기
+
+			const accent = document.getElementById('accent');
+            const date100 = document.getElementById('date100');
+            const date200 = document.getElementById('date200');
+
+			const oneDay = 24 * 60 * 60 * 1000; // 하루의 밀리초
+
+            const firstDay = new Date('2020-01-01');
+            const firstDayTimeStamp = firstDay.getTime(); // 처음 만난 날을 밀리초를 반환.
+
+            // 1. 만난지 몇일
+            const today = new Date();
+            const todayTimeStamp = today.getTime(); // 오늘 날짜를 밀리초를 반환.
+            const passedDay = parseInt(((todayTimeStamp - firstDayTimeStamp) / oneDay).toString());
+            accent.textContent = `${passedDay}일`;
+
+            // 2. 100일
+			const someDay100 = new Date(firstDayTimeStamp + 100 * oneDay);
+            date100.textContent = `${someDay100.getFullYear()}년 ${someDay100.getMonth() + 1}월 ${someDay100.getDate()}일`;
+
+            // 3. 200일
+			const someDay200 = new Date(firstDayTimeStamp + 200 * oneDay);
+            date200.textContent = `${someDay200.getFullYear()}년 ${someDay200.getMonth() + 1}월 ${someDay200.getDate()}일`;
+		});
+	</script>
+	<style>
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="day1">
+			<h3>우리 만난지</h3>
+			<p id="accent" class="accent"><span style="font-size:0.6em; font-style:italic">며칠?</span></p>
+		</div>
+		<div class="bar">기념일 계산</div>
+		<div class="day2">
+			<ul>
+				<li class="item-title">100일</li>
+				<li class="item-date" id="date100"></li>
+			</ul>
+			<ul>
+				<li class="item-title">200일</li>
+				<li class="item-date" id="date200"></li>
+			</ul>
+			<ul>
+				<li class="item-title">1년</li>
+				<li class="item-date" id="date365"></li>
+			</ul>
+			<ul>
+				<li class="item-title">500일</li>
+				<li class="item-date" id="date500"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

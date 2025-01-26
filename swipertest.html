@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Swiper demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+	<!-- Demo styles -->
+	<style>
+        .swiper-container {
+            width: 100%;
+            height: 600px; /* 원하는 높이 설정 */
+	        background-color: yellow;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+	</style>
+</head>
+
+<body>
+	<article>
+		<div>
+			<h1 data-aos="fade-up"><span>노는걸 너무 좋아하는 뽀로로</span>님, 인기 도서로 다시 독서를 시작해보세요!</h1>
+		</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="swiper-slide"></div>
+					<div class="book_component">
+						<a href="#">
+							<div><img src="e_book01/images/breakwall.png" alt="#"></div>
+							<div>너혼자 레벨업</div>
+							<div>문학상 홍준호 선생</div>
+						</a>
+					</div>
+				</div>
+				<!-- 추가 책 요소들 -->
+				<div class="swiper-slide">
+					<div class="book_component">
+						<a href="#">
+							<div><img src="./images/간편낚시.png" alt="#"></div>
+							<div>너혼자 레벨업</div>
+							<div>문학상 홍준호 선생</div>
+						</a>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="book_component">
+						<a href="#">
+							<div><img src="./images/디자인하는법.png" alt="#"></div>
+							<div>너혼자 레벨업</div>
+							<div>문학상 홍준호 선생</div>
+						</a>
+					</div>
+				</div>
+				<!-- 더 많은 슬라이드 추가 -->
+			</div>
+			<!-- 추가 네비게이션 (선택 사항) -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</article>
+
+
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script>
+            const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3, // 한 화면에 보이는 슬라이드 수
+            spaceBetween: 30, // 슬라이드 간격
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+            pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+            // 추가 옵션 설정 가능
+        });
+	</script>
+
+
+</body>
+
+</html>

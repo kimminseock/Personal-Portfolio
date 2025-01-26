@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		이벤트 강제 실행
+		trigger() : 해당 이벤트를 강제로 발생
+		 */
+		$(function () {
+			// '클릭' 버튼을 클릭하면 id=con1 on클래스를 추가.
+			$('button:first').on('click', function () {
+				$('#con1').toggleClass('on');
+            }).trigger('click');
+            $('button:nth-of-type(2)').on('click', function () {
+                $('#con2').toggleClass('on');
+            }).trigger('click');
+            // $('button:eq(2)').on('click', function () {
+            //     $('#con1').toggleClass('on');
+            //     $('#con2').toggleClass('on');
+            // });
+            $('button:eq(2)').on('click', function () {
+                $('button:eq(0)').trigger('click');
+                $('button:eq(1)').trigger('click');
+            });
+            // 바로 출력 하는 방법 위에 있는 .trigger('click')도 동일한 방법
+            // $('button:eq(0)').trigger('click');
+            // $('button:eq(1)').trigger('click');
+            // $('button:eq(2)').trigger('click');
+        });
+	</script>
+	<style>
+		*{margin: 0; padding: 0;}
+		body { overflow: hidden;}
+		#con1{height: 100px; background: #718c00; transform: translateX(-98%); transition: all 1s ease;}
+		#con2{height: 100px; background: #cc3300; transform: translateX(98%); transition: all 1s ease;}
+		#con1.on, #con2.on{transform: translateX(0);}
+	</style>
+</head>
+<body>
+	<div id="con1"></div>
+	<div id="con2"></div>
+	<button>클릭1</button>
+	<button>클릭2</button>
+	<button>all</button>
+</body>
+</html>

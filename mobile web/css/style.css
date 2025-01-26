@@ -1,0 +1,32 @@
+
+span{
+    color: #4965f1;
+}
+#center{
+    text-align: center;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+.yellow{
+    background-color: yellow;
+}
+#big{
+    font-size: 30px;
+}
+ol{
+    background-color: orange;
+}
+#red{
+    color: red;
+}
+span{
+    font-size: 20px;
+    color: #4965f1;
+}
+#medium{
+    font-size: 25px;
+}
+#underline{
+    text-decoration: underline;
+}

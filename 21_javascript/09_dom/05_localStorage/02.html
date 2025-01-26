@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+        /*
+        사용자가 이름과 메모를 입력하고 저장할 수 있는 웹 페이지를 만드세요.
+        페이지를 새로고침하더라도 이전에 입력한 이름과 메모가 유지되도록
+        localStorage를 사용하여 데이터를 저장하고 불러오세요.
+
+        요구사항:
+
+	    1.	id가 nameInput인 입력 필드에서 사용자가 이름을 입력하고, id가 noteInput인 텍스트 필드에서 메모를 입력합니다.
+	    2.	id가 saveButton인 버튼을 클릭하면 nameInput과 noteInput의 값을 localStorage에 저장하고, 저장 성공 메시지를 화면에 표시합니다.
+	    3.	페이지가 새로고침되면 localStorage에 저장된 값을 불러와 nameInput과 noteInput에 자동으로 채워집니다.
+	    4.	id가 clearButton인 버튼을 클릭하면 localStorage에 저장된 모든 데이터를 삭제하고, 입력 필드를 비웁니다.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. 요소 불러오기
+            const nameInput = document.getElementById('nameInput');
+            const noteInput = document.getElementById('noteInput');
+            const saveButton = document.getElementById('saveButton');
+            const clearButton = document.getElementById('clearButton');
+            const status = document.getElementById('status');
+
+
+            // 2. 이벤트 리스너
+
+	        // 1) saveButton 클릭시
+	        saveButton.addEventListener('click', function () {
+		       localStorage.setItem('nameInput', nameInput.value);
+		       localStorage.setItem('noteInput', noteInput.value);
+
+               status.textContent = '성공';
+            });
+            // 2) claearButton 클릭시
+
+	        clearButton.addEventListener('click', function () {
+		       localStorage.clear();
+               status.textContent = '삭제 성공';
+
+                nameInput.value = '';
+                noteInput.value = '';
+            });
+	        // 3. 페이지 로딩 처리
+	        nameInput.value = localStorage.getItem('nameInput') ? localStorage.getItem('nameInput') : '';
+	        noteInput.value = localStorage.getItem('noteInput') ? localStorage.getItem('noteInput') : '';
+
+        });
+	</script>
+</head>
+<body>
+	<h1>My Notes</h1>
+	<label for="nameInput">Name:</label>
+	<input type="text" id="nameInput" placeholder="Enter your name">
+	<br>
+	<label for="noteInput">Note:</label>
+	<textarea id="noteInput" placeholder="Write your note here..."></textarea>
+	<br>
+	<button id="saveButton">Save</button>
+	<button id="clearButton">Clear</button>
+	<p id="status"></p>
+</body>
+</html>

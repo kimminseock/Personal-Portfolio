@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* 속성 조작 메서드 : html() / text()
+		html() 메서드 : 선택한 요소의 하위 요소를 가져와 문자열로 반환하거나
+					   하위 요소를 전부 제거하고 새 요소를 바꿀 때 사용
+		text() 메서드 : 선택한 요소에 포함되어 있는 전체 텍스트를 가져 오거나
+					   선택한 하위 요소를 전부 제거하고 새 텍스트를 생성할 때 사용
+
+		* 대부분의 프로그래밍 언어(자바스크립트 포함)은 가지고 오는 용도 getter, 수정하는 용도 setter는 다른 메서드(2개의 메서드)를 사용하는데,
+		제이쿼리는 하나의 메서드를 두가지 용도로 사용. ()안이 비어있으면 getter, ()안에 뭐가 있으면 setter.
+
+		기본형 : $('요소 선택').html() -> 안에 있는 요소를 가지고 올때 사용.
+				$('요소 선택').html('새 요소') -> 안에 있는 요소를 수정할 때 사용.
+				$('요소 선택').text()
+				$('요소 선택').text('새 텍스트')
+		 */
+
+		$(function () {
+            console.log($('#sec_1').html()); // <h2><em>html()</em></h2> <p>내용1</p>
+			$('#sec_1 p').html('<a href="#">Text1</a>');
+
+            console.log($('#sec_2 h2').text()); // 텍스트()
+			$('#sec_2 h2').text('text()');
+        });
+	</script>
+</head>
+<body>
+	<h1><strong>객체 조작 및 생성</strong></h1>
+	<section id="sec_1">
+		<h2><em>html()</em></h2>
+		<p>내용1</p>
+	</section>
+	<section id="sec_2">
+		<h2><em>텍스트()</em></h2>
+		<p>내용2</p>
+	</section>
+</body>
+</html>

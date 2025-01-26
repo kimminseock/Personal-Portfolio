@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* 배열의 복사
+		 */
+		const test = [1, 2, 3, 4, 5];
+        test[4] = test[4] + 10;
+        document.write(test[4] + '<br>'); // 15
+
+		// 1. 일반 데이터 타입의 복사
+		let num = test[1];
+        document.write(typeof num + '<br>'); // number
+        document.write(test[1] + '<br>'); // 2
+        document.write(num + '<br>'); // 2
+
+		num += 10;
+        document.write(test[1] + '<br>'); // 12
+        document.write(num + '<br>'); // 12
+
+		/*
+		1. 원시형(Primitive Types)
+		원시형 데이터는 값 자체를 저장하고 변수는 복사될 때 값이 복사.
+		즉, 다른 변수에 할당하면 새로운 복사본이 생성.
+		ex) 문자열, 숫자, 불린형 등
+		 */
+
+		// 2) 배열의 복사
+		const copyArr = test;
+        document.write(test[2] + '<br>'); // 3
+		document.write(copyArr[2] + '<br>'); // 3
+
+		copyArr[2] += 10;
+        document.write(test[2] + '<br>'); // 13
+		document.write(copyArr[2] + '<br>'); // 13
+		// 복사본과 원본이 동일
+
+		/*
+		2. 참조형(Reference Types)
+		참조형 데이터는 값이 아닌 주소(참조)를 저장.
+		즉, 변수에 참조형 데이터를 할당할 경우 해당 데이터가 저장된 메모리 위치를 가리킴.
+		참조형 변수는 복사될 때 주소(참조 값)가 복사되므로, 서로 다른 변수가 같은 객체를 참조될 수 있음.
+		ex) 배열, 객체 등
+		 */
+	</script>
+</head>
+<body>
+
+</body>
+</html>

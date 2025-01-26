@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+			* 회전하는 제목 만들기
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+           const heading = document.getElementById('heading');
+
+           const keyframes = {
+               opacity: [0, 1],
+               rotate: ['x 360deg', 0],
+           };
+           const options = {
+               duration: 2000,
+	           easing: 'ease',
+               iterations: Infinity,
+           };
+
+           heading.animate(keyframes, options);
+		});
+	</script>
+	<style>
+		body {text-align: center}
+	</style>
+</head>
+<body>
+	<h1 id="heading">자바스크립트로 애니메이션</h1>
+</body>
+</html>

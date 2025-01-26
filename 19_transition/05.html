@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* transition : 변환 속성
+
+		transition : 모든 transition 속성을 한 번에 사용.
+		transition-delay : 이벤트 발생 후 몇 초 후에 재생할지 지정.
+		transition-duration : 몇 초 동안 재생할지 지정.
+		transition-property : 어떤 속성을 변형할지 지정.
+		transition-timing-function : 수치 변형 함수를 지정.
+		*/
+		* {
+			margin: 0; padding: 0;
+		}
+		/* .box를 포함하는 영역 아이디 graph 박스의 영역 */
+		#graph{
+			width: 700px; margin: 30px; border: 2px solid black; overflow: hidden;
+
+
+		}
+		/* 클래스 box의 기본 스타일 지정 */
+		.box{
+			width: 30px; height: 50px; margin: 10px; background-color: blue;
+			/* 반응하는 선택자에 지정 */
+			/* n초만큼 반응. 여기서 5s는 5초를 나타냄 */
+            transition-duration: 5s; /* 몇 초 동안 재생할지 지정 */
+		}
+		#graph:hover .box{
+			width: 500px;
+		}
+
+		/* 아이디 graph에 마우스를 올렸을 때 바로 아래에 있는 클래스 box의 순번대로 스타일 지정 */
+		#graph:hover > .box:nth-of-type(1){
+			background-color: red;
+			width: 100px;
+		}
+        #graph:hover > .box:nth-of-type(2){
+            background-color: green;
+            width: 400px;
+        }
+        #graph:hover > .box:nth-of-type(3){
+            background-color: blueviolet;
+            width: 200px;
+        }
+        #graph:hover > .box:nth-of-type(4){
+            background-color: dodgerblue;
+            width: 300px;
+        }
+        #graph:hover > .box:nth-of-type(5){
+            background-color: brown;
+            width: 500px;
+        }
+        /*
+        * transition-property : 어떤 속성을 변형할지 지정.
+        변형하고자 하는 스타일에 변화되는 시간을 각각 다르게 지정하고자 할 때 사용. */
+		/* 반응하는 클래스 box의 배경 색상은 각각 1초동안 변화하고, 가로 넓이는 5초동안 반응함 */
+        .box{
+	        transition-property: background-color, width;
+	        transition-duration: 1s, 5s; /* 속성에 따라 지정 */
+        }
+	</style>
+</head>
+<body>
+	<div id="graph">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>

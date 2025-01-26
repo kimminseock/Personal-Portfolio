@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+            /* 이벤트 등록시 매개변수 사용 */
+			$('#m1 button').on('click', function () {
+				alert('이벤트 연결1');
+            });
+
+            /* 하위 요소에 이벤트 등록 */
+            $('#m2').on('click', 'button', function () {
+                alert('이벤트 연결2');
+            });
+
+            /* 이벤트 등록시 객체 사용 */
+            $('#m3 button').on({
+                mouseenter: function () {
+	                $(this).toggleClass('on');
+                },
+	            mouseleave: function () {
+		            $(this).toggleClass('on');
+                }
+            });
+
+            // 이벤트 등록시에 실행할 코드(함수)를 외부에 선언. 여러곳에서 실행할 때 사용.
+            const showEvent = function () {
+	            alert('이벤트 연결4');
+            }
+            $('#m4 button').on('click', showEvent);
+
+            /* 이벤트 등록 후 제거.
+			off() : on() 메서드로 등록한 이벤트를 제거할 때 사용 */
+            $('#m5 button').on('click', function () {
+	            alert('이벤트 제거');
+            }).off();
+
+            /* 이벤트가 1번만 실행
+            one() : 이벤트가 1회 발생하면 자동으로 등록된 이벤트가 제거. 일회성 이벤트를 등록할 때 사용 */
+            $('#m6 button').one('click', function () {
+	           alert('이벤트 한번만 연결') ;
+            });
+
+            /*
+            버튼이나 a 태그가 아닌 요소도 클릭 가능.
+            $('p', this) -> this는 이벤트가 발생한 요소(#m7), 즉 이벤트가 발생한 하위 요소 p를 선택
+             */
+            $('#m7').on('click', function () {
+	           $('p', this).css({background: '#ff0000'});
+            });
+        });
+	</script>
+	<style>
+		* { margin: 5px;}
+
+		.on { background: #ff6600; color: #fff; }
+	</style>
+</head>
+<body>
+	<div id="m1">
+		<button>클릭1</button>
+	</div>
+	<div id="m2">
+		<button>클릭2_1</button>
+		<button>클릭2_2</button>
+	</div>
+	<div id="m3">
+		<button>클릭3</button>
+	</div>
+	<div id="m4">
+		<button>클릭4</button>
+	</div>
+	<div id="m5">
+		<button>클릭5</button>
+	</div>
+	<div id="m6">
+		<button>클릭6</button>
+	</div>
+	<div id="m7">
+		<p>클릭7</p>
+	</div>
+	<p>text</p>
+</body>
+</html>

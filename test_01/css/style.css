@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #000;}
+div{box-sizing: border-box;}
+img{display:block;}
+header, section{width: 1600px; margin: 0 auto;}
+#logo{font-family: "Dongle", sans-serif;font-weight: 400;font-style: normal; text-align: center; font-size: 30px; color: #ff3333}
+header ul{display: flex; height: 80px; text-align: center; justify-content: center;}
+header ul li{width: 120px; margin-left: 50px;}
+header ul li img{height: 53px; margin: 0 auto;}
+header ul li a:hover{border-bottom: solid 1px red;}
+
+section article:nth-child(1){display: flex; width: 1600px; justify-content: space-between; margin-top: 10px;}
+section article:nth-child(1) .box{width: 316px; height: 160px; margin-top: 10px; border: solid 2px #000; text-align: center;}
+section article:nth-child(1) .box p{margin-top: 20px; height: 46px; background: #990099; color: #fff; line-height: 46px; }
+section article:nth-child(1) .box h4 {height: 86px; line-height: 86px;}
+section article:nth-child(2){display: flex; width: 1600px; justify-content: space-between; margin-top: 10px;}
+section article:nth-child(2) div:nth-child(1) iframe{margin-top: 10px;}
+section article:nth-child(3){display: flex; width: 1600px; justify-content: space-between; margin-top: 10px;}
+section article:nth-child(4){display: flex; width: 1600px; justify-content: space-between; margin-top: 10px;}
+input[type="email"]{background-color: #c1bebe;}
+input[type="submit"]{background-color: #7e7d7d;}
+h2{height: 363px; line-height: 363px; text-align: center;}
+input{position: relative; bottom: 3px; left: 4px; border: none;}
+
+

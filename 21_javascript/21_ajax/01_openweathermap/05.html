@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+        /*
+		* OpenWeatherMap API를 이용하여 특정 도시의 5일간의 날씨 예보를 가져오는 프로그램을 작성하세요.
+		1. 사용자가 페이지의 유럽 5개 도시 중 하나를 선택하면 해당 도시의 5일간 날씨 예보를 가져오세요.
+		2. 5일 동안의 날씨 예보 중 매일 정오(12:00)에 해당하는 데이터만 출력하세요.
+		1) 날짜 2) 온도 3) 날씨 설명 (예: clear sky, few clouds 등)
+		요청 실패 시, 에러 메시지를 출력하세요.
+		3.	AJAX 요청을 사용하여 구현하세요.
+
+		ex)
+		2024-11-08: 15°C, clear sky
+		2024-11-09: 17°C, few clouds
+		2024-11-10: 13°C, scattered clouds
+		2024-11-11: 12°C, rain
+		2024-11-12: 14°C, clear sky
+		 */
+        /*
+
+		openweathermap.org
+		1. 대구 날씨 구하기
+
+		https://openweathermap.org/current
+		https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+		api.openweathermap.org/data/2.5/forecast?lat={city.lat}&lon={city.lon}&appid={API key}&lang=kr&units=metric
+
+		api.openweathermap.org/data/2.5/forecast?lat=42.9832406&lon=-81.243372&appid=01a7d7d02bd04546e914ad3d3a7cc284&lang=kr&units=metric
+
+		1) url 구하기
+		2) json 출력
+		 */
+        document.addEventListener('DOMContentLoaded', () => {
+            const city = document.querySelector("select[name=city]");
+            // const div = document.querySelector('div');
+			const p1 = document.querySelector('p:nth-of-type(1)');
+			const p2 = document.querySelector('p:nth-of-type(2)');
+			const p3 = document.querySelector('p:nth-of-type(3)');
+			const p4 = document.querySelector('p:nth-of-type(4)');
+			const p5 = document.querySelector('p:nth-of-type(5)');
+            function getJson(url, callBack) {
+                // 1. XMLHttpRequest 객체 생성
+                const xhr = new XMLHttpRequest()
+
+                // 2. HTTP 요청 초기화. 통신 방식과 url 설정
+                xhr.open('GET', url);
+
+                // 3.이벤트 등록
+                // XMLHttpRequest 객체의 readyState 프로퍼티 값이 변할 때마다 자동으로 호출
+                xhr.onreadystatechange = () => {
+                    // readtState 프로퍼티의 값이 DONE : 요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨.
+                    if (xhr.readyState !== XMLHttpRequest.DONE) return
+
+                    if (xhr.status === 200) { // 서버(url)에 문서가 준재함
+                        console.log(xhr.responseText);
+                        callBack(JSON.parse(xhr.responseText));
+                    } else {
+                        console.error('Error', xhr.status, xhr.statusText)
+                    }
+                }
+
+                // 4. url에 요청을 보냄.
+                xhr.send()
+            }
+
+            function callBack(obj) {
+
+                console.log(obj);
+                console.log(obj.list);
+                obj.list.forEach(value => {
+                    console.log(value)
+                    const day = new Date(value.dt * 1000);
+                    console.log(day.getHours());
+                });
+                console.log(obj.list[0].dt_txt);
+
+                        const p = document.createElement('p');
+                        p1.textContent = `${obj.list[0].dt_txt.slice(0, 10)}: ${obj.list[0].main.temp}℃, ${obj.list[0].weather[0].description}`;
+                        p2.textContent = `${obj.list[8].dt_txt.slice(0, 10)}: ${obj.list[8].main.temp}℃, ${obj.list[8].weather[0].description}`;
+                        p3.textContent = `${obj.list[16].dt_txt.slice(0, 10)}: ${obj.list[16].main.temp}℃, ${obj.list[16].weather[0].description}`;
+                        p4.textContent = `${obj.list[24].dt_txt.slice(0, 10)}: ${obj.list[24].main.temp}℃, ${obj.list[24].weather[0].description}`;
+                        p5.textContent = `${obj.list[32].dt_txt.slice(0, 10)}: ${obj.list[32].main.temp}℃, ${obj.list[32].weather[0].description}`;
+            }
+
+            city.addEventListener('change', evt => {
+                // 1. 위도 경도 구하기
+                // console.log(evt);
+                console.log(evt.target[evt.target.selectedIndex]);
+                const locStr = evt.target[evt.target.selectedIndex].getAttribute('data-loc');
+                const locObj = JSON.parse(locStr);
+
+                const apiKey = '01a7d7d02bd04546e914ad3d3a7cc284';
+                // const city = {lat: 35.8713, lon: 128.6018};
+	            const city = locObj;
+                let url = `https://api.openweathermap.org/data/2.5/forecast`;
+                url += `?lat=${city.lat}&lon=${city.lon}&appid=${apiKey}&lang=kr&units=metric`;
+
+                // 3. 값 출력
+                getJson(url, callBack);
+            });
+
+        });
+	</script>
+</head>
+<body>
+	<div>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	</div>
+	<label>
+		<select name="city">
+			<option data-loc={"lat":42.9832406,"lon":-81.243372}>런던</option>
+			<option data-loc={"lat":48.8588897,"lon":2.3200410217200766}>파리</option>
+			<option data-loc={"lat":40.477791499999995,"lon":-3.6858052277006363}>마드리드</option>
+			<option data-loc={"lat":54.006485,"lon":61.192986}>베를린</option>
+			<option data-loc={"lat":38.7077507,"lon":-9.1365919}>리스본</option>
+		</select>
+	</label>
+</body>
+</html>

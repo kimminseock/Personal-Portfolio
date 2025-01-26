@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		임의의 정수를 입력받은 뒤 해당 값이 3의 배수인지 아닌지 판별하는 프로그램을 구현하세요.
+
+		실행 예)
+		정수를 입력하세요 >>> 14
+		14는 3의 배수가 아닙니다.
+		------------------------
+		정수를 입력하세요 >>> 15
+		15는 3의 배수입니다.
+		*/
+		const num = Number(prompt('정수를 입력하세요'));
+
+        if(num % 3 === 0){
+            document.write(`입력하신 ${num}의 값은 3의 배수입니다.`);
+        } else {
+            document.write(`입력하신 ${num}의 값은 3의 배수가 아닙니다.`);
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

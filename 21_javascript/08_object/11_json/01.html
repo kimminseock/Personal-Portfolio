@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+
+		* 내장 객체 : JSON 객체
+		JSON : javaScript Object Notation 약자
+		자바 스크립트의 객체처럼 자료를 표현하는 방식.
+		인터넷에서 '문자열'로 자료를 주고 받을 때 사용.
+
+		ex) {"name":"박은지","days":10}
+		XML : eXtensible Markup Language
+		ex) <name>"박은지"</name><days>10</days>
+		XML이 코드 길이가 길어서 용량도 많이 잡아먹어서 JSON을 쓴다.
+
+		JSON 형식의 추가 규칙
+		* 값을 표현할 때는 문자열, 숫자, 불 자료형만 사용할 수 있음.(함수 등은 사용 불가)
+		* 문자열은 반그시 큰 따옴표로 만들어야 함.
+		* 키 key에도 반드시 따옴표를 붙여야 함.
+		 */
+        const data = [ // 자료를 생성
+            {
+                name: '리팩터링 2판',
+                price: 35000,
+                publisher: '한빛미디어'
+            },
+            {
+                name: '리팩토링 자바스크립트',
+                price: 36000,
+                publisher: '길벗'
+            }];
+        console.log(typeof data); // Object
+        console.log(data[0].name);
+
+        // 자료를 JSON (문자열)으로 변환.
+        const str = JSON.stringify(data);
+        console.log(typeof str); // string
+        console.log(str);
+        console.log(str.substring(10,17));
+
+        // 2) JSON (문자열)을 객체로 변환
+		const book = JSON.parse(str);
+        console.log(typeof book); // object
+        console.log(book[0].name); // 리펙터링 2판
+
+        console.log(JSON.stringify(book, null, 2));
+        /*
+        2번째 매개변수는 객체에서 어떤 속성만 선택해서 추출하고 싶을 때 사용(함수 또는 배열 사용)하거나 거의 사용하지 않으며,
+        일반적으로 null(아무 것도 없음)을 넣음.
+        3번째 매개변수는 들여쓰기.
+         */
+        /*
+        [{
+        "name":"리팩터링 2판",
+        "price":35000,
+        "publisher":"한빛미디어"},
+        {"name":"리팩토링 자바스크립트",
+        "price":36000,
+        "publisher":"길벗"}]
+         */
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

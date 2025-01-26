@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* 상태 선택자와 동위 선택자의 복합 활용.
+		-> input 태그의 type 속성값이 checkbox인 태그가 체크 되었을 때
+		바로 뒤에 위치하는 div 태그의 height 속성에 0픽셀을 적용
+		*/
+		input[type=checkbox]:checked + div {
+			/*height: 0;*/
+			display: none;
+		}
+        input[type=checkbox]:checked ~ span {
+            display: inline;
+
+        }
+		span{
+			display: none;
+		}
+		div {
+			overflow: hidden; /* 박스의 높이만큼만 보이도록 함. */
+			width: 650px;
+			height: 300px;
+			background: yellow;
+		}
+		/*
+		초기 화면에서는 '약관에 동의하셨습니다.'가 나오지 않고 체브박스 클릭시에 나오도록 수정 할 것.
+		*/
+	</style>
+</head>
+<body>
+	<input type="checkbox"/> 동의
+
+	<div>
+		<h1>Lorem Ipsum</h1>
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+			when an unknown printer took a galley of type and scrambled it to make a type
+		</p>
+	</div>
+	<span>약관에 동의하셨습니다.</span>
+</body>
+</html>

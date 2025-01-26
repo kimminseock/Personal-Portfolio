@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+            const div = document.querySelector('div');
+
+            function printNow() {
+                const today = new Date();
+
+                const year = today.getFullYear();
+                const month = today.getMonth() + 1;
+                const date = today.getDate();
+
+                // getDay 메서드는 해당 요일(0 ~ 6)을 나타내는 정수를 반환
+                const dayArray = ['일', '월', '화', '수', '목', '금', '토'];
+                const day = dayArray[today.getDay()];
+
+                let hour = today.getHours();
+                let minute = today.getMinutes();
+                let second = today.getSeconds();
+                // 0 ~ 23 반환 : am -> 0 ~ 11, pm -> 12 ~ 23
+                const ampm = hour < 12 ? 'AM' : 'PM';
+
+                hour = hour > 12 ? hour - 12 : hour;
+                hour = hour < 10 ? '0' + hour : hour;
+
+                // 10미만인 분과 초를 2자리로 변경
+	            minute = minute < 10 ? '0' + minute : minute;
+                second = second < 10 ? '0' + second : second;
+
+
+
+				div.textContent = `${year}년 ${month}월 ${date}일 ${day}요일 ${hour}:${minute}:${second} ${ampm}`;
+            }
+            setInterval(printNow, 1000);
+		});
+
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

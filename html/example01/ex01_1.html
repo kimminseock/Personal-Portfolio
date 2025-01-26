@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/ex01_1.css">
+	<script>
+        $(function () {
+            slideMove();
+            $('.menu').on({
+                mouseover: function () {
+                    $('.submenu').stop().slideDown();
+                },
+                mouseout: function () {
+                    $('.submenu').stop().slideUp();
+                },
+            });
+
+            $('#small01').on('click', function () {
+                $(this).addClass('on');
+                $('#small02').removeClass('on');
+                $('#gallery1').show();
+                $('#gallery2').hide();
+            });
+            $('#small02').on('click', function () {
+                $(this).addClass('on');
+                $('#small01').removeClass('on');
+                $('#gallery2').show();
+                $('#gallery1').hide();
+
+            });
+            $('#popupcnt').on('click', function () {
+                $('#popup').show();
+                $('#stop').show();
+            });
+            $('#popup button').on('click', function () {
+                $('#popup').hide();
+                $('#stop').hide();
+            });
+        });
+        let cnt = 0;
+        function slide() {
+	        cnt -= 300;
+            if(cnt < -600){
+                cnt = 0;
+            }
+            $('#slide_contents').animate({'top': cnt});
+        }
+        function slideMove() {
+	        setInterval(slide, 3000);
+        }
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<!-- header 시작 -->
+		<header>
+			<h1><a><img src="images/logo.jpg" alt="#"></a></h1>
+			<nav>
+				<ul class="menu">
+					<li><a href="#">탑</a>
+						<ul class="submenu">
+							<li><a href="#">블라우스</a></li>
+							<li><a href="#">티</a></li>
+							<li><a href="#">셔츠</a></li>
+							<li><a href="#">니트</a></li>
+						</ul>
+					</li>
+					<li><a href="#">아우터</a>
+						<ul class="submenu">
+							<li><a href="#">자켓</a></li>
+							<li><a href="#">코트</a></li>
+							<li><a href="#">가디건</a></li>
+							<li><a href="#">머플러</a></li>
+						</ul>
+					</li>
+					<li><a href="#">팬츠</a>
+						<ul class="submenu">
+							<li><a href="#">청바지</a></li>
+							<li><a href="#">짧은바지</a></li>
+							<li><a href="#">긴바지</a></li>
+							<li><a href="#">레깅스</a></li>
+						</ul>
+					</li>
+					<li><a href="#">악세서리</a>
+						<ul class="submenu">
+							<li><a href="#">귀고리</a></li>
+							<li><a href="#">목걸이</a></li>
+							<li><a href="#">반지</a></li>
+							<li><a href="#">팔찌</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- header 종료 -->
+		<!-- slide 시작 -->
+		<section id="slide">
+			<div id="slide_contents">
+				<img src="images/slide1.jpg" alt="#">
+				<img src="images/slide2.jpg" alt="#">
+				<img src="images/slide3.jpg" alt="#">
+			</div>
+		</section>
+		<!-- slide 종료 -->
+		<!-- content 시작 -->
+		<section id="content">
+			<div id="con1">
+				<div>
+					<p id="small01" class="on">공지사항</p>
+					<p id="small02">갤러리</p>
+				</div>
+				<div id="gallery1">
+					<p id="popupcnt">공지사항 입니다.</p>
+					<p>공지사항 입니다.</p>
+					<p>공지사항 입니다.</p>
+					<p>공지사항 입니다.</p>
+				</div>
+				<div id="gallery2">
+					<a href="#"><img src="images/g1.jpg" alt="#"></a>
+					<a href="#"><img src="images/g2.jpg" alt="#"></a>
+					<a href="#"><img src="images/g3.jpg" alt="#"></a>
+				</div>
+				<div id="stop">
+
+				</div>
+				<div id="popup">
+					<button>닫기</button>
+				</div>
+			</div>
+			<div id="con2">
+				<a href="#"><img src="images/banner.jpg"></a>
+			</div>
+			<div id="con3">
+				<h2><a href="#">바로가기</a></h2>
+			</div>
+		</section>
+		<!-- content 종료 -->
+		<!-- footer 시작 -->
+		<footer>
+			<div id="logo1">
+				<a href="#"><img src="images/flogo.jpg"></a>
+			</div>
+			<div id="cp">
+				<h2><a href="#">Copyright</a></h2>
+			</div>
+			<div id="sns">
+				<h2><a href="#">SNS</a></h2>
+			</div>
+		</footer>
+		<!-- footer 종료 -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        form {
+            width: 520px;
+            height: auto;
+            padding-left: 10px;
+            margin: 50px auto;
+        }
+
+        fieldset {
+            border: 1px solid #c0c0c0;
+            padding: 30px 20px 30px 30px;
+            margin-bottom: 35px;
+        }
+
+        .field {
+            float: left;
+            width: 60px;
+            font-weight: bold;
+            font-size: 0.9em;
+            line-height: 55px;
+            text-align: right;
+            margin-right: 15px;
+        }
+
+        .input-box {
+            width: 350px;
+            height: 35px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 10px 0;
+            float: left;
+        }
+
+        .order {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #aaa;
+            background: #e9e9e9;
+            font-size: 1em;
+            font-weight: bold;
+        }
+	</style>
+</head>
+<body>
+	<div id="container">
+		<form name="order">
+			<fieldset>
+				<legend> 주문 정보 </legend>
+				<ul>
+					<li>
+						<label class="field" for="billingName">이름 : </label>
+						<input type="text" class="input-box" id="billingName" name="billingName">
+					</li>
+					<li>
+						<label class="field" for="billingTel">연락처 : </label>
+						<input type="text" class="input-box" id="billingTel" name="billingTel">
+					</li>
+					<li>
+						<label class="field" for="billingAddr">주소 : </label>
+						<input type="text" class="input-box" id="billingAddr" name="billingAddr">
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend> 배송 정보 </legend>
+				<ul>
+					<li>
+						<label><input type="checkbox" id="shippingInfo" name="shippingInfo"></label>
+						<label class="check">주문 정보와 배송 정보가 같습니다.</label>
+					</li>
+					<li>
+						<label class="field" for="shippingName">이름 : </label>
+						<input type="text" class="input-box" id="shippingName" name="shippingName">
+					</li>
+					<li>
+						<label class="field" for="shippingTel">연락처 : </label>
+						<input type="text" class="input-box" id="shippingTel" name="shippingTel">
+					</li>
+					<li>
+						<label class="field" for="shippingAddr">주소 : </label>
+						<input type="text" class="input-box" id="shippingAddr" name="shippingAddr">
+					</li>
+				</ul>
+			</fieldset>
+			<button type="submit" class="order">결제하기</button>
+		</form>
+	</div>
+	<script>
+		/*
+		'주문 정보와 배송 정보가 같습니다' 클릭 시 주문 정보 가지고 오기
+		클릭시에 값을 콘솔로 출력
+		 */
+		const check = document.querySelector('#shippingInfo');
+        check.addEventListener('click', function () {
+            // console.log(check.checked);
+	        if(check.checked){ // 체크되었다면 주문정보에 입력된 값으로 배송 정보 필드를 채움
+                document.order.shippingName.value = document.order.billingName.value;
+                document.order.shippingTel.value = document.order.billingTel.value;
+                document.order.shippingAddr.value = document.order.billingAddr.value;
+	        }else { // 체크되어 있지 않다면 배송 정보 필드를 지움.
+				document.order.shippingName.value = '';
+				document.order.shippingTel.value = '';
+				document.order.shippingAddr.value = '';
+	        }
+			/*
+			1. id 값이나 class값을 사용해 폼 요소에 접근하기
+			id값이나 class값을 사용해 폼 요소에 접근하는 방법은 DOM의 다른 요소에 접근하는 것과 같음.
+			querySelector() 함수나 querySelectorAll() 함수를 사용해서 특정 id값이나 class값을 가진 요소에 접근할 수 있음.
+			텍스트 필드에 있는 값을 가져오기 위해서는 텍스트 필드에 접근하는 소스 뒤에 value속성을 붙임.
+			 */
+            // console.log(document.getElementById('billingName').value);
+            // console.log(document.querySelector('[name=billingName]').value);
+            /*
+			2. name 값을 사용해 폼 요소에 접근하기
+			폼 요소에 id나 class 속성이 없고 name 속성만 있다면 name 식별자를 사용해 폼 요소에 접근할 수도 있음.
+			id나 class 속성은 웹 개발에 css를 사용하기 시작하면서부터 등록했지만,
+			name 속성은 자바스크립트에서 폼 요소를 구별하고 접근할 수 있도록 HTML 초기부터 사용하는 방법.
+
+			이 방법을 사용하려면 <form> 태그에 name 속성이 지정되어 있어야 하고,
+			<form> 태그 안에 포함된 폼 요소에도 name 속성이 있아야 함.
+			name 속성을 사용해 폼 요소에 접근하려면 form의 name 값부터 폼 요소의 name값까지 계층을 따라 하나씩 지정.
+			폼 안에 있는 텍스트 필드에 접근하려면 <form>의 name 값과 텍스트 필드의 name 값을 사용.
+
+			submit시에 input의 name은 서버로 전송. 하지만 form의 name은 서버로 전송되지 않음.
+            */
+            // console.log(document.order.billingName.value);
+
+            /*
+			3. 폼 배열을 사용해 폼 요소에 접근하기
+			document의 속성 중 forms 속성은 문서 안에 있는 <form> 태그를 모두 가져와 배열 형태로 반환.
+			이 방법은 폼 요소에 id나 class 속성도 없고 name 속성도 없을 때 유용.
+			<form> 태그 안에 포함된 요소에 접근하려면 elements 속성을 사용.
+			해당 폼 안에 있는 모든 폼 요소를 가져오는 속성.
+			인덱스 번호로 접근
+			*/
+            // console.log(document.forms[0].elements[1].value);
+        });
+	</script>
+</body>
+</html>

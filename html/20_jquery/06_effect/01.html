@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* animate() : 애니메이션 메서드
+
+		기본형
+		$('요소 선택').animate({스타일 속성}, 적용 시간, 가속도, 콜백함수)
+		1) 스타일 속성 : 애니메이션으로 적용할 스타일 속성
+		2) 적용 시간 : 동작에 반응하는데 소요되는 시간
+		3) 콜백함수 : animate() 관련 동작이 끝난후에 실행할 코드를 적는 곳.
+		 */
+		$(function () {
+			$('.btn1').on('click', function () {
+				$('.txt1').animate({marginLeft: '500px', fontSize: '30px'}, 2000, 'linear', function () {
+					// alert('모션 완료!');
+                    $('.txt1').animate({marginLeft: '0px', fontSize: '18px'}, 2000);
+                });
+            });
+            $('.btn2').on('click', function () {
+                $('.txt2').stop().animate({marginLeft: '+=50px'}, 1000);
+            });
+        });
+	</script>
+	<style>
+		.txt1{background-color: aqua;}
+		.txt2{background-color: pink;}
+	</style>
+</head>
+<body>
+	<p>
+		<button class="btn1">버튼1</button>
+	</p>
+	<span class="txt1">"500px" 이동</span>
+	<p>
+		<button class="btn2">버튼2</button>
+	</p>
+	<span class="txt2">"50px"씩 이동</span>
+</body>
+</html>

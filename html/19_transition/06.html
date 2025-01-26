@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/* 1. 태그 초기화 */
+		*{ margin: 0; padding: 0;}
+		li{list-style: none;}
+		a{text-decoration: none;}
+
+		/* 전체 세로 메뉴를 포함하는 ul의 넓이 */
+		.nav{
+			overflow: hidden; width: 200px;
+		}
+		/* 메인메뉴, 서브메뉴 */
+		.nav li{
+			box-sizing: border-box; border-bottom: 1px solid #808080;
+			background-color: #000000;
+			font-size: 14px; text-align: center; font-weight: 900; font-family: Tahoma; color: white;
+			line-height: 40px;
+			cursor: pointer; /* 마우스 커서를 포인터로 변환 */
+		}
+        /* 서브 메뉴 항목 */
+        .submenu li {
+            font-size: 12px; background-color: #999999; border-bottom: 1px solid #777777;
+        }
+
+        .submenu li a {
+            color: black;
+        }
+
+        /* 메인 메뉴 항목에 마우스를 올렸을 때의 글자 색상 */
+        .nav li:hover {
+            color: red;
+        }
+        /* 서브 메뉴 항목에 마우스를 올렸을 때의 글자 색상과 배경 색상 */
+        .submenu li:hover {
+            background-color: burlywood;
+        }
+
+        .submenu li:hover a {
+            color: yellow;
+        }
+
+        .submenu{
+	        height: 0;
+			overflow: hidden; /* 높이만큼 보여짐 */
+	        transition-duration: 0.5s; /* 자연스럽게 0.5초만큼 동작함 */
+        }
+        /* 메인 메뉴 li에 마우스를 올리면 서브 메뉴 항목의 높이를 160px로 보여지게 함 */
+        .nav li:hover .submenu{
+	        height: 160px;
+        }
+        .nav li:nth-of-type(2) > .submenu{
+	        height: 202px;
+        }
+	</style>
+</head>
+<body>
+	<!-- 전체 메인 메뉴 -->
+	<ul class="nav">
+		<li>MENU-1
+			<!--서브 메뉴1-->
+		<ul class="submenu">
+			<li><a href="#">menu1-1</a></li>
+			<li><a href="#">menu1-2</a></li>
+			<li><a href="#">menu1-3</a></li>
+			<li><a href="#">menu1-4</a></li>
+		</ul>
+		</li>
+		<li>MENU-2
+			<!--서브 메뉴2-->
+			<ul class="submenu">
+				<li><a href="#">menu2-1</a></li>
+				<li><a href="#">menu2-2</a></li>
+				<li><a href="#">menu2-3</a></li>
+				<li><a href="#">menu2-4</a></li>
+				<li><a href="#">menu2-5</a></li>
+			</ul>
+		</li>
+		<li>MENU-3
+			<!--서브 메뉴3-->
+			<ul class="submenu">
+				<li><a href="#">menu3-1</a></li>
+				<li><a href="#">menu3-2</a></li>
+				<li><a href="#">menu3-3</a></li>
+				<li><a href="#">menu3-4</a></li>
+			</ul>
+		</li>
+		<li>MENU-4
+			<!--서브 메뉴4-->
+			<ul class="submenu">
+				<li><a href="#">menu4-1</a></li>
+				<li><a href="#">menu4-2</a></li>
+				<li><a href="#">menu4-3</a></li>
+				<li><a href="#">menu4-4</a></li>
+			</ul>
+		</li>
+		<li>MENU-5
+			<!--서브 메뉴5-->
+			<ul class="submenu">
+				<li><a href="#">menu5-1</a></li>
+				<li><a href="#">menu5-2</a></li>
+				<li><a href="#">menu5-3</a></li>
+				<li><a href="#">menu5-4</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

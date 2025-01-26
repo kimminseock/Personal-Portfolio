@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0; padding: 0;
+		}
+		.container {
+			margin-bottom: 30px; border: 1px solid #222; background-color: #eee;
+		}
+
+		.box {
+			/*width: 80px; margin: 5px; padding: 5px 45px;*/
+		}
+
+		.box:nth-child(odd) {
+			background-color: rgb(255, 187, 0);
+		}
+
+		.box:nth-child(even) {
+			background-color: rgb(35, 220, 35);
+		}
+
+		p {
+			text-align: center; font-weight: bold;
+		}
+		/*
+		* flex-grow
+		화면 너비가 큰 환경에서 접속할 경우 플렉스 컨테이너에 플렉스 항목을 채우고도 남는 공간이 생김. 이때 남은 공간을 어떻게 나눌지 정하는 속성.
+
+		기본값은 0이고, 확장하지 않는다는 의미. 음수값은 사용할 수 없음.
+		*/
+
+		/*
+		컨테이너 넓이가 800px, 내부 요소는 (150px * 4) + gap(10px * 3) = 630px, 남는 공간은 170px = 800 - 630.
+		남는 공간(170px)을 1 : 1 : 2 비율로 확장.
+
+		170 / 4 = 42.5
+		box1 : 192.5px = 150 + 42.5 => (170 * 1 / 4)
+		box2 : 192.5px = 150 + 42.5 => (170 * 1 / 4)
+		box3 : 150px
+		box4 : 235px = 150 + 42.5 + 42.5 => (170 * 2 / 4)
+		*/
+		.container {
+			display: flex; /* 플렉스 컨테이너 지정 */
+			width: 800px;
+			height: 100px;
+			gap: 10px; /* 플렉스 항목 간의 간격 10px*/
+		}
+		.box {flex-basis: 150px;}
+		/*.box{ margin: 5px;}*/
+		#box1{ flex-grow: 1;}
+        #box2{ flex-grow: 1;}
+        #box4{ flex-grow: 2;}
+	</style>
+</head>
+<body>
+	<div class="container" id="opt1">
+		<div class="box" id="box1"><p>1</p></div>
+		<div class="box" id="box2"><p>2</p></div>
+		<div class="box" id="box3"><p>3</p></div>
+		<div class="box" id="box4"><p>4</p></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+           // 1. querySelector()로 요소 선택
+           const btnClick = document.querySelector('button:nth-of-type(1)');
+           const btnRemove = document.querySelector('button:nth-of-type(2)');
+           const btnRegister = document.querySelector('button:nth-of-type(3)');
+
+           let count = 1;
+
+           const btnCnt = () => alert(`${count++}`);
+
+           btnClick.addEventListener('click', btnCnt);
+           btnRemove.addEventListener('click', function () {
+	           btnClick.removeEventListener('click', btnCnt);
+           });
+           btnRegister.addEventListener('click', function () {
+	          btnClick.addEventListener('click', btnCnt);
+           });
+		});
+	</script>
+</head>
+<body>
+	<!--
+	1. 화면에 버튼 3개 생성. '클릭', '제거', '등록'
+	2. '클릭' 버튼을 클릭하면 경고창에 클릭한 횟수가 나옴.
+	3. '제거' 버튼을 클릭하고 '클릭'버튼을 클릭하면 경고창이 안나옴.
+	4. '등록' 버튼을 클릭하고 '클릭'버튼을 클릭하면 경고창이 다시 나옴.
+	-->
+	<button>Click!</button>
+	<button>Remove!</button>
+	<button>Register!</button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #000;}
+#wrap{width: 1200px; height: 700px; margin: 0 auto; background-color: aqua;}
+#header{width: 1200px; height: 100px; background-color: #ffd800;}
+#slider{width: 1200px; height: 300px; background-color: #4CAF50;}
+#content{width: 1200px; height: 200px; background-color: silver;}
+#footer{width: 1200px; height: 100px; background-color: #00bbdd;}
+#header #logo{float: left; width: 200px; height: 100px; background-color: #990099;}
+#header #nav{float: left; width: 1000px; height: 100px; background-color: #ff3333;}
+
+#content #con1{float: left; width: 480px; height: 200px; background-color: #00bbdd;}
+#content #con2{float: left; width: 360px; height: 200px; background-color: #4965f1;}
+#content #con3{float: left; width: 360px; height: 200px; background-color: #990099;}
+
+#footer #logo1{float: left; width: 200px; height: 100px; background-color: #aa9110;}
+#footer #cp{float: left; width: 800px; height: 100px; background-color: greenyellow;}
+#footer #sns{float: left; width: 200px; height: 100px; background-color: cadetblue;}
+
+
+.gnb li{display: block; position: relative; left: 350px; top: 50px; width: 150px; height: 50px; text-align: center; line-height: 50px;background-color: #aa9110;}
+.lnb li{display: block; position: relative; left: 350px; top: 50px; width: 150px; height: 50px; text-align: center; line-height: 50px;background-color: #a63d4f;}
+.gnb li:hover{background-color: #ffd701; color: #d9d9d9;}
+.lnb li:hover{background-color: #ffd701; color: #d9d9d9;}

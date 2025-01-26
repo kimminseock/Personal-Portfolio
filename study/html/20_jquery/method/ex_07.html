@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		버튼을 클릭할 때마다 <div id="dynamicContainer"> 내부에 'Dynamic Content'라는 택스트를 추가하세요.
+		 */
+		$(function () {
+            $('#addContent').click(function () {
+	            $('#dynamicContainer').append('Dynamic Content');
+            })
+            $('#deletContent').click(function () {
+                $('#dynamicContainer').empty();
+            })
+        });
+	</script>
+</head>
+<body>
+	<div id="dynamicContainer"></div>
+	<button id="addContent">Add Content</button>
+	<button id="deletContent">Delete Content</button>
+</body>
+</html>

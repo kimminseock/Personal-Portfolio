@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/contents.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/slide.css">
+    <link rel="stylesheet" href="./css/popup.css">
+    <title>JUST쇼핑몰</title>
+</head>
+<body>
+    <!--z-index는 가려지지않게 z축을 올려 제일 앞으로 해서 가려지지않게 맨앞으로 이동-->
+    <div id="popup">
+        <div id="popup-img">
+            <img src="./images/popup.png" alt="팝업창">
+        </div>
+        <div id="popup-btn">
+            <input type="checkbox">
+            <span>하루동안 열지않기</span>
+            <button>닫기</button>
+        </div>
+    </div>
+    <div id="wrap">
+        <div id="header">
+            <div id="logo">
+                <a href="#">
+                    <img src="./images/logo.png" alt="로고">
+                </a>
+            </div>
+            <div id="nav">
+                <ul id="gnb"><!--global navigation bar-->
+                    <li>
+                        <a href="#">탑</a><!--display:block-->
+                        <ul class="lnb"><!--local navigation bar-->
+                            <li><a href="#">블라우스</a></li>
+                            <li><a href="#">티</a></li>
+                            <li><a href="#">셔츠</a></li>
+                            <li><a href="#">니트</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">아우터</a>
+                        <ul class="lnb"><!--display:block-->
+                            <li><a href="#">자켓</a></li>
+                            <li><a href="#">코트</a></li>
+                            <li><a href="#">가디건</a></li>
+                            <li><a href="#">머플러</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">팬츠</a>
+                        <ul class="lnb"><!--display:block-->
+                            <li><a href="#">청바지</a></li>
+                            <li><a href="#">짧은바지</a></li>
+                            <li><a href="#">긴바지</a></li>
+                            <li><a href="#">레깅스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">악세서리</a>
+                        <ul class="lnb"><!--display:block-->
+                            <li><a href="#">귀고리</a></li>
+                            <li><a href="#">목걸이</a></li>
+                            <li><a href="#">반지</a></li>
+                            <li><a href="#">팔찌</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="slide">
+            <div id="slide-contents">
+                <img src="./images/slide1.jpg" alt="슬라이드1">
+                <img src="./images/slide2.jpg" alt="슬라이드2">
+                <img src="./images/slide3.jpg" alt="슬라이드3">
+            </div>
+        </div>
+        <div id="contents">
+            <div id="con1">
+                <div id="tab">
+                    <div id="tab-btn">
+                        <button class="active">공지사항</button>
+                        <button>갤러리</button>
+                    </div>
+                    <div id="tab-con">
+                        <div id="notice">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span>SNS 비회원 주문하기 종료 안내</span>
+                                        <span>[2024-01-01]</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>구매 이용약관 개정 공지의 건</span>
+                                        <span>[2024-01-01]</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>개인정보처리방침 개정 안내</span>
+                                        <span>[2024-01-01]</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>데이터프리 서비스 종료 안내</span>
+                                        <span>[2024-01-01]</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="gallery">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/gallery1.jpg" alt="갤러리1">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./images/gallery2.jpg" alt="갤러리2">
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                    <img src="./images/gallery3.jpg" alt="갤러리3">
+                                </a>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="con2">
+                <a href="#">
+                    <img src="./images/banner_img.jpg" alt="배너">
+                </a>
+            </div>
+            <div id="con3">
+                <a href="#">
+                    <img src="./images/shortcut_img.jpg" alt="바로가기">
+                </a>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="logo">
+                <a href="#">
+                    <img src="./images/logo2.png" alt="">
+                </a>
+            </div>
+            <div id="copyright">
+                <address>
+                    서울시 강남구 테헤란로 152 (역삼동 강남 파이낸스 센터) 대표이사 : 변광윤<br>
+                    사업자등록번호 : 220-81-83676 통신판매업신고 : 강남 10630호
+                </address>
+            </div>
+            <div id="sns">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="./images/fb.png" alt="페북">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/insta.png" alt="인스타">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/kakao.png" alt="카카오">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

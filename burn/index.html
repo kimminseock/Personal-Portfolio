@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{
+			margin: 0; margin: 0 auto;
+		}
+		h2, div, table{
+			width: 1000px; margin: 0 auto;
+		}
+		h2{
+			padding-bottom: 30px; border-bottom: solid 1px black; padding-top: 20px;
+		}
+		div{
+			margin: 30px auto; padding-left: 800px;
+		}
+		/* 테이블 태그 시작 */
+		table{
+			border-collapse: collapse; box-sizing: border-box;
+		}
+        th{
+            background-color: #c0bebe;
+        }
+		th,td{
+			border: solid 1px black; padding: 10px; font-size: 14px;
+		}
+        th>span{
+            color: red;
+        }
+		tr:first-child th{
+			float: left; border: none; padding-top: 30px; background-color: white;
+		}
+		/* 테이블 종료 */
+
+		/* input 시작*/
+		input[name="adress"]{
+			width: 50px; height: 20px;
+		}
+		div > input[type="submit"]{
+			color: white; border: none; cursor: pointer; height: 30px;
+		}
+		input[id="btn1"]{
+			width: 90px; background-color: blue;
+		}
+		input[id="btn2"]{
+			width: 70px; background-color: black;
+		}
+		input[type="text"], input[type="password"]{
+			height: 20px;
+		}
+		input[id="id"], input[id="pw"], input[id="pwc"] {
+			width: 120px;
+		}
+		input[id="name"], input[id="nickname"]{
+			width: 60px;
+		}
+		input[id="email"]{
+			width: 500px;
+		}
+		input[id="dress"], input[id="nomaladress"], input[id="detailadress"]{
+			width: 400px;
+		}
+		/* input 종료*/
+	</style>
+</head>
+<body>
+	<h2>회원가입</h2>
+	<table>
+		<tr>
+			<th colspan="2"><span>* </span>필수입력사항</th>
+		</tr>
+		<tr>
+			<th>아이디<span> *</span></th>
+			<td><input type="text" name="id" id="id">영문자,숫자,_만 입력가능. 최소 3자이상 입력하세요.</td>
+		</tr>
+		<tr>
+			<th>비밀번호<span >*</span></th>
+			<td><input type="password" name="id" id="pw">영문자,숫자,특수문자 중 2종류 이상의 조합으로 10자이상 입력하세요.</td>
+		</tr>
+		<tr>
+			<th>비밀번호 확인<span> *</span></th>
+			<td><input type="password" name="passwordcontack" id="pwc"></td>
+		</tr>
+		<tr>
+			<th>이름<span> *</span></th>
+			<td><input type="text" name="name" id="name"></td>
+		</tr>
+		<tr>
+			<th>닉네임<span> *</span></th>
+			<td>공백없이 한글,영문,숫자만 입력 가능 (한글2자, 영문4자 이상)<br>
+				닉네임을 바꾸시면 앞으로 60일 이내에는 변경 할 수 없습니다.
+				<input type="text" name="nickname" id="nickname"></td>
+		</tr>
+		<tr>
+			<th>E-mail<span> *</span></th>
+			<td><input type="text" name="email" id="email"></td>
+		</tr>
+		<tr>
+			<th>휴대폰번호<span> *</span></th>
+			<td><input type="text" name="phone" id="phone"></td>
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td>우편번호<input type="text" name="adress" id="adress"><input type="submit" value="주소 검색"><br>
+				<input type="text" name="nomaladress" id="nomaladress"> 기본 주소<br>
+				<input type="text" name="detailadress" id="detailadress"> 상세 주소<br>
+				<input type="text" name="dress" id="dress"> 참고 주소
+			</td>
+		</tr>
+		<tr>
+			<th>메일링서비스</th>
+			<td><input type="checkbox" name="mailing" id="mailing" checked="checked"> 정보 메일을 받겠습니다.</td>
+		</tr>
+		<tr>
+			<th>SMS 수신여부</th>
+			<td><input type="checkbox" name="sms" id="sms" checked="checked"> 휴대폰 문자메세지를 받겠습니다.</td>
+		</tr>
+		<tr>
+			<th>정보공개</th>
+			<td>정보공개를 바꾸시면 앞으로 0일 이내에는 변경이 안됩니다. <input type="checkbox" name="info" id="info" checked="checked"> 다른분들이 나의 정보를 볼 수 있도록 합니다.</td>
+		</tr>
+	</table>
+	<div>
+		<input type="submit" value="회원가입" id="btn1">
+		<input type="submit" value="취소" id="btn2">
+	</div>
+
+</body>
+</html>

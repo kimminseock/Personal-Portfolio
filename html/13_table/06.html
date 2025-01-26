@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* border-collapse
+		표의 바깥 테두리와 셀의 각 테두리가 떨어져 있는 것을 합칠 것인지 그대로 둘 것인지 조정 가능.
+		table과 td 사이의 선값의 결합 유무를 결정하는 속성.
+
+		border-collapse: collapse;
+
+		separate : 기본값 - 틈이 생긴 상태
+		collapse : 선사이의 틈을 병합
+		*/
+		table {
+			border: solid 2px black;
+			border-collapse: collapse; /* 테두리 통합 */
+		}
+		td{
+			padding: 15px;
+			border: dotted 1px black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>표 스타일</caption>
+		<tr>
+			<td>시네마천국</td>
+			<td>벤허</td>
+		</tr>
+		<tr>
+			<td>11:00 ~ 14:30</td>
+			<td>16:00 ~ 19:00</td>
+		</tr>
+	</table>
+</body>
+</html>

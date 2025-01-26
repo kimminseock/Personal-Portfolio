@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* 인접 관계 선택자 : 가장 가까운 상위 요소 선택자
+		선택한 요소를 기준으로 가장 가까운 상위 요소만 선택할 때 사용
+
+		기본형 : $('요소 선택').closest('요소 선택')
+		 */
+        $(function () {
+            $('.txt1').closest('div.line').css({border: '2px solid red'});
+        })
+	</script>
+</head>
+<body>
+	<h1 class="title">선택자</h1>
+	<div class="line">
+		<div>
+			<p class="txt1">내용</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>복합 대입 연산자</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* 대입 연산자 : 변수 a에 1을 대입하라~
+		a = 1;
+
+		* 복합 대입 연산자 : 대입 연산자(=)와 다른 연산자를 함께 사용하는 연산자.
+		  일반적으로는 산술연산자와 함께 사용.
+		  변수에 특정 연산을 하고, 연산의 결과를 다시 그 변수에 입력하는 케이스가 많아서 단축형으로 만듬.
+
+		  += : a += 1 => a = a + 1
+		  -= : a -= 1 => a = a - 1
+		  *= : a *= 1 => a = a * 1
+		  /= : a /= 1 => a = a / 1
+		  %= : a %= 1 => a = a % 1
+		 */
+		let value = 10;
+        value += 10; //value = value + 10;
+        document.write(value);
+
+        // 복합 대입 연산자를 사용해서 문자열을 조합.
+		let list = '';
+
+        list += '<ul>';
+        list += '   <li>Hello</li>';
+        list += '   <li>javaScript..!</li>';
+        list += '</ul>';
+
+        document.write(list);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

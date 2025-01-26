@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		finally 구문을 사용하는 이유
+
+		return 이 실행되더라도 finally 에 있는 구문이 실행이 됨.
+
+		finally 구문이 필요한 경우
+		* try catch 구문 내부에서 return 키워드를 만날 때
+		* try catch 구문 내부에서 break 또는 continue 키워드를 만날 때
+		 */
+		function test() {
+            try {
+                console.log('try 구문의 시작 줄');
+                willExcept.bye();
+                console.log('try 구문의 마지막 줄');
+            } catch (except) {
+                console.log('에러발생');
+                return;
+            } finally {
+                console.log('finally 구문의 마지막 줄');
+            }
+
+            console.log('코드 마지막');
+        }
+        test()
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

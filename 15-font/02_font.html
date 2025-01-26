@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		h1 {
+			font-size: 42px;
+		}
+
+		/*
+		* font-weight
+		글자 굵기를 지정하는 속성.
+		미리 만들어진 예약어 (normal, bold, bolder)나 숫자값을 사용해 굵기를 지정할 수 있음.
+		100 ~ 900 사이에서 400은 normal, 700은 bold에 해당.
+		*/
+		.accent{
+			font-size: 24px;
+			font-weight: 900;
+		}
+		/*
+		* font-style
+		글자를 이탤릭체로 표시할 때 사용.
+		normal, italic, ablique가 있고 이탤릭테로 바꾸는 속성값은 italic, oblique가 있는데 웹에서는 주로 italic을 사용.
+		italic은 기울어진 글꼴이 미리 디자인되어 있는 반면에, oblique는 원래 글꼴을 단지 기울어지게 표시.
+		*/
+		.italic{
+			font-weight: bold;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<h1>레드향</h1>
+	<p>껍질에 붉은 빛이 돌아 <span class="accent">레드향</span>이라 불린다.</p>
+	<p>레드향은 한라봉과 귤을 교배한 것으로</p>
+	<p class="italic">일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+           // 요소 가져오기
+			const check = document.getElementById('check');
+            const btn = document.getElementById('btn');
+
+            check.addEventListener('change', ev => {
+                btn.disabled = !check.checked;
+
+                // if(check.checked){
+                //     btn.disabled = false;
+                // } else {
+                //     // console.log('해제')
+                //     btn.disabled = true;
+                // }
+            });
+
+		});
+	</script>
+	<style>
+        body {
+            text-align: center;
+            padding: 2rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 1rem;
+        }
+        /* 버튼 */
+        #btn {
+            background: #0bd;
+            border-radius: 4px;
+            padding: .75rem 1rem;
+        }
+        /* 버튼 비활성화 */
+        #btn:disabled {
+            background: #ccc;
+        }
+	</style>
+</head>
+<body>
+	<label><input id="check" type="checkbox"> 이용 약관에 동의</label>
+	<input id="btn" type="submit" value="전송" disabled>
+</body>
+</html>

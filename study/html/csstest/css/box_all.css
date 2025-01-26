@@ -1,0 +1,36 @@
+.gnb{
+    float:left;
+    width:750px;
+    height:500px;
+    background-color: yellow;
+}
+.gnb > li{
+    float:left;
+    width: 250px;
+    height:250px;
+}
+h3{
+    padding-top: 30px;
+    padding-left: 10px;
+}
+p{
+    padding-top: 20px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+.gnb > li:nth-child(2n){
+    background-color: orange;
+}
+.gnb > li:nth-child(2n+1){
+    background-color: red;
+    color: white;
+}
+.lnb{
+    float: right;
+    width: 250px;
+    height: 500px;
+    background-color: #4965f1;
+}
+.lnb{
+    background-color: orange;
+}

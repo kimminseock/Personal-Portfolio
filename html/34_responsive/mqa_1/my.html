@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        /*
+		요구사항
+		1. 폴더 안에는 images, script, css 등의 자료를 분류하여 저장한 폴더도 포함
+		 */
+        $(function () {
+            /* 메뉴 */
+            $('header nav > ul').on({
+                    mouseover: function () {
+                        $('header nav > ul ul').stop().slideDown();
+                    },
+                    mouseout: function () {
+                        $('header nav > ul ul').stop().slideUp();
+                    }
+
+                }
+            );
+
+            /* 탭 */
+            $('.box .title a:eq(0)').on('click', function () {
+                $('.box .title a').removeClass('on');
+                $(this).addClass('on');
+                $('.box .notice').show();
+                $('.box .gallery').hide();
+            });
+            $('.box .title a:eq(1)').on('click', function () {
+                $('.box .title a').removeClass('on');
+                $(this).addClass('on');
+                $('.box .notice').hide();
+                $('.box .gallery').show();
+            });
+
+            /* popup */
+            $('.box .notice li:eq(0)').on('click', function () {
+                $('.popup').show();
+            });
+            $('.popup button').on('click', function () {
+                $('.popup').hide();
+            })
+        });
+	</script>
+	<style>
+		/* reset */
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+
+		a { text-decoration: none; color: black; }
+
+		li { list-style: none; }
+
+		img { display: block; }
+
+		/* layout */
+		#wrap { width: 100%; }
+
+		header, section, footer { width: 1200px; margin: 0 auto; }
+
+		header, footer { height: 100px; }
+
+		/* header */
+		header { display: flex; }
+
+		header h2 { width: 200px; height: 100%; padding-top: 30px; }
+
+		header nav { width: 800px; height: 100%; }
+
+		header nav > ul { display: flex; justify-content: end; margin-top: 70px; }
+
+		header nav li { background: #fff; }
+
+		header nav li a { display: block; width: 120px; height: 30px;
+			text-align: center; line-height: 30px; }
+
+		header nav > ul > li > a {
+			border: 1px solid #333; border-right: none;
+		}
+
+		header nav > ul > li:last-child > a { border-right: 1px solid #333; }
+
+		header nav > ul > li > ul { position: absolute; display: none; }
+
+		header nav > ul > li:hover > a { background: black; color: #fff; }
+
+		header nav > ul ul li:hover a { background: black; color: #fff; }
+
+		/* section */
+		section .slide { text-align: center; }
+
+		section article:nth-of-type(2) { display: flex; height: 200px; }
+
+		section article:nth-of-type(2) > div:nth-of-type(1) { width: 400px; }
+
+		section .box {}
+
+		section .box .title { display: flex; }
+
+		section .box .title a { display: block; width: 100px; height: 30px; line-height: 30px; text-align: center;
+			border: 1px solid #000; border-bottom: none; }
+
+		section .box .title a.on { background: #eaeaea }
+
+		section .box .notice, section .box .gallery {
+			height: 170px; border: 1px solid #000;
+		}
+
+		section .box .notice ul li { padding: 10px; }
+
+		section .box .gallery { display: none; }
+
+		section .box .gallery ul { display: flex; height: 100%; padding: 10px; justify-content: space-between; align-items: center; }
+
+		section .box .gallery ul img { width: 120px; }
+
+		section article:nth-of-type(2) > div:nth-of-type(2) { width: 400px; }
+
+		section article:nth-of-type(2) > div:nth-of-type(3) { width: 400px; padding: 10px; background: #00bbdd; }
+
+		/* footer */
+		footer { display: flex; }
+		footer h2 { width: 200px; height: 100%; padding-top: 25px; }
+		footer .copyright { width: 850px; height: 100%; background: #eaeaea; text-align: center; line-height: 100px; color: #000; }
+		footer .sns { width: 150px; height: 100%; background: #000; text-align: center; line-height: 100px; color: #fff; }
+
+
+		/* popup */
+		.popup { display: none;
+			position: absolute; left: calc(50% - 250px); top: calc(50% - 300px);
+			width: 500px; height: 600px; padding: 10px; background: #00bbdd;
+
+		}
+		@media screen and (max-width: 1024px){
+			#wrap {width: 100%; padding: 0 0;}
+			header{display: block; width: 100%; height: auto;}
+            header h2{padding-top: 10px; margin: 0 auto;}
+            header nav{width: 100%;}
+            header nav > ul {justify-content: start; flex-wrap: wrap; margin-top: 20px;}
+            header nav li{width: 50%;}
+            header nav li a{width: auto;}
+            header nav > ul > li:nth-of-type(2) > a{border-right: 1px solid #333; border-bottom: none;}
+            header nav > ul > li:nth-of-type(1) > a{border-bottom: none;}
+            header nav > ul > li > ul{height: 0px; overflow: hidden;}
+            section{width: 100%;}
+            section .slide img{width: 100%; height: 300px; object-fit: cover;}
+            section article:nth-of-type(2){display: block; height: auto; margin-top: 8px;}
+            section article:nth-of-type(2) > div:nth-of-type(1) {width: 100%;}
+            section article:nth-of-type(2) > div:nth-of-type(2){width: auto;}
+            section article:nth-of-type(2) > div:nth-of-type(2) img{width: 100%;}
+            section .box .gallery ul li img{width: 100%;}
+            section article:nth-of-type(2) > div:nth-of-type(3){width: 100%; height: 200px;}
+            footer{width: auto; height: auto; flex-direction: column;  padding: 0 0;}
+            footer h2{display: none;}
+            footer .copyright{width: auto; height: auto;}
+            footer .sns{width: auto; height: auto; order: -1;}
+        }
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<h2><img src="images/logo.jpg" alt=""></h2>
+			<nav>
+				<ul>
+					<li><a href="#">탑</a>
+						<ul>
+							<li><a href="#">블라우스</a></li>
+							<li><a href="#">티</a></li>
+							<li><a href="#">셔츠</a></li>
+							<li><a href="#">니트</a></li>
+						</ul>
+					</li>
+					<li><a href="#">아우터</a>
+						<ul>
+							<li><a href="#">자켓</a></li>
+							<li><a href="#">코트</a></li>
+							<li><a href="#">가디건</a></li>
+							<li><a href="#">머플러</a></li>
+						</ul>
+					</li>
+					<li><a href="#">팬츠</a>
+						<ul>
+							<li><a href="#">청바지</a></li>
+							<li><a href="#">짧은바지</a></li>
+							<li><a href="#">긴바지</a></li>
+							<li><a href="#">레깅스</a></li>
+						</ul>
+					</li>
+					<li><a href="#">악세서리</a>
+						<ul>
+							<li><a href="#">귀고리</a></li>
+							<li><a href="#">목걸이</a></li>
+							<li><a href="#">반지</a></li>
+							<li><a href="#">팔찌</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<style>
+
+		</style>
+		<section>
+			<article class="slide">
+				<img src="images/slide1.jpg" alt="">
+			</article>
+			<article>
+				<div>
+					<div class="box">
+						<div class="title">
+							<a href="#none" class="on">공지사항</a>
+							<a href="#none">갤러리</a>
+						</div>
+						<div class="notice">
+							<ul>
+								<li><a href="#">공지사항입니다.</a></li>
+								<li><a href="#">공지사항입니다.</a></li>
+								<li><a href="#">공지사항입니다.</a></li>
+								<li><a href="#">공지사항입니다.</a></li>
+							</ul>
+						</div>
+						<div class="gallery">
+							<ul>
+								<li><img src="images/g1.jpg" alt=""></li>
+								<li><img src="images/g2.jpg" alt=""></li>
+								<li><img src="images/g3.jpg" alt=""></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+				<div>
+					<img src="images/banner.jpg" alt="">
+				</div>
+				<div>
+					<h3>바로가기</h3>
+				</div>
+			</article>
+		</section>
+	</div>
+	<style>
+
+	</style>
+	<footer>
+		<h2><img src="images/flogo.jpg" alt=""></h2>
+		<div class="copyright">Copyright</div>
+		<div class="sns">sns</div>
+	</footer>
+
+
+	<style>
+
+	</style>
+	<div class="popup">
+		<button>닫기</button>
+	</div>
+</body>
+</html>

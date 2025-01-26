@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		// 문제 버튼 클릭 시 버튼 이름 처럼 글자 색이 바뀌도록 할것
+		document.addEventListener('DOMContentLoaded', () => {
+            // 필요한 요소
+            const apple = document.getElementById('apple');
+            const banana = document.getElementById('banana');
+            const orange = document.getElementById('orange');
+            const btn = document.querySelectorAll('button');
+            // 버튼 색깔로 하기 위한 나누기
+			btn.forEach(color => { // 버튼 색깔별로 각각 뽑아내기
+                color.addEventListener('click', function (evt) {
+                    // console.log(evt.target.textContent);
+                    // 버튼 클릭시 색깔 바꾸기
+	                apple.style.color = evt.target.textContent;
+                    banana.style.color = evt.target.textContent;
+                    orange.style.color = evt.target.textContent;
+                });
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li id="apple">Apple</li>
+		<li id="banana">Banana</li>
+		<li id="orange">Orange</li>
+	</ul>
+	<div>
+		<button>red</button>
+		<button>orange</button>
+		<button>yellow</button>
+	</div>
+</body>
+</html>

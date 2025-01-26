@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        const average = Number(prompt('평균을 입력해주세요!')); // 평균
+
+        if(average <= 100 && average >= 90){
+            document.write(`학점은 A 입니다!`);
+        } else if(average >= 80){ // 0 ~ 89
+            document.write(`학점은 B 입니다!`);
+        } else if(average >= 70){ // 0 ~ 79
+            document.write(`학점은 C 입니다!`);
+        } else if(average >= 60){ // 0 ~ 69
+            document.write(`학점은 D 입니다!`);
+        } else { // 0 ~ 59
+            document.write(`학점은 F 입니다!`);
+        }
+
+        switch (parseInt(average/10)){
+	        case 10: case 9:
+                document.write(`학점은 A 입니다!`);
+                break;
+	        case 8:
+                document.write(`학점은 B 입니다!`);
+                break;
+	        case 7:
+                document.write(`학점은 C 입니다!`);
+                break;
+	        case 6:
+                document.write(`학점은 D 입니다!`);
+                break;
+	        default:
+                document.write(`학점은 F 입니다!`);
+                break;
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

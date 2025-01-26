@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		사용자에게 0보다 큰 정수를 입력받아서 합계를 출력하는 코드를 완성하시오.
+        사용자가 0을 입력하면 사용자에게 입력을 받지않고 합계를 출력합니다.
+
+
+        0보다 큰 정수를 입력해주세요.(0: 종료) >>> 10
+        0보다 큰 정수를 입력해주세요.(0: 종료) >>> 15
+        0보다 큰 정수를 입력해주세요.(0: 종료) >>> 9
+        0보다 큰 정수를 입력해주세요.(0: 종료) >>> 0
+
+        입력하신 정수의 합의 34입니다.
+		 */
+        // let sum = 0;
+        // while (true){
+        //     let i = Number(prompt('0보다 큰 정수를 입력해주세요.(0: 종료) >>> '));
+        //     sum +=i;
+        //     if(i === 0){
+        //         break;
+        //     }
+        // }
+        // document.write(`입력하신 정수의 합의 ${sum}입니다.`);
+
+        let num = -1; // while 조건식이 참이 되는 어떠한 값이라도 가능. -> 0만 아니면 됨
+        let sum = 0;
+        while (num !== 0){
+            num = Number(prompt('0보다 큰 정수를 입력해주세요.(0: 종료) >>> '));
+            sum += num;
+        }
+        document.write(`입력하신 정수의 합의 ${sum}입니다.`);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

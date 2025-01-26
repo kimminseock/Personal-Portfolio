@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* 상태선택자
+		입력 양식(form 태그)의 상태를 선택할 때 사용하는 선택자.
+
+		:checked 체크상태의 input태그에 선택
+		:focus 초점이 맞춰진 input태그를 선택
+		:enabled 사용 가능한 input 선택
+		:disabled 사용 불가능한 input 선택
+		*/
+		input:enabled { /* 입력을 할 수 있는 상태의 input 태그의 배경 색상과 글자 색상 지정 */
+			background-color: blue;
+			color: white;
+		}
+		input:disabled {
+			background-color: black;
+		}
+
+		input:focus { /* input 태그의 입력을 위한 초점이 맞추어진 상태에서의 배경 색상 지정 */
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<!-- 입력을 할 수 있는 상태 -->
+		<h1>enabled</h1>
+		<p>
+			<input type="text" name="email"/>
+		</p>
+
+		<!-- 입력을 할 수 없는 상태 -->
+		<h1>disabled</h1>
+
+		<p>
+			<input disabled="disabled" name="address"/> <span>클릭</span>
+		</p>
+	</form>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const btn = document.querySelector('span')
+			btn.addEventListener('click', function () {
+				//document.querySelectorAll('input')[1].removeAttribute('disabled')
+				document.querySelector('input[name="address"]').removeAttribute('disabled');
+            })
+        })
+	</script>
+</body>
+</html>

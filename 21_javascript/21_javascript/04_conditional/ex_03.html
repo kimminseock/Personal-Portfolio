@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		사용자가 입력한 아이디와 비밀번호가 맞는지 확인하는 조건문을 작성하세요. 아이디는 'admin', 비밀번호는 '1234'로 가정합니다.
+		조건이 맞으면 '로그인 성공', 틀리면 '로그인 실패'를 출력하세요.
+		 */
+		const id = prompt('아이디를 입력하세요.');
+        const password = Number(prompt('비밀번호를 입력하세요.'));
+
+        if(id === 'admin' && password === 1234){
+            alert('로그인 성공!');
+        } else {
+            alert('로그인 실패!');
+        }
+		// 로그인 실패 조건 구현
+		// 1)
+        if(id !== 'admin' || password !== 1234){
+            alert('로그인 실패!');
+        } else {
+            alert('로그인 성공!');
+        }
+
+        if(!(id === 'admin' && password === 1234)){
+            alert('로그인 실패!');
+        } else {
+            alert('로그인 성공!');
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

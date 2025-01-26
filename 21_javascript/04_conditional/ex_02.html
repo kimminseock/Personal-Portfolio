@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+			사용자에게 숫자를 입력받아 양수, 0, 음수를 구분하는 프로그램을 만들어 보세요.
+			* 실행 결과
+			숫자를 입력해주세요
+			입력 > -500
+			입력한 숫자는 음수입니다.
+		 */
+		const  num = Number(prompt('숫자를 입력하세요'));
+        /* 구문 시작 */
+        if(num < 0){ // 0보다 작을 때
+            document.write(`${num}은 음수입니다.`);
+        } else if(num === 0){ // 0일 때
+            document.write(`${num}은 0입니다.`);
+        } else { // 0보다 클 때
+            document.write(`${num}은 양수입니다.`);
+        }
+        /* 구문 끝 */
+		/*
+		if(조건1) {
+			실행 코드1
+		} else if(조건2) {
+			실행 코드2
+		} else {
+			실행 코드3
+		}
+
+		1) 조건 1이 참이면 밑의 구문은 실행하지 않음
+		2) 조건 1이 거짓이면 조건 2를 검사.
+		즉 조건 2을 검사한다는 것은 조건 1이 거짓.
+		실행 코드2가 실행 되었다면 조건 1은 거짓, 조건 2는 참
+
+		3) 조건 1, 조건 2 모두 거짓이면 else가 실행
+		실행 코드3이 실행이 되었다면 조건1은 거짓, 조건 2도 거짓
+		*/
+	</script>
+</head>
+<body>
+
+</body>
+</html>

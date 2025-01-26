@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*a {*/
+/*    text-decoration: none; !* 링크 속성 글자 밑줄 없앰 *!*/
+/*}*/
+/*li {*/
+/*    list-style: none; !* 항목 태그 블릿 아이콘 장식 없앰 *!*/
+/*}*/
+/*img {*/
+/*    display: block; !* inline 속성을 지니고 있는 img 태그의 오차 간격을 없애기 위한 속성 변경 *!*/
+/*    border: none; !* img 태그의 모든 테두리선은 없음으로 초기화 *!*/
+/*}*/
+/*body{*/
+/*    font-family: 'Verdana'; !* 글꼴 *!*/
+/*    font-size: 14px; !* 글자 크기 *!*/
+/*    color: black; !* 글자 색상 *!*/
+/*    line-height: 28px; !* 줄 간격 *!*/
+/*}*/
+header {
+    width: 1000px;
+    height: 100px;
+    border: solid 2px black;
+    margin: 0 auto;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+header h1{
+    width: 200px;
+    height: 96px;
+    line-height: 96px;
+    background-color: yellow;
+    box-sizing: border-box;
+}
+header ul{
+    display: inline-block;
+    float: right;
+    width: 360px;
+    height: 36px;
+}
+header li{
+    float: right;
+    height: 30px;
+    display: inline-block;
+}
+
+ul:nth-child(1) li{
+    width: 96px;
+    height: 24px;
+    text-align: center;
+    background-color: yellow;
+    box-sizing: border-box;
+}
+ul:nth-child(2) li {
+    width: 96px;
+    height: 24px;
+    text-align: center;
+    background-color: orange;
+    box-sizing: border-box;
+    margin-top: 36px;
+}
+nav{
+    float: right;
+    width: 360px;
+    background-color: #4CAF50;
+}
+foot
+#main{
+    width: 1000px;
+}
+
+
+

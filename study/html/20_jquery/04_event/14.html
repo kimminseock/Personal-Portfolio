@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		change() : 선택한 폼 요소의 값(value)을 새 값으로 바꾸고 포커스가 다른 요소로 이동 할 때 발생
+
+		기본형
+		1) change 이벤트 등록
+		$("이벤트 대상 선택").change(function () { 자바스크립트 코드; });
+		$("이벤트 대상 선택").on("change", function () {자바스크립트 코드; });
+		2) change 이벤트 강제 발생
+		$("이벤트 대상 선택").change();
+		 */
+		$(function () {
+			$('#rel_site').on('change', function () {
+                console.log($(this).val());
+                $('.txt').text($(this).val());
+
+                if($(this).val()) {
+                    location.href = 'http://' + $(this).val()
+                }
+            });
+        });
+	</script>
+</head>
+<body>
+	<select id="rel_site">
+		<option value="">사이트 선택</option>
+		<option value="www.google.com">구글</option>
+		<option value="www.naver.com">네이버</option>
+		<option value="www.daum.net">다음</option>
+	</select>
+	<p class="txt"></p>
+</body>
+</html>

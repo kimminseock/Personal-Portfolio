@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 배열의 요소 개수 구하기
+		배열이름.length
+		 */
+		const everything = ['사과', 1, undefined, true, '배열', null];
+        console.log(everything.length);
+        // 빈 값도 유효한 값이므로 요소 개수를 셀 때 포함.
+
+		// 배열의 요소 개수를 활용해 원하는 인덱스의 요소를 찾을 수 있음.
+		// 배열의 요소 개수에서 1을 빼면 마지막 요소의 인덱스가 됨.
+		const findLastElement = ['a', 'b', 'c', 'd', 'e'];
+        console.log(findLastElement[findLastElement.length -1]); // e
+
+		// at()
+        console.log(findLastElement.at(4));
+        console.log(findLastElement.at(-1));
+
+        // at()의 소괄호 안에 넣은 숫자가 0이상의 정수이면 배열의 앞에서부터 해당 인덱스의 요소를 찾고,
+		// 숫자가 음의 정수이면 배열의 마지막에서 부터 요소를 찾음.
+
+		// findLastElement 배열에서, 마지막에서 세 번째 요소를 찾는 방법은?
+        console.log(findLastElement[findLastElement.length -3]);
+        console.log(findLastElement.at(-3))
+	</script>
+</head>
+<body>
+
+</body>
+</html>

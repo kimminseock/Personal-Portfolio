@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* width, height
+		표의 너비와 높이를 지정. 셀, 전체 표의 너비에 스타일 지정 가능.
+		높이와 너비를 지정하지 않으면 셀의 내용만큼 차지
+		*/
+		table {
+			width: 400px;
+			border: solid 2px black;
+			border-collapse: collapse;
+		}
+		td{
+			height: 40px;
+			padding: 15px;
+			border: dotted 1px black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>표 스타일</caption>
+		<tr>
+			<td>시네마천국</td>
+			<td>벤허</td>
+		</tr>
+		<tr>
+			<td>11:00 ~ 14:30</td>
+			<td>16:00 ~ 19:00</td>
+		</tr>
+	</table>
+</body>
+</html>

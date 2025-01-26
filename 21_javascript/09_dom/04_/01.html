@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		* 기본 이벤트 막기
+		기본 이벤트 : 어떤 이벤트가 발생했을 때 웹 브라우저가 기본적으로 처리해주는 것.
+		기본 이벤트를 제거할 때는 event 객체의 preventDefault() 메소드를 사용.
+
+		이미지 마우스 오른쪽 버튼 클릭 막기
+		웹 브라우저는 이미지에서 마우스 오른쪽 버튼을 클릭하면 컨텐스트 메뉴 context menu를 출력.
+		 */
+		document.addEventListener('DOMContentLoaded', function () {
+			const images = document.querySelectorAll('img');
+            images.forEach(image => {
+                image.addEventListener('contextmenu', evt => {
+                   evt.preventDefault();
+                });
+            });
+        });
+	</script>
+</head>
+<body>
+	<img src="https://placecats.com/300/300" alt="">
+</body>
+</html>

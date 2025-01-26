@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<form name="frmPost" action="action.php" method="post">
+		<div class="box">
+			<h1>프런트엔드 개발자 지원서</h1><br>
+			<p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+			<h3>개인정보</h3><br>
+			<label>이름</label>
+			<input type="text" name="name" placeholder="공백없이 입력하세요"><br>
+			<label>연락처</label>
+			<input type="tel" name="tel">
+			<h3>지원분야</h3><br>
+			<input type="radio" name="job" value="pe">
+			<label>웹 퍼블리싱</label><br>
+			<input type="radio" name="job" value="app">
+			<label>웹 애플리케이션 개발</label><br>
+			<input type="radio" name="job" value="dev">
+			<label>개발 환경 개선</label>
+			<h3>지원동기</h3>
+			<textarea cols="70" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea><br>
+			<input type="submit" value="접수하기">
+			<input type="submit" value="다시쓰기">
+		</div>
+	</form>
+</body>
+</html>

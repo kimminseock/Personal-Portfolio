@@ -1,0 +1,20 @@
+li{
+    float: left;
+    list-style: none;
+    padding: 15px;
+
+}
+li:first-child{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+li:nth-child(2n+1){
+    background-color: orange;
+}
+li:nth-child(2n){
+    background-color: red;
+}
+li:last-child{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

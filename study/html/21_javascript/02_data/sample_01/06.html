@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+		* 자료형 검사 : 자료형을 확인할 때 typeof 연산자 사용
+		 */
+
+		// 자바스크립트는 하나의 변수에 다른 타입의 자료형을 저장할 수 있음.
+		let num = 10;
+        console.log(num);
+        num = '하이';
+        console.log(num);
+
+        // typeof 연산자 사용 : typeof(자료)
+        console.log(typeof ('안녕하세요')); // 문자형
+        console.log(typeof (100)); // 숫자형
+        console.log(typeof (true)); // boolean
+
+		// 괄호가 없어도 됨 : typeof가 연산자라서 가능
+        console.log(typeof '안녕하세요'); // 문자형
+        console.log(typeof 100); // 숫자형
+        console.log(typeof true); // boolean
+
+		console.log(typeof '안녕하세요' === 'string'); // true. '안녕하세요'의 자료형이 string
+        console.log(typeof ('안녕하세요') === 'string'); // true. '안녕하세요'의 자료형이 string
+        console.log(typeof ('안녕하세요' === 'string')); // boolean. '안녕하세요' === 'string'의 결과값은 false 즉 boolean
+	</script>
+</head>
+<body>
+
+</body>
+</html>

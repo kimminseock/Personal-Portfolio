@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		20부터 10까지 출력을 하세요.
+		짝수는 파란색, 홀수는 빨간색으로 출력하세뇨.
+		 */
+		for(let i = 20; i >= 10; i--){
+            // if(i%2===0){
+            //     document.write(`<p class="blue">${i}</p>`);
+            // } else {
+            //     document.write(`<p class="red">${i}</p>`);
+            // }
+			document.write(`<p style="color: ${i%2 === 1 ? 'red' : 'blue'}">${i}</p>`)
+		}
+	</script>
+	<style>
+		*{margin: 0;}
+		.red{color: red;}
+		.blue{color: blue;}
+	</style>
+</head>
+<body>
+
+</body>
+</html>

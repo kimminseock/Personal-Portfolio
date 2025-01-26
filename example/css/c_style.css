@@ -1,0 +1,30 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #000000;}
+
+#wrap{display: flex; width: 1000px; height: 650px; flex-wrap: wrap; flex-direction: column; background-color: aqua;}
+#header{width: 200px; height: 650px; background-color: #4CAF50;}
+#header #logo{width: 200px; height: 100px; background-color: #aa0000;}
+#nav ul li {width: 180px; background-color: greenyellow; align-content: center;}
+#nav ul li a{display: block; height: 40px; text-align: center; line-height: 40px;}
+#nav ul li:hover a{background-color: silver; color: white;}
+.on { background: #999; color: #000; }
+
+#slide{width: 800px; height: 350px; background-color: #ddff3c;}
+
+#content{display: flex; width: 800px; height: 200px; background-color: #919191;}
+#content #con1{width: 480px; height: 200px; background-color: chocolate;}
+#content #con2{width: 360px; height: 200px; background-color: greenyellow;}
+#content #con3{width: 360px; height: 200px; background-color: grey;}
+
+#footer{display: flex; width: 800px; height: 100px; background-color: #ff6600;}
+#footer #logo1{width: 200px; height: 100px; background-color: #4965f1;}
+#footer #footer-inner{width: 600px; height: 100px; background-color: #4965f1;}
+#footer-inner div:nth-child(1){width: 600px; height: 50px; background-color: #a63d4f;}
+#footer-inner div:nth-child(2){width: 600px; height: 50px; background-color: #00bbdd;}
+
+
+
+
+
+

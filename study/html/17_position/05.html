@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		position 요소를 자유롭게 배치하기
+		relative : 적용된 요소의 현재 위치값을 기준으로 상대 위치를 지정
+
+		실무에서는 relative 속성은 특정 요소의 위치를 배치하는 것 보다
+		absolute 속성의 기준점을 설정하는 용도로 많이 사용.
+		*/
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		section {
+			width: 600px;
+			height: 200px;
+		}
+		section:nth-of-type(1){
+			background-color: gold;
+		}
+		section:nth-of-type(2){
+			background-color: lightblue;
+			position: relative;
+			top: -100px;
+			left: 100px;
+		}
+	</style>
+</head>
+<body>
+	<section></section>
+	<section></section>
+</body>
+</html>

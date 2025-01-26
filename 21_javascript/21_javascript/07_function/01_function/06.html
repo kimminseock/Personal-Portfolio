@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		일반 함수는 함수정의 위에 호출문이 나와도 오류가 없지만
+		익명 함수는 반드시 선언 이후에 호출문이 나와야 된다.
+		 */
+
+        let count = 0; // count 변수 값은 0
+
+        myFnc(); // 호스팅으로 일반 함수 호출
+
+        // 일반 함수 정의
+        function myFnc() {
+            count++; // count + 1씩 증가
+            document.write("hello" + count,"<br>"); // 출력
+        }
+
+        myFnc(); // 일반 함수 호출
+
+        // 익명 함수 선언
+        let theFnc = function() {
+            count++; // count + 1씩 증가
+            document.write("bye" + count,"<br>"); // 출력
+        }
+
+        theFnc(); // 익명 함수 호출
+	</script>
+</head>
+<body>
+
+</body>
+</html>

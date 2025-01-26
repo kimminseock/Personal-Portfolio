@@ -1,0 +1,37 @@
+div{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border: solid 1px black;
+    box-sizing: border-box;
+
+}
+img{
+    width: 80px;
+    height: 80px;
+    padding-left: 60px;
+    padding-top: 20px;
+}
+.box1{
+    float: left;
+    font-size: 10px;
+}
+.box1>p{
+    text-align: center;
+}
+#green{
+    background-color: #4CAF50;
+}
+#blue{
+    background-color: #4965f1;
+}
+#gray{
+    background-color: gray;
+}
+.main{
+    width: 600px;
+    margin: 0 auto;
+    float: none;
+    padding: 0;
+    border: none;
+}

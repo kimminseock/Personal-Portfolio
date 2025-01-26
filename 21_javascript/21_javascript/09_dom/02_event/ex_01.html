@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+        1. class가 title인 요소를 찾아 변수에 저장하고, 해당 요소의 텍스트를 "Hello, World!"로 변경하세요.
+	    2. 모든 class가 item인 li 요소들을 가져와 배열에 저장하고, 각각의 요소에 대해 콘솔에 innerText를 출력하세요.
+	    3. id가 addButton인 버튼을 클릭했을 때, id가 itemList인 ul 요소에 새로운 li 요소(Item 4 텍스트)를 추가하는 기능을 구현하세요.
+
+        모든 작업은 자바스크립트 코드에서 이루어지며, HTML은 수정하지 않습니다.
+
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+            // 1
+			// const title = document.getElementsByClassName('title');
+            const title = document.querySelector('.title');
+            // title[0].textContent = 'Hello, World!';
+			title.textContent = 'Hello, World!';
+
+            // 2
+            const items = document.querySelectorAll('li.item');
+            const  array = [...items]; // 전개 연산자 forEach는 배열로 하기 때문에 전개 연산자를 통해 배열로 만들어줌
+            array.forEach(item => console.log(item.innerText)); // 콘솔에 innerText를 통해 출력
+
+            // 3
+            document.querySelector('#addButton').addEventListener('click', function () {
+	           const li = document.createElement('li'); // 새로운 li 요소 추가
+               li.textContent = 'Item 4'; // 새로운 li의 value 값을 'Item 4'
+               document.querySelector('#itemList').appendChild(li); // #itemList라는 부모에 변수 li를 추가
+            });
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h1 class="title">Welcome to My Page</h1>
+		<p class="description">This is a description paragraph.</p>
+		<ul id="itemList">
+			<li class="item">Item 1</li>
+			<li class="item">Item 2</li>
+			<li class="item">Item 3</li>
+		</ul>
+		<button id="addButton">Add Item</button>
+	</div>
+</body>
+</html>

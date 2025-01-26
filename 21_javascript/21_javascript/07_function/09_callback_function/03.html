@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 콜백함수를 활용하는 함수 : forEach() 메서드
+		배열이 갖고 있는 함수(메서드)로써 단순하게 배열 내부 요소를 사용해서 콜백함수를 호출.
+
+		배열이 가지고 있는 메소드 중 콜백 함수를 활용하는 메서드는 아래와 같은 형태의 콜백함수를 사용.
+
+		매개 변수가 다 필요하지 않음.
+		기본형 :
+		function (value, index, array) { }
+		*/
+
+		const numbers = [273, 52, 103, 32, 57];
+
+        // for(let index = 0; index < numbers.length; index++){
+        //     let value = numbers[index];
+        //     console.log(`${index}번째 요소: ${value}`);
+        // }
+		//
+        // numbers.forEach(function (value, index, array) {
+        //     // 매개변수로 value(배열에 저장된 값), index(배열인덱스), array를 갖는 콜백함수를 사용
+        //     console.log(`${index}번째 요소: ${value}`);
+        // });
+
+        // 함수 선언한 후에 매개 변수로 넘겨도 됨
+
+		// const call = function (value, index, array) {
+        //     // 매개변수로 value(배열에 저장된 값), index(배열인덱스), array를 갖는 콜백함수를 사용
+        //     console.log(`${index}번째 요소: ${value}`);
+        // }
+		//
+		// numbers.forEach(call);
+
+		numbers.forEach(function (v, i) {
+            console.log(`${i}번째 요소: ${v}`);
+        });
+
+        numbers.forEach(function (item, idx) { // 매개변수로 value만 사용
+            console.log(idx);
+        });
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+</head>
+<body>
+	<h2>add todo</h2>
+	<div>
+		<label><input type="text" name="todo"></label>
+		<label><input type="date" name="dueDate"></label>
+		<button>등록</button>
+	</div>
+	<h2>todo list</h2>
+	<ul>
+
+	</ul>
+	<script>
+		/*
+		to do
+
+		* 필요한 기능
+		1) 추가 2) 삭제 3) 스트로지 저장
+
+		1. 추가
+		1) 등록시에 빈 값이 있는지 확인
+		2) 오늘 날짜 이전은 선택이 안되도록
+		 */
+		const todo = document.querySelector('[name=todo]');
+        const dueDate = document.querySelector('[name=dueDate]');
+        const btn = document.querySelector('button');
+        const todoList = document.querySelector('ul');
+
+        let todoArr = [];
+
+        // 오늘 날짜 이전은 선택이 안되도록
+		let today = new Date().toISOString().slice(0, 10); // toISOString() = 2024-01-01 14:24:59
+        dueDate.value = today;
+        dueDate.setAttribute('min', today);
+
+        // 출력을 함수화
+		const printItem = function (obj) {
+            const item = document.createElement('li');
+            // ex) <li><strong>할일</strong><span>날짜</span>></li>
+            item.innerHTML = `<li><strong>${obj.todo}</strong><span>${obj.dueDate}</span></li>`;
+
+            todoList.appendChild(item); // html의 출력
+        }
+
+        // 스토로지에 저장된 값 가져오기, 독립적인 영역이면 1번만 사용하기 때문에 함수로 하면 2번이상 사용한다고 생각하고, 그냥 두자니 뭔가 애매해서 즉석실행 함수를 통해 읽기 편하게 보기 편하게 해준다.
+		 if(localStorage.getItem('todoArr')){
+             // console.log(localStorage.getItem('todoArr').split(','));
+             // console.log(JSON.parse(localStorage.getItem('todoArr')));
+             todoArr = JSON.parse(localStorage.getItem('todoArr'));
+             todoArr.forEach(value => {
+                 // console.log(value.todo);
+                 // console.log(value.dueDate);
+                 printItem(value);
+             })
+		 }
+
+        btn.addEventListener('click', ev => {
+            if(todo.value.trim() === ''){ // trim = 공백제거, ' 1 . ' => '1 .'
+                alert('이름!!!!');
+                todo.focus()
+	            return;
+            } else if(dueDate.value.trim() === ''){
+                alert('날짜!!!');
+                dueDate.focus();
+                return;
+            }
+            todoArr.push({todo: todo.value, dueDate: dueDate.value}); // 배열의 추가
+            // console.log(todoArr);
+			printItem({todo: todo.value, dueDate: dueDate.value})
+	        const item = document.createElement('li');
+            // ex) <li><strong>할일</strong><span>날짜</span>></li>
+            item.innerHTML = `<li><strong>${todo.value}</strong><span>${dueDate.value}</span></li>`;
+
+            todoList.appendChild(item); // html의 출력
+
+            todo.value = ''; // 초기화
+            dueDate.value = today; // 초기화
+            // console.log(todoArr)
+
+            localStorage.setItem('todoArr', JSON.stringify(todoArr)); // 로컬스트로지에 저장 JSON.stringify => 객체가 들어가 있는 상태에서는 쓰임
+
+
+        })
+	</script>
+</body>
+</html>

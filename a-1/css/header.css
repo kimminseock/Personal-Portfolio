@@ -1,0 +1,50 @@
+#logo{
+    float: left;
+    width: 200px;
+    height: 100px;
+    background-color: beige;
+}
+#nav{
+    float: left;
+    width: 1000px;
+    height: 100px;
+    background-color: green;
+}
+.gnb{
+    float: left;
+}
+.gnb>li>a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+    left: 350px;
+    top: 50px;
+}
+.lnb{
+    float: left;
+}
+.lnb>li>a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+    left: 350px;
+    top: 50px;
+}
+.gnb>li>a:hover{
+    background-color: greenyellow;
+    color: orange;
+}
+.lnb>li>a:hover{
+    background-color: greenyellow;
+    color: orange;
+}

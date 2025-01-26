@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 타이머 함수 : 특정 시간 이후에 콜백함수(특정코드)를 호출함수 있는 함수.
+
+		setTimeout(함수, 시간) : 특정 시간 후에 함수(코드)를 한 번 호출(실행).
+		setInterval(함수, 시간) : 특정 시간마다 함수(코드)를 호출(반복 실행).
+		 */
+
+		setTimeout(function () {
+            console.log('2초 후에 실행됩니다.');
+        }, 2 * 1000); // 시간의 기초단위는 밀리 초 단위.
+
+		let count = 0;
+        setInterval(function () {
+            console.log(`2초마다 실행됩니다.(${count}번째)`);
+            count++;
+        }, 2 * 1000);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

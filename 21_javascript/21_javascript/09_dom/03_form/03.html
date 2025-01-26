@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		* form 태그 관련
+		드롭다운 목록 활용하기
+
+		드롭다운 목록은 select 태그로 구현, 드롭 다운 목록을 선택했을 때(값이 변경 되었을 때) 어떤 것을 선택했는지 출력.
+		 */
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. 요소 들고오기
+			const select = document.querySelector('select');
+            const p = document.querySelector('p');
+
+            // 2. 이벤트 리스터 등록
+	        select.addEventListener('change', function (event) {
+                console.log(event);
+                console.log(event.target.value);
+
+                p.textContent = `선택: ${event.target.value}`;
+            });
+        });
+	</script>
+</head>
+<body>
+	<label>
+		<select>
+			<option>떡볶이</option>
+			<option>순대</option>
+			<option>오뎅</option>
+			<option>튀김</option>
+		</select>
+	</label>
+	<p>선택: 떡볶이</p>
+</body>
+</html>

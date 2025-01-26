@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+        /*
+
+        사용자가 타이머를 설정하고 시작할 수 있는 웹 페이지를 만드세요.
+         설정한 시간은 localStorage에 저장되어, 페이지를 새로고침해도 마지막으로 설정한 시간이 유지됩니다.
+         타이머가 종료되면 “Time’s up!” 메시지를 표시하세요.
+
+        요구사항:
+
+        1.	타이머 시작: 사용자가 timerInput에 시간을 입력하고 startTimerButton을 클릭하면,
+        해당 시간부터 타이머가 1초씩 감소합니다.
+        2.	시간 저장: 타이머가 시작될 때 설정된 시간을 localStorage에 저장하여 페이지를 새로고침해도
+        마지막 설정 시간이 유지되도록 합니다.
+        3.	시간 불러오기: 페이지가 로드될 때 localStorage에 저장된 시간이 있다면 불러와서
+        timerDisplay에 남은 시간을 표시합니다.
+        4.	타이머 종료: 타이머가 0이 되면 “Time’s up!” 메시지를 표시합니다.
+         */
+        document.addEventListener('DOMContentLoaded', function () {
+            // 요소 들고오기
+	        const timerInput = document.getElementById('timerInput');
+            const startTimerButton = document.getElementById('startTimerButton');
+            const timerDisplay = document.getElementById('timerDisplay');
+            let timerId;
+            let second;
+
+            const timer = function () {
+                if(second === 0){
+                    // timerDisplay.textContent = `Time remaining: ${second--}`; // 1이 보이는 시점에서 종료를 위해서 추가
+                    timerDisplay.textContent = `Time's up!`;
+                    clearInterval(timerId);
+                    localStorage.removeItem('second');
+                    return;
+                }
+                timerDisplay.textContent = `Time remaining: ${second--}`;
+                localStorage.setItem('second', second);
+            };
+            (function () {
+                if(localStorage.getItem('second')){
+                    second = localStorage.getItem('second');
+                    timerDisplay.textContent = `Time remaining: ${second--}`;
+                    timerId =  setInterval(timer, 1000);
+
+                }
+            })();
+            // if(localStorage.getItem('time')){
+            //     timerDisplay.textContent = `Time remaining: ${second--}`;
+            //     timerId =  setInterval(() => {
+            //         // if(second === 0){
+            //         //     // timerDisplay.textContent = `Time remaining: ${second--}`; // 1이 보이는 시점에서 종료를 위해서 추가
+            //         //     timerDisplay.textContent = `Time's up!`;
+            //         //     clearInterval(timerId);
+            //         //     localStorage.removeItem('time');
+            //         //     return;
+            //         // }
+            //         // timerDisplay.textContent = `Time remaining: ${second--}`;
+            //         // localStorage.setItem('time', second);
+            //     }, 1000);
+			//
+            // }
+
+
+            // 이벤트 리스너
+	        startTimerButton.addEventListener('click', ev => {
+                console.log(timerInput.value);
+                // let second = timerInput.value;
+                second = timerInput.value
+                timerDisplay.textContent = `Time remaining: ${second--}`;
+		        timerId =  setInterval(() => {
+                    if(second === 0){
+                        // timerDisplay.textContent = `Time remaining: ${second--}`; // 1이 보이는 시점에서 종료를 위해서 추가
+                        timerDisplay.textContent = `Time's up!`;
+                        clearInterval(timerId);
+                        localStorage.removeItem('second');
+                        return;
+                    }
+                    timerDisplay.textContent = `Time remaining: ${second--}`;
+                    localStorage.setItem('second', second);
+                }, 1000);
+	        })
+
+        });
+	</script>
+</head>
+<body>
+	<h1>Simple Timer</h1>
+	<label><input type="number" id="timerInput" placeholder="Enter time in seconds"></label>
+	<button id="startTimerButton">Start Timer</button>
+	<p id="timerDisplay">Time remaining: </p>
+</body>
+</html>

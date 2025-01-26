@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		* 속성(attribute) 조작하기
+
+		문서 객체의 속성을 조작할 때는 다음과 같은 메소드를 사용.
+
+		문서객체.setAttribute(속성 이름, 값) : 특성 속성에 값을 지정.
+		문서객체.getAttribute(속성 이름) : 특성 속성의 값을 추출
+		 */
+		document.addEventListener('DOMContentLoaded', () => {
+            const rects = document.querySelectorAll('.rect'); // 클랙스 선택자 이용.
+			console.log(rects);
+
+            // for(let i = 0; i < rects.length; i++){
+            //     const url = `https://placecats.com/${(i + 1) * 100}/250`;
+            //     rects[i].setAttribute('src', url);
+            // }
+
+			// foreach() 메서드로 동일한 작업.
+			rects.forEach(function (value, idx) {
+                value.setAttribute('src', `https://placecats.com/${(idx + 1) * 100}/250`);
+                // value.src = `https://placecats.com/${(idx + 1) * 100}/250`;
+            });
+		});
+	</script>
+</head>
+<body>
+	<img class="rect" alt="" src="">
+	<img class="rect" alt="" src="">
+	<img class="rect" alt="" src="">
+	<img class="rect" alt="" src="">
+</body>
+</html>

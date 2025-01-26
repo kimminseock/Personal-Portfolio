@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<form name="frmPost" action="action.php" method="post">
+		<h4>취미</h4>
+
+		<input name="hobby[]" type="checkbox" value="sports" id="sportsId">
+		<label for="sportsId">스포츠</label>
+
+		<label><input name="hobby[]" type="checkbox" value="game">게임</label>
+
+		<input name="hobby[]" type="checkbox" value="cook">
+		<label>요리</label>
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

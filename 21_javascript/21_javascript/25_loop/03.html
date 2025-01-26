@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* for 반복문과 배열
+		배열을 순회할 때 사용. 인덱스 값을 사용해서 들고옴.
+		1) 반복 횟수는 배열의 개수와 동일. 배열을 출력할 경우 배열. length 사용
+		2) 모든 배열의 요소가 한번씩 불러옴. 불러올때는 인덱스를 사용
+		 */
+		const todos = ['우유 구매', '업무 메일 확인하기', '필라테스 수업'];
+
+        // for(let i = 0; i < todos.length; i++){
+
+            // 배열의 개수 출력
+            console.log(todos.length);
+
+            // 0 ~ 2 (todos.length - 1)
+        // }
+        // for(let i = 0 ; i < todos.length; i++){
+        //     console.log(`${i}번째 할 일: ${todos[i]}`);
+        // }
+        /*
+        0번째 할 일: 우유 구매
+        1번째 할 일: 업무 메일 확인하기
+        2번째 할 일: 필라테스 수업
+         */
+        for(let i = todos.length - 1; i >= 0; i--){
+            console.log(`${i}번째 할 일: ${todos[i]}`);
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+		/*
+
+		* 선언적 함수 사용하기
+		선언적 함수 : 이름이 있는 함수.
+		기본형 : function 함수이름 () {}
+
+		대부분의 프로그램은 선언적 함수만 사용거나거(C),
+		선언적 함수를 주로 사용하고 익명함수를 보조적인 수단(C++, 자바의 람다)으로 사용하지만,
+		자바 스크립트는 함수지향 프로그램(ECMA script 6 이후)이라서 변수에 함수 할당하거나,
+		익명함수를 주로 사용하고 선언적 함수를 보조적인 수단으로 사용하는것을 지향함.
+
+		 */
+
+		// 정의
+        function func() {
+            console.log('함수 내부의 코드입니다 ... 1');
+            console.log('함수 내부의 코드입니다 ... 2');
+            console.log('함수 내부의 코드입니다 ... 3');
+            console.log('');
+        }
+
+        // 호출
+		func();
+		func();
+
+        console.log(typeof func);
+        console.log(func);
+
+        function func() {
+            console.log('함수 내부의 코드입니다 ... ');
+
+        }
+        func();
+		func();
+        console.log(typeof func);
+        console.log(func);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

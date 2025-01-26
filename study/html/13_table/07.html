@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* border-spacing
+		table 태그와 border 속성을 사용했을 때 테두리와 셀들의 간격을 지정.
+		테두리와 셀들의 간격을 지정하는 값
+
+		border-spacing: 20px 40px;
+		2자리 입력 - 수평 수직
+		*/
+		table {
+			border: solid 2px black;
+			border-spacing: 20px 40px;
+		}
+		td{
+			padding: 15px;
+			border: dotted 1px black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<caption>표 스타일</caption>
+		<tr>
+			<td>시네마천국</td>
+			<td>벤허</td>
+		</tr>
+		<tr>
+			<td>11:00 ~ 14:30</td>
+			<td>16:00 ~ 19:00</td>
+		</tr>
+	</table>
+</body>
+</html>

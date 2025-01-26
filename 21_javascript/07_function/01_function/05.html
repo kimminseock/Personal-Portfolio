@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 익명 함수
+		변수에 함수 데이터(코드)를 저장하여 변수를 마치 함수처럼 사용하게 만들어 줌.
+
+		let 변수 = function() {
+			실행문;
+		}
+		1. 익명함수는 변수 선언(함수 정의) 후 호출 가능.
+		2. 익명함수는 동일한 이름으로 재선언 불가능. let과 const의 특징.
+		 */
+        //computer(); // Uncaught ReferenceError: Cannot access 'computer' before initialization
+        let computer = function () {
+            let x = 10;
+            let y = 100;
+            let result = x / y;
+            console.log(result);
+        }
+
+        computer(); // 0.1
+	</script>
+	<script>
+        computer(); // Uncaught SyntaxError: Identifier 'computer' has already been declared
+        // 선언적 함수는 재정의 가능
+        // let computer = function ()  {
+        //     let x = 10;
+        //     let y = 100;
+        //     let result = x * y;
+        //     console.log(result);
+        // }
+        computer(); // 1000
+	</script>
+</head>
+<body>
+
+</body>
+</html>

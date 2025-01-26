@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        computer(); // Uncaught ReferenceError: computer is not defined
+	</script>
+	<script>
+		computer(); // 0.1
+         function computer()  {
+            let x = 10;
+            let y = 100;
+            let result = x / y;
+            console.log(result);
+        }
+        computer(); // 0.1
+	</script>
+	<script>
+		computer(); // 0.1
+	</script>
+	<script>
+        computer(); // 1000
+        // 선언적 함수는 재정의 가능
+        function computer()  {
+            let x = 10;
+            let y = 100;
+            let result = x * y;
+            console.log(result);
+        }
+        computer(); // 1000
+	</script>
+</head>
+<body>
+
+</body>
+</html>

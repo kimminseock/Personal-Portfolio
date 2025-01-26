@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        /*
+		1. 중첩 박스에 대한 이해와 정렬
+		두 개의 박스를 왼쪽 정렬에서 가운데 정렬로 변경
+		가운데 정렬을 위해서 부모박스에 해당하는 중첩 박스
+		*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner{
+            width: 740px;
+            height: 120px;
+            background-color: burlywood;
+            float: left;
+            margin-right: 8px;
+            border: 2px solid black;
+        }
+        .login{
+            width: 333px;
+            height: 120px;
+            background-color: beige;
+            float: left;
+	        border: 2px solid black;
+            /* 로그인 박스 기준에서 간격을 주고자 왼쪽 바깥쪽 여백을 지정하였으며,
+			배너 박스 기준일 때 바깥쪽 여백은 margin-right가 됨. */
+        }
+        .main{
+	        /* 740 + 8 = 748 + 333 */
+	        width: 1089px; /* 배너 박스와 로그인 박스를 더한 값*/
+	        height: 120px; /* 두 개 박스의 고정 높이*/
+	        margin: 0 auto;
+        }
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="banner">배너영역</div>
+		<div class="login">로그인</div>
+	</div>
+</body>
+</html>

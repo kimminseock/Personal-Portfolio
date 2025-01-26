@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		#container{
+			border: 2px solid red;
+		}
+
+		.item{
+			padding: 10px;
+			margin: 10px;
+			background: #0bd;
+			color: #fff;
+		}
+		/*
+		display: flex;
+
+		flex-direction이 row인 경우 (기본값)
+		너비를 지정하지 않은 경우 내부의 컨텐트에 따라 너비가 정해짐. inline-block 속성과 유사.
+		*/
+		#container{
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="item">Item 1</div>
+		<div class="item">Item 2</div>
+		<div class="item">Item 3</div>
+		<div class="item">Item 4</div>
+	</div>
+</body>
+</html>

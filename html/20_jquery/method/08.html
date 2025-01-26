@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+			요소 위치 메서드: position() / offset()
+			position() : 포지션 기준이 되는 요소를 기준으로 선택한 요소에서 가로/세로로 떨어진 위치의 좌표값을 반환하거나 변경할 때 사용
+			offset() : 문서 Document 를 기준으로 선택한 요소의 가로/세로로 떨어진 위치의 좌표값을 반환하거나 변경할 때 사용
+
+			기본형 : $("요소 선택").position().[left | right | top |bottom]
+                    $("요소 선택").offset().[left | top]
+		 */
+		$(function () {
+			let $txt1 = $('.txt_1 span'), $txt2 = $('.txt_2 span'), $box = $('.box');
+
+            let offTop = $box.offset().top;
+
+            $txt1.text(offTop); // 100 -> .box = top: 50px, #box_wrap = margin 50px;
+			let posTop = $box.position().top; // 50
+
+			$txt2.text(posTop); // 50
+        });
+	</script>
+	<style>
+		* {margin: 0; padding: 0;}
+		#box_wrap {position: relative; width: 300px; height: 200px; margin: 50px auto; background-color: #ccc;}
+		.box{position: absolute; top: 50px; left: 100px; width: 50px; height: 50px; background-color: red;}
+	</style>
+</head>
+<body>
+	<div id="box_wrap">
+		<p class="box">박스</p>
+	</div>
+	<p class="txt_1">절대 top위칫값: <span></span></p>
+	<p class="txt_2">상대 top위칫값: <span></span></p>
+</body>
+</html>

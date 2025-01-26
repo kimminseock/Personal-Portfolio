@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		// 1) 객체 리터널로 객체 생성하기
+		const absence = {
+            name: '박은지',
+			days: 10,
+		}
+
+        /*
+        {...} 부분이 바로 객체 리터널.
+        프로퍼티 이름과 프로퍼티 값은 suit: '하트'처럼 1) 콜른(:)을 사용해서 구분하며,
+        2) 중괄호({})안에 있는 프로퍼티들은 쉼표(,)로 구분.
+        프로퍼티 이름으로는 모든 식별자와 문자열 리터널(빈 문자열도 사용 가능)을 사용할 수 있음.
+        즉, 위의 코드에 있는 프로퍼티 이름은 문자열로 바꾸어 작성할 수 있음.
+         */
+
+		const absence2nd = {
+            name: '방혜원',
+			'days num': 3,
+		}
+        /*
+        프로퍼티 값에는 모든 데이터 타입의 값과 표현식을 대입할 수 있음.
+        변수에 대입된 객체 안의 프로퍼티 값을 읽거나 쓸 때는 마침표(.) 연산자 또는 대괄호([]) 연산자를 사용.
+         */
+        console.log(absence2nd.name);
+        console.log(absence2nd["days num"]);
+
+        console.log(absence);
+        console.log(JSON.stringify(absence));
+        // JSON.stringify : 객체를 콘솔에서 출력을 쉽게 하는 방법.
+		// JSON. stringify(value, replacer?, space?)
+        console.log(JSON.stringify(absence, null, 2));
+
+        // 2) 프로퍼티 추가와 삭제
+
+		// 없는 프로퍼티 이름에 값을 대입하면 새로운 프로퍼티가 추가.
+		absence.isSubmit = true;
+        console.log(absence.isSubmit);
+
+        // delete 연산자를 사용하면 프로퍼티를 삭제할 수 있음.
+		delete absence2nd['days num'];
+        console.log(absence2nd['days num']); // undefined
+
+        /*
+        이처럼 자바 스크립트, 파이썬의 객체는 실행 중에 프로퍼티를 자유롭게 추가하거나 삭제할 수 있음.
+        반면 Java와 C++ 등에서는 객체의 프로퍼티를 실행 중에 추가하거나 삭제할 수 없음.
+         */
+
+		// 3) in 연산자로 프로퍼티가 있는지 확인하기
+
+		// in 연산자를 사용하면 객체에 특정 프로퍼티가 있는지 확인할 수 있음.
+		// 코드를 다음과 같이 작성하면 프로퍼티가 객체에 포함되었을 때는 true를 반환하고 포함되지 않았을 때는 false를 반환.
+		// 프로퍼티 이름을 뜻하는 문자열 in 객체명
+
+        console.log('name' in absence); // true
+        console.log('age' in absence); // false
+
+		/*
+		in 연산자가 조사하는 대상이 1) 그 객체가 가진 프로퍼티와 2) 그 객체가 상속받은 프로퍼티라는 점을 주의.
+		원래 toString 프로퍼티는 absence 객체 안에 없지만, 프로퍼티가 있다는 결과가 나옴.
+		이는 absence가 Object 객체를 상속받았기 때문.
+		 */
+        console.log('toString' in absence) // true
+
+		// 4) 메서드
+		// 프로퍼티에 저장된 값의 타입이 함수면 그 프로퍼티를 메서드라 부름.
+
+		/*
+		5) 객체는 참조 타입
+		생성된 객체는 메모리의 영역을 차지하는 한 덩어리가 됨.
+		객체 타입의 값을 변수에 대입하면 그 변수에는 객체의 참조(메모리에서의 위치 정보)가 저장.
+		이때의 변수 상태를 가르켜 그 객체를 참조하고 있다라고 함.
+
+		변수에 저장된 객체의 참조는 다른 원시 값과 마찬가지로 다른 변수에 저장할 수 있음.
+		 */
+		const student = absence;
+
+        console.log(student.name);
+        student.days = 21;
+        console.log(student.days);
+        console.log(absence);
+
+        // 6) 순회
+		// 객체의 모든 속성에 접근할 때는 for in문을 사용
+		for (const key in absence)
+        console.log(`${key}: ${absence[key]}`);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

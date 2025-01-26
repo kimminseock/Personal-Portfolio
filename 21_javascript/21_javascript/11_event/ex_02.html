@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 요소 들고오기
+            const btnBg = document.querySelector('button:nth-of-type(1)');
+            const btnClear = document.querySelector('button:nth-of-type(2)');
+
+            // 2. '배경색 변경' 버튼 이벤트 등록
+            const colorBg = ['red', 'orange', 'yellow', 'blue'];
+            let idx = 0;
+            const changeColor = () => document.body.style.backgroundColor = colorBg[idx++ % colorBg.length];
+            btnBg.addEventListener('click', changeColor);
+
+            // const changeColor = function () { // 선언형 함수로 색을 변환
+            //     if (idx < colorBg.length) {
+            //         document.body.style.backgroundColor = colorBg[idx++];
+            //     } else {
+            //         idx = 0;
+            //     }
+            // }
+            // btnBg.addEventListener('click', changeColor); // 배경색 클릭 시 변경
+            // btnClear.addEventListener('click', () => { // 초기화 클릭 시
+            //     document.body.style.backgroundColor = null; // body 색은 null
+	        //     btnBg.removeEventListener('click', changeColor); // 이벤트 제거
+            // });
+	        // 3. '배경색 초기화' 버튼 이벤트 등록
+	        btnClear.addEventListener('click', () => {
+                document.body.style.backgroundColor = '';
+                btnBg.removeEventListener('click', changeColor);
+	        });
+        });
+	</script>
+</head>
+<body>
+	<!--
+	1. 화면에 버튼 2개 생성. '배경색 변경', '배경색 초기화'
+	2. '배경색 변경' 버튼을 클릭하면 배경이 빨강, 주황, 노랑, 파랑 순서대로 변경
+	3. '배경색 초기화' 버튼을 클릭하면 배경 속성이 초기화되고
+	'배경색 변경' 버튼을 클릭해도 동작이 안되도록.
+	-->
+	<button>배경색 변경</button>
+	<button>배경색 초기화</button>
+</body>
+</html>

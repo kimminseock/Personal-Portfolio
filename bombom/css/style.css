@@ -1,0 +1,21 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #000;}
+body{font-size:14px;}
+header, section{width: 1380px;}
+header{ display: flex; justify-content: center;}
+header nav{display: flex; align-items: start;}
+header nav div{width: 250px; height: 50px; margin-top: 20px;}
+header .gnb{display: flex;}
+header .gnb li{width: 150px; height:100px; line-height: 100px; text-align: center; font-size: 1.2em;}
+header .lnb{height: 0px; overflow: hidden; transition-duration: 0.5s; position: absolute;}
+header .lnb li{height: 30px; line-height: 15px; display: block; font-size: 0.8em; background-color: #fdda24; padding-bottom: 15px; padding-top: 10px;}
+header .lnb li a{color: #aa9110;}
+/*header .gnb li a:hover{border-bottom: solid 2px #fdda24;}*/
+header .gnb li:hover a{border-bottom: solid 2px #fdda24;}
+header .lnb li a:hover{border-bottom: solid 2px #000; color: #000;}
+header .gnb li:nth-of-type(1):hover > .lnb{height: 225px;}
+header .gnb li:nth-of-type(2):hover > .lnb{height: 480px;}
+header .gnb li:nth-of-type(3):hover > .lnb{height: 90px;}
+header .gnb li:nth-of-type(4):hover > .lnb{height: 225px;}
+header .gnb li:nth-of-type(5):hover > .lnb{height: 225px;}

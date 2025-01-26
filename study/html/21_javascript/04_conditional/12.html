@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* 조건문
+		-> 코드를 무조건 실행하는것이 아니라, 특정 조건일때 코드를 실행시키고 싶을 때 사용.
+
+		* if문 (유형 4가지)
+
+		1) 하나의 조건이 true일 때 실행.
+		if(조건) {
+			실행할 코드
+		}
+
+		2) 조건은 하나인데, 조건이 false일때도 실행하고 싶을 때. 무조건 하나는 실행.
+		if(조건) {
+			실행할 코드
+		} else {
+			실행할 코드
+		}
+
+		3) 조건이 여러개일 경우
+		if (조건1){
+			실행할 코드
+		} else if (조건2) {
+			실행할 코드
+		}
+
+		4) 조건이 여러개이고, 여러개의 조건에 해당하지 않는 경우도 처리하고 싶을 때
+		if(조건1) {
+			실행할 코드
+		} else if(조건2){
+			실행할 코드
+		} else {
+			실행할 코드
+		}
+
+		규칙
+		1
+		1) 무조건 if가 제일 먼저 나옴
+		2) 무조건 else가 제일 나중에 나옴.
+
+		 * 중첩 조건문 : 조건문 안에 조건문을 중첩해서 사용하는 것.
+		 */
+		/* if ~ else if 조건문*/
+		// 변수를 선언.
+		const date = new Date(); // 현재 날짜와 시간을 갖는 객체생성.
+		const hour = date.getHours(); // 현재시간을 0 ~ 23 사이의 값으로 출력하는 메소드
+		// hour = 14;
+
+		/* 시간으로 아침, 점심, 저녁을 구분 */
+		if(hour < 11) { // 표현식 hour < 11가 참일 때 실행. 0 ~ 10
+            alert('아침 먹을 시간입니다.');
+		} else if(hour < 15) { // 표현식 hour < 11가 거짓일 때 실행. hour가 11이상.
+            alert('점심 먹을 시간입니다.');
+		} else { // 표현식 hour < 15가 거짓일 때 실행. 15 ~ 23
+            alert('저녁 먹을 시간입니다.');
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>

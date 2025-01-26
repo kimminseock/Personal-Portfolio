@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+		사용자에게 원화를 기반으로 사용자에게 입력받고 엔화나 달러로 변환해서 알려주는 프로그램을 만들어보세요.
+
+		예) 원화를 입력해주세요.
+		입력 -> 1000
+		환전할 외화를 선택해 주세요. 1) 엔화 2) 달러. 해당 숫자만 입력해 주세요.
+		입력 > 1
+		-> 출력 > 1000원는 110.54엔 입니다.
+		 */
+		// let won = prompt('원화를 입력해주세요.'); // 원화를 입력할때
+        // won = parseFloat(won); // 원의 변수 값이 정수에서 실수로 변경
+        // let choice = Number(prompt('1. 엔화 2. 달러. 해당 숫자만 입력해 주세요.')); // 사용자의 엔화, 달러 정보를 입력할 때 타입은 숫자형
+        // let dollarRate =  1350.50; // 달러 환율
+        // let enRate = 9.04; // 엔화 환율
+		// let rusultEn = won / enRate; // 원을 엔화로 바꾸는 식
+        // let resultDollar = won / dollarRate; // 원을 달러로 바꾸는 식
+        // if(choice === 1){ // choice 값이 1일때
+        //     document.write(`${won}원은 ${rusultEn.toFixed(2)}엔 입니다.`); // 출력 -> toFixed는 소수점 2자리까지 반올림 출력
+        // } else { // choice 값이 1이 아니라면
+        //     document.write(`${won}원은 ${resultDollar.toFixed(2)}달러 입니다.`); // 출력 -> toFixed는 소수점 2자리까지 반올림 출력
+        // };
+
+        const won = prompt('원화를 입력해주세요.');
+        const condition = prompt('환전할 외화를 선택해 주세요. 1) 엔화 2) 달러. 해당 숫자만 입력해주세요');
+
+        // 1원일때 엔비율
+		const rateYen = 0.11059;
+        // 1원일때 달러비율
+        const rateDollar = 0.00074;
+        const exchange = condition === '1' ? (won * rateYen) + '엔' : (won * rateDollar) + '달러';
+        document.write(`${exchange}`)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

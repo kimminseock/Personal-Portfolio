@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+        /*
+        사용자가 색상을 선택할 수 있는 두 개의 <input type="color"> 태그를 사용하여, 페이지의 배경색과 텍스트 색상을 변경하세요.
+        선택한 색상은 localStorage에 저장되어 페이지를 새로고침해도 마지막으로 선택한 색상이 적용되도록 합니다.
+        요구사항:
+
+	    1.	배경색 선택: 사용자가 bgColorPicker에서 색상을 선택하면, 선택한 색상이 페이지의 배경색으로 적용됩니다.
+	    2.	텍스트 색상 선택: 사용자가 textColorPicker에서 색상을 선택하면, 선택한 색상이 페이지의 제목 텍스트 색상(h1)으로 적용됩니다.
+	    3.	색상 저장: 선택한 배경색과 텍스트 색상을 localStorage에 저장하여, 페이지를 새로고침해도 마지막으로 선택한 색상들이 적용되도록 합니다.
+	    4.	색상 불러오기: 페이지가 로드될 때 localStorage에 저장된 배경색과 텍스트 색상을 불러와 배경색과 텍스트 색상에 각각 적용되도록 합니다.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const colorBg = document.getElementById('bgColorPicker');
+            const colorText = document.getElementById('textColorPicker');
+            const h1 = document.getElementById('title');
+
+            if(localStorage.getItem('bgColor')){
+                document.body.style.backgroundColor = localStorage.getItem('bgColor');
+                colorBg.value = localStorage.getItem('bgColor');
+            }
+            if(localStorage.getItem('textColor')){
+                h1.style.color = localStorage.getItem('textColor');
+                colorText.value = localStorage.getItem('textColor');
+            }
+            colorBg.addEventListener('change', ev => {
+                // console.log(ev)
+               document.body.style.backgroundColor = ev.target.value;
+               localStorage.setItem('bgColor', ev.target.value);
+                console.log(colorBg.value)
+               localStorage.setItem('saveColor', colorBg.value);
+            });
+            colorText.addEventListener('change', ev => {
+				h1.style.color = ev.target.value;
+                localStorage.setItem('textColor', ev.target.value);
+            });
+        });
+	</script>
+</head>
+<body>
+	<h1 id="title">Customize Your Colors</h1>
+	<label for="bgColorPicker">Choose Background Color:</label>
+	<input type="color" id="bgColorPicker">
+	<br>
+	<label for="textColorPicker">Choose Text Color:</label>
+	<input type="color" id="textColorPicker">
+</body>
+</html>

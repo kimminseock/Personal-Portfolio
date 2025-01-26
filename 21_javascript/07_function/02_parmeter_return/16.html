@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		*{margin: 0; padding: 0;}
+		
+		#galleryZon{
+			text-align: center;
+		}
+	</style>
+	<script>
+		/* 종료 목적의 return */
+		/*
+		수정 : 이미지가 순환되도록 수정.
+		마지막이미지입니다 출력후 첫번째 이미지로...
+		첫 이미지입니다. 출력후 마지막 이미지로...
+		 */
+		let num = 1;
+		const showGallery = function (direction) {
+            /*
+            다음을 클릭한 경우 pic_1.jpg -> pic_2.jpg : 번호가 증가
+            이전을 클릭한 경우 pic_9.jpg -> pic_8.jpg : 번호가 감소
+
+            * 종료 조건
+            direction === 1 : num === 9
+            direction === 0 : num === 1
+
+            다음을 클릭한 경우 : num이 9면 경고문 출력 후 1로 변경. 아니면 1증가.
+            이전을 클릭한 경우 : num이 1이면 경고문 출력 후 9로 변경. 아니면 1감소.
+             */
+			// if(direction === 1){ // 다음을 클릭
+            //     if(num === 9){
+            //         alert('마지막 이미지입니다');
+            //         num = 0;
+            //     }
+            //     num++;
+			// } else { // 이전을 클릭
+            //     if(num === 1){
+            //         alert('첫 이미지입니다');
+            //         num = 10;
+            //     }
+            //     num--;
+			// }
+            if(direction === 1){ // 다음을 클릭
+               if(num === 9) alert(`마지막 이미지입니다`);
+               num === 9 ? num = 1 : num++;
+            } else { // 이전을 클릭
+                if(num === 1){
+                    alert('첫 이미지입니다');
+                    num = 10;
+                }
+                num--;
+            }
+			const imgTag = document.querySelector('#photo');
+            imgTag.setAttribute('src', `images/pic_${num}.jpg`);
+        }
+	</script>
+</head>
+<body>
+	<div id="galleryZon">
+		<p><img src="images/pic_1.jpg" id="photo" alt=""></p>
+		<p>
+			<button onclick="showGallery(0)">이전</button>
+			<button onclick="showGallery(1)">다음</button>
+		</p>
+	</div>
+</body>
+</html>

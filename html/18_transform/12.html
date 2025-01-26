@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		section {
+			float: left; width: 200px; height: 200px; border: 1px solid #000; margin: 50px;
+			/* perspective : 속성(px) 3D효과가 적용된 요소가 입체감있게 부여되도록 부모 요소에 perspective 속성을 적용하여 원근감을 부여 */
+            perspective: 400px;
+		}
+		section article{
+			width: 100%; height: 100%; background: blue; opacity: 0.3;
+			transition-duration: 2s;
+		}
+		/* rotateX, rotateY : 선택한 요소를 X축 또는 Y축으로 입체감 있게 회전 */
+		section:nth-of-type(1) article:hover{
+			transform: rotateX(45deg);
+		}
+        section:nth-of-type(2) article:hover{
+			transform: rotateY(45deg);
+        }
+        /* translateZ : 선택한 요소를 Z축으로 입체감 있게 보이면서 이동 */
+        section:nth-of-type(3) article:hover{
+			transform: scale3d(1.3, 1.3, 1.3);
+	        transform: translateZ(100px);
+        }
+        section:nth-of-type(4) article:hover{
+			transform: scale3d(0.8, 0.8, 0.8);
+            transform: translateZ(-100px);
+        }
+	</style>
+</head>
+<body>
+	<!-- 3d transform -->
+	<section>
+		<article></article>
+	</section>
+	<section>
+		<article></article>
+	</section>
+	<section>
+		<article></article>
+	</section>
+	<section>
+		<article></article>
+	</section>
+</body>
+</html>

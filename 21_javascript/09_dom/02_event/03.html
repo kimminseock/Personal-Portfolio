@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		* 키보드 이벤트
+		keydown : 키가 눌릴 때 실행. 키보드를 꾹 누르고 있을 때도, 입력될 때도 실행.
+		keypress : 키가 입력되었을 때 실행. 웹 브라우저에 따라서 아시아권의 문자를 제대로 처리 못하는 문제가 있음.
+		keyup : 키보드에서 키가 떨어질 때 실행.
+		 */
+		// 남은 글자수 출력하기
+		document.addEventListener('DOMContentLoaded', () => {
+           const textarea = document.querySelector('textarea');
+           const  h1 = document.querySelector('h1');
+
+           textarea.focus();
+           textarea.addEventListener('keyup', () => {
+               // console.log(textarea.value.length);
+               h1.textContent = `글자 수: ${textarea.value.length}`;
+           });
+		});
+	</script>
+</head>
+<body>
+	<h1>글자 수: 0</h1>
+	<label>
+		<textarea></textarea>
+	</label>
+</body>
+</html>

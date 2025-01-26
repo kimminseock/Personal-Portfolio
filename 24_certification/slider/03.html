@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        /*
+		1. 문제
+		* Slide 이미지 제작
+		- Slide 폴더에 제공된 3개의 이미지로 제작한다.
+		- Slide 폴더에 제공된 3개의 텍스트를 각 이미지에 적용하되, 텍스트의 글자체, 굵기, 색상, 크기를 적절하게 설정하여 가독성을 높이고,
+		  독창성이 드러나도록 제작한다.
+		* Slide 애니메이션 작업
+		- 위에서 작업한 결과물을 이용하여 슬라이드 작업을 한다.
+		- 이미지만 바뀌면 안 되고, 이미지가 좌에서 우 또는 우에서 좌로 이동하면서 전환되어야 한다.
+		- 슬라이드는 매 3초 이내로 하나의 이미지에서 다른 이미지로 전환되어야 한다.
+		- 웹사이트를 열었을 때 자동으로 시작되어 반복적으로(마지막 이미지가 슬라이드되면 다시 첫 번째 이미지가 슬라이드 되는 방식) 슬라이드 되어야한다.
+		 */
+
+        /*
+        보여진 이미지가 페이드 아웃되고, 다음번의 이미지가 페이드인이 됨,
+        3장중 2은은 display: none 이고, 1장은 display: block.
+        이전 예제와 다르게 이미지가 겹쳐지게 해야함
+
+        * 작업 순서
+        1) css를 이용해서 이미지가 겹쳐지게 작업
+        2) css를 이용해서 맨 윗장을 제외하고는 안보이게 (display : none) 작업. z-index 사용을 하지 않기 위해.
+        3) 스크립트 작업
+        */
+		$(function () {
+            let idx = 0;
+            const len = $('.slide_block').length;
+            setInterval(function () {
+                $('.slide_block').eq(idx % len).fadeOut(1000); // 0
+
+	            idx ++;
+	            // if(idx === 2){
+                //     idx = 0;
+	            // } else {
+                //     idx++; // +1씩 증가
+	            // }
+                console.log(idx);
+                $('.slide_block').eq(idx % len).fadeIn(1000);
+            }, 3000);
+			// $('.slide_container').animate({left: '-100%'}, 1000); //animate는 .slide_container 대상에 position값이 있어야 한다.
+        });
+	</script>
+	<style>
+		* {margin: 0; padding: 0; box-sizing: border-box;}
+
+		a {text-decoration: none; color: inherit;}
+
+		img{display: block; max-width: 100%;}
+
+		#wrap {width: 1200px; margin: auto;}
+
+		header{width: 100%; height: 100px; background-color: salmon;}
+
+		/* 이미지 하나의 너비와 높이가 동일 */
+		#slide{width: 100%; height: 300px;}
+
+		/* left 속성을 주기 위해 position 속성추가 */
+		#slide .slide_container {position: relative; height: 100%;}
+
+		/* flex는 요소에 맞춰서 이미지 크기가 줄어듬, shrink는 요소에 맞춰서 이미지가 줄어드는 것을 방지 */
+		#slide .slide_container .slide_block {flex-shrink: 0;}
+
+		/* 수정, 이미지를 겹치기 위해 absolute 속성으로 변경 */
+		.slide_block{position: absolute;}
+
+		/* text */
+		#slide .slide_container .slide_block span{ position: absolute; top: 50%; left: 50%;
+				transform: translate(-50%, -50%); font-size: 30px; font-weight: 700; color: #fff;}
+
+		/* 추가 - 맨 윗장을 제외한 나머지는 display: none으로 변경 */
+        .slide_block:nth-of-type(2), .slide_block:nth-of-type(3){display: none;}
+	</style>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		<header></header>
+		<div id="slide">
+			<div class="slide_container">
+				<div class="slide_block">
+					<a href="#">
+						<img src="../img/slide1.jpg" alt="s1">
+						<span>slide_text01</span>
+					</a>
+				</div>
+				<div class="slide_block">
+					<a href="#">
+						<img src="../img/slide2.jpg" alt="s2">
+						<span>slide_text02</span>
+					</a>
+				</div>
+				<div class="slide_block">
+					<a href="#">
+						<img src="../img/slide3.jpg" alt="s3">
+						<span>slide_text03</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //wrap -->
+</body>
+</html>

@@ -1,0 +1,52 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration: none; color: #000;}
+#wrap{display: flex; width: 1000px; height: 650px;}
+img{display: block;}
+
+header{width: 200px; height: 650px; position: relative; z-index: 1;}
+header #logo{width: 200px; height: 150px;}
+header nav{width: 200px; height: 500px;}
+header nav ul li{display: block; width: 150px;background-color: #4eaf5e; text-align: center;}
+header nav ul li a{display: block;text-align: center; line-height: 50px;}
+header nav ul li:hover{background-color: #ff6600;}
+header nav ul li a:hover{color: #fff;}
+header .menu{margin-left: 25px;}
+header .menu li{position: relative;}
+header .submenu{ display: none; width:150px; position: absolute; left: 150px; top: -50px;}
+
+#sideWrap{width: 800px; height: 650px;}
+#sideWrap .slide{position: relative; overflow: hidden; height: 350px;}
+.slide_container{display: flex; position: relative; height: 100%;}
+.slide .slide_block img{width: 800px; height: 350px;}
+.slide .slide_block {flex-shrink: 0;}
+.slide_block{position: relative;}
+.slide .slide_block span{ position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); font-size: 30px; font-weight: 700; color: #fff;}
+#sideWrap #content{display: flex; width: 800px; height: 200px;}
+#sideWrap #footer{display: flex; width: 800px; height: 100px;}
+#sideWrap #content #con1{width: 270px; height: 200px;}
+#sideWrap #content #con2{width: 265px; height: 200px;}
+#sideWrap #content #con3{width: 265px; height: 200px;}
+#sideWrap #content #conTitle{width: 270px; height: 50px;}
+#conText{width: 270px; height: 150px; border: solid 1px #000;}
+#sideWrap #content #conTitle p{width: 100px; height: 50px; line-height: 50px; text-align: center; border: solid 1px #000;}
+#sideWrap #content #conText p{margin: 10px;}
+#gallery{width: 100px; height: 50px; line-height: 50px; text-align: center; border: solid 1px #000;}
+#gallery1{display: flex; width: 265px; height: 150px; border: solid 1px #000;}
+#gallery1 a img{width: 70px; height: 80px; margin: 30px 10px 20px 10px;}
+#con3{position: relative}
+#con3 h3{position: absolute; top:10px; right: 10px; color: #000;}
+#con3 a img{width: 265px; height: 200px;}
+#content #stop {width: 100%; height: 100%; position: absolute; background-color: #666666; top: 0; left: 0; opacity: 0.5; display: none;}
+#content #popupcnt{cursor: pointer;}
+#content #popup {position: absolute; width: 300px; height: 300px; background-color: #4965f1; bottom: 500px; left: 350px; display: none;}
+#content #popup button{position: relative; left: 250px; top: 10px;}
+
+#footer #logo1{width: 200px; height: 100px;}
+#footer #logo1 a img{padding-top: 30px;}
+#footer #cp{width: 400px; height: 100px; background-color: #ddff3c;}
+#footer #fm{width: 200px; height: 100px;}
+#footer #fm select{position: relative; top: 25px; left: 20px; width: 150px; height: 50px;}
+
+

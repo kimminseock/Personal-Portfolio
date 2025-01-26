@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+        /*
+
+		   * 오류 error의 종류
+		   1. 프로그램 실행 전에 발생하는 오류
+		   구문 오류 syntax error
+
+		   2. 프로그램 실행 중에 발생하는 오류
+		   예외 exception 또는 런타임 오류 runtime error
+
+		   1. 기본 예외 처리
+		   -> 조건문을 사용해서 예외가 발생하지 않게 만드는 것.
+		   querySelector() 메소드로 추출된 문서 객체가 없는 경우.
+			*/
+		document.addEventListener('DOMContentLoaded', () => {
+            const h1 = document.querySelector('h1');
+            // console.log(h1); // null
+			if(h1){
+                h1.textContent = '안녕하세요';
+            } else {
+                console.log('h1 태그를 추출할 수 없습니다.');
+			}
+
+            // Uncaught TypeError: Cannot set properties of null (setting 'textContent')
+			// at HTMLDocument.<anonymous>
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>

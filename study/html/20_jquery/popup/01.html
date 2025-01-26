@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+		/* 1. 팝업이 모달이 아닌 경우 */
+			$('header button:eq(1)').on('click', function () {
+				alert('클릭');
+            });
+            $('header button:eq(0)').on('click', function () {
+                $('.popup').show();
+            });
+            $('.popup button:eq(0)').on('click', function () {
+	            $('.popup').hide();
+            })
+        });
+	</script>
+	<style>
+		*{margin: 0; padding: 0; box-sizing: border-box;}
+		body{height: 5000px;}
+		button{width: 65px; height: 30px;}
+
+		/* header */
+		header{height: 100px; background: #eaeaea; text-align: center; line-height: 100px;}
+
+		/* popup */
+		/* 1) position을 absolute하고, 화면 너비, 높이 중앙에 위치하도록 수정 */
+		/* 2) position을 absolute로 사용하면 스크롤시에 팝업이 보이지 않음.
+		 fixed로 하면 스크롤시에 따라다님*/
+		.popup{ display: none; position: absolute; left: calc(50% - 200px); top: calc(50% - 200px); position: fixed;
+			width: 400px; height: 400px; padding: 10px;
+			background: #0a9b97; text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<button>팝업 클릭</button>
+		<button>다른 기능</button>
+	</header>
+
+	<div class="popup">
+		<button>닫기</button>
+	</div>
+</body>
+</html>

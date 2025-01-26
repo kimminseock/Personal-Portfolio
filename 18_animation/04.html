@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		/*
+
+		 */
+		*{margin: 0; padding: 0;}
+		#wrap{
+			position: absolute;
+			width: 200px; height: 200px; border-radius: 100px;
+			/*background: #00bbdd;*/
+			background: linear-gradient(to bottom, rgba(135, 224, 253, 1) 0%, rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+			text-align: center;
+
+			/* 애니메이션의 동작을 지정 */
+			animation-name: spin; /* 애니메이션 이름 지정 - spin */
+			animation-duration: 2s; /* 애니메이션을 몇 초 동안 재생할지 지정 */
+			animation-timing-function: linear; /* 수치 변형 함수를 지정. 애니메이션 속도의 변화 */
+			animation-iteration-count: infinite; /* 반복 횟수, infinite = 무한 */
+			animation-direction: alternate;
+		}
+		/*
+		<animation-play-state> 속성 : 재생 및 중지
+		애니메이션의 재생 및 중지 반응 선택자와 함께 사용하여 제어.
+		예) #wrap:hover {animation-play-state: paused;} 애니메이션 중지
+		 */
+		#wrap:hover{
+			animation-play-state: paused;
+		}
+
+		#wrap h1{line-height: 200px;}
+
+		/* 애니메이션의 각 키프레임의 변화되는 부분 */
+		@keyframes spin {
+			from{ /* 애니메이션이 10초라고 가정하면 0초 시점 */
+				left: 0;
+				transform: rotate(0deg);
+			}
+			50%{ /* 애니메이션이 10초라고 가정하면 5초 시점 */
+				left: 1500px;
+			}
+			to{ /* 애니메이션이 10초라고 가정하면 10초 시점 */
+				left: 500px;
+				/*left: 0;*/
+				transform: rotate(360deg);
+			}
+        }
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>animation</h1>
+	</div>
+</body>
+</html>

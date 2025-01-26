@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		div{
+			width: 300px;
+			height: 100px;
+			border: #4CAF50 10px solid;
+			margin: 10px;
+		}
+		.box1{
+			border-radius: 30px;
+		}
+		.box2{
+			border-radius: 10px 20px 30px 40px;
+		}
+		.box3{
+			border-radius: 10px 40px;
+		}
+		.box4{
+			width: 100px;
+			height: 100px;
+			border-radius: 100px; /* 원모양 */
+		}
+		/*
+		* border-radius
+		네모 박스를 라운드 형태로 둥글게 만들 때 사용.
+		라운드 지정하는 순서는 top-left, top-right, bottom-right, bottom-left
+
+		border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius
+		*/
+	</style>
+</head>
+<body>
+	<div class="box1">BOX-1</div>
+	<div class="box2">BOX-2</div>
+	<div class="box3">BOX-3</div>
+	<div class="box4">BOX-4</div>
+</body>
+</html>

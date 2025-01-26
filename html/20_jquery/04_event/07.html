@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	/*
+		* ready() / load() 이벤트 메서드
+		  ready() : 사용자가 사이트를 방문할 때 요청한 HTML 문서 객체 (document)의 로딩이 끝나면 이벤트를 발생
+		  load() : 외부에 연동된 소스 (iframe, img, video)의 로딩이 끝나면 이벤트 발생
+
+		  기본형
+		  $(document).ready(function() { 자바 스크립트 코드;});
+          $(document).on("ready", function() { 자바 스크립트 코드;});
+		  $(window).load(function() { 자바 스크립트 코드;}); > 제이쿼리 3버젼 부터 지원이 중단됨
+		  $(window).on("load", function() { 자바 스크립트 코드;});
+	 */
+	$(function () {
+		$(document).ready(function () {
+			let h1 = $('.img1').height();
+            console.log('ready :', h1); // html은 로딩, 이미지는 로딩 전 출력
+        });
+
+        $(window).on('load', function () {
+	       let h2 = $('.img1').height();
+            console.log('load :', h2); // 이미지 로딩 후 출력
+        });
+    });
+	</script>
+</head>
+<body>
+	<p>
+<!--		<img src="http://place-hold.it/300X300" class="img1" alt="">-->
+		<img src="https://placecats.com/bella/300/300" class="img1" alt="">
+	</p>
+</body>
+</html>

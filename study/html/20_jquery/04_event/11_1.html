@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        /* 포커스 이벤트
+	   focus() : 대상 요소로 포커스가 이동하면 이벤트를 발생
+	   blur() : 포커스가 대상 요소에서 다른 요소로 이동하면 이벤트 발생
+	   focusin() : 대상 요소의 하위 요소 중 입력 요소로 포커스가 이동하면 이벤트 발생
+	   focusout() : 대상 요소의 하위 요소 중 입력 요소에서 외부 요소로 이동하면 이벤트 발생
+
+	   기본형
+	   1) focus 이벤트 등록
+	   $("이벤트 대상 선택").focus(function () { 자바스크립트 코드; });
+	   $("이벤트 대상 선택").on("focus", function () {자바스크립트 코드; });
+
+	   2) focus 이벤트 강제 발생
+	   $("이벤트 대상 선택").focus();
+
+	   1) blur 이벤트 등록
+	   $("이벤트 대상 선택").blur(function () { 자바스크립트 코드; });
+	   $("이벤트 대상 선택").on("blur", function () {자바스크립트 코드; });
+
+	   2) blur 이벤트 강제 발생
+	   $("이벤트 대상 선택").blur();
+
+	   1) focusin 이벤트 등록
+	   $("이벤트 대상 선택").focusin(function () { 자바스크립트 코드; });
+	   $("이벤트 대상 선택").on("focusin", function () {자바스크립트 코드; });
+
+	   2) focusin 이벤트 강제 발생
+	   $("이벤트 대상 선택").focusin();
+
+	   1) focusout 이벤트 등록
+	   $("이벤트 대상 선택").focusout(function () { 자바스크립트 코드; });
+	   $("이벤트 대상 선택").on("focusout", function () {자바스크립트 코드; });
+
+	   2) focusout 이벤트 강제 발생
+	   $("이벤트 대상 선택").focusout();
+	   */
+        $(function () {
+            $('#user_id_1, #user_pw_1').on('focus',
+                function () {
+                    $(this).css({backgroundColor: 'pink'});
+                }
+            );
+            $('#user_id_1, #user_pw_1').on('blur',
+                function () {
+                    $(this).css({backgroundColor: 'white'});
+                });
+
+            $('#frm_2').on('focusin',
+                function () {
+                    $(this).css({backgroundColor: 'pink'});
+                }
+            );
+            $('#frm_2').on('focusout',
+                function () {
+                    $(this).css({backgroundColor: 'white'});
+                }
+            );
+        });
+	</script>
+</head>
+<body>
+	<h1>focus / blur</h1>
+	<form action="#">
+		<p>
+			<label for="user_id_1">ID</label>
+			<input type="text" name="user_id_1" id="user_id_1">
+		</p>
+		<p>
+			<label for="user_pw_1">PW</label>
+			<input type="password" name="user_pw_1" id="user_pw_1">
+		</p>
+	</form>
+	<h1>focusin / focusout</h1>
+	<form action="#" id="frm_2">
+		<p>
+			<label for="user_id_2">ID</label>
+			<input type="text" name="user_id_2" id="user_id_2">
+		</p>
+		<p>
+			<label for="user_pw_2">PW</label>
+			<input type="password" name="user_pw_2" id="user_pw_2">
+		</p>
+	</form>
+</body>
+</html>

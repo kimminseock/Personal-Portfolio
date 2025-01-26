@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="./css/f_style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+            $('header nav > ul  ul').css({display: 'none'});
+
+			$('header nav > ul > li').on({
+                click: function () {
+                    $(this).parent().find('a').removeClass('on');
+                    $(this).children('a').addClass('on');
+                    $(this).parent().find('ul').stop().slideUp()
+                    $('ul', this).stop().slideDown();
+                },
+			})
+        });
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="logo"><a href="#"><img src="./images_f/logo.jpg" alt="#"></a></div>
+			<nav>
+				<ul>
+					<li>
+						<a href="#">조회</a>
+						<ul>
+							<li><a href="#">계좌조회</a></li>
+							<li><a href="#">거래내역조회</a></li>
+							<li><a href="#">휴먼계좌 조회</a></li>
+							<li><a href="#">수표/어음 조회</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">이체</a>
+						<ul>
+							<li><a href="#">계좌이체</a></li>
+							<li><a href="#">다계좌이체</a></li>
+							<li><a href="#">자동이체</a></li>
+							<li><a href="#">예약이체</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">공과금</a>
+						<ul>
+							<li><a href="#">자료/생활요금</a></li>
+							<li><a href="#">지방세</a></li>
+							<li><a href="#">국세/관세</a></li>
+							<li><a href="#">벌칙금/벌과금</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">외화</a>
+						<ul>
+							<li><a href="#">금리</a></li>
+							<li><a href="#">환율/외화예금</a></li>
+							<li><a href="#">글로벌뱅킹</a></li>
+							<li><a href="#">외화송금</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="slide">
+			<div class="link"></div>
+		</div>
+		<section></section>
+		<footer></footer>
+	</div>
+</body>
+</html>

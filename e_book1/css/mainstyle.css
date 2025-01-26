@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gowun+Dodum&family=Jua&family=Noto+Sans+KR:wght@100..900&display=swap');
+/* reset */
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration: none; color: #000;}
+body{font-size: 14px; overflow-x: hidden;}
+img{display:block; width: 100%; height: 100%;}
+.on{font-weight: 700; background-color: #fff;}
+span{font-size: 15px; font-weight: 700;}
+p{font-size: 14px;}
+/* 코드를 이용한 addclass, removeclass용 */
+.swiper { width: 100%;  }
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    border-radius: 12px;
+    transition: transform 0.8s ease;
+}
+.swiper-slide img{
+    border-radius: 12px;
+}
+
+.swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+#category .mySwiper .swiper-wrapper .swiper-slide {
+    /*flex-shrink: 1;*/
+    position: relative;
+    left: 220px;
+    width: 100px !important;
+}
+#famous .mySwiper .swiper-wrapper .swiper-slide {
+    width: 100px !important;
+    position: relative;
+    left: 220px;
+}
+/*.cartoon .mySwiper .swiper-wrapper .swiper-slide {*/
+/*    width: 209px !important;*/
+/*}*/
+
+h1 {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+/* header 영역 시작*/
+header,section{width: 100%;}
+header{position: sticky; top: 0;  height: 50px; z-index: 1000; background-color: #fff;}
+/*header{background-color: #4CAF50; border-bottom: 1px solid #9e9e9e;}*/
+header #header_wrap{display: flex; height: 50px; position: sticky; top: 60px; z-index: 900; margin: 0 35px; padding: 0 24px; background-color: #fff;}
+header #header_wrap #logo{display: block;width: 200px; height: 50px;}
+header nav .Main{display: flex; position: sticky; width: 100%;}
+header nav .Main li {width: 120px; height: 50px; font-size: 1.5em; line-height: 50px; text-align: center;}
+header nav .Main li a{display: block; width: 100%; height: 100%; color: #000;}
+header #rightWrap{display: flex; justify-content: flex-end; width: 100%; margin-right: 35px; padding-right: 24px;}
+header #rightWrap div:nth-of-type(1){width: 50px; height: 50px;}
+header #rightWrap div:nth-of-type(2){width: 100px; text-align: center; line-height: 40px; margin: 5px;  border-radius: 24px; background-color: #000;}
+header #rightWrap div:nth-of-type(2) a{color: #fff;}
+/* header 영역 종료 */
+/* Section Sub메뉴 시작 */
+section #Sub{position: sticky; height: 50px; top: 50px; z-index: 900; border-top: 1px solid #9e9e9e; border-bottom: 1px solid #9e9e9e; background-color: #fff;}
+section #Sub .submenu{display: flex; position: relative; left: 60px;}
+section #Sub div:nth-of-type(1){height: 44px; line-height: 44px; margin-left: 90px;}
+section #Sub .submenu li{height: 44px; text-align: center; line-height: 44px; margin: 0 20px 0 30px;}
+/* Section Sub메뉴 종료 */
+/* Section slide 영역 시작 */
+section #slide{width: 100%; height: 700px; margin: 20px 0 0 0; overflow: hidden;}
+.sliderList { display: flex; height: 650px; position: relative; }
+.sliderList li { width: 100%; height: 100%; flex-shrink: 0; }
+.sliderList li img { width: 1920px; height: 650px; object-fit: contain; object-position: center; }
+.btnList { clear: both; width: 90px; height: 50px; margin: 0 auto; padding-top: 10px;}
+
+.btnList span { display: block; float: left; width: 20px; height: 20px; margin: 0 5px; background: #666;
+    border-radius: 20px; text-indent: -9999px; cursor: pointer; }
+
+.btnList .on { background: #ff3d00; }
+/* Section slide 영역 종료 */
+/* Section 히스토리 영역 시작 */
+section article .title{display: flex; justify-content: space-between; height: 60px; margin-top: 50px; padding: 0 100px;}
+section article .title h1{line-height: 60px; margin-left: 45px; font-size: 1.5em;}
+section article .title h1 {font-family: "Noto Sans KR", sans-serif;font-optical-sizing: auto;font-weight: 500;font-style: normal;}
+section article .title a{line-height: 60px; margin-right: 200px; }
+section article:nth-of-type(2){margin: 20px 50px 100px 100px;}
+/* book 컴포넌트 시작 */
+/* book 컴포넌트 종료*/
+/* Section 히스토리 영역 종료 */
+/* Section 인기도서로 다시 독서를 시작 영역 시작 */
+section article:nth-of-type(3) { width: 90%; height: 100%; border-radius: 24px; margin: 0 auto; padding: 20px 40px 40px 40px; overflow: hidden; background-color: #D9D9D9;}
+section article:nth-of-type(3) h1 {font-size: 1.8em; margin-top: 10px; padding: 0 0 15px 0;}
+section article:nth-of-type(3) > div:nth-of-type(1) > h1 > span{color: #4965f1; font-size: 1em;}
+/*section article:nth-of-type(3) div:nth-of-type(2){display: flex;}*/
+/* book 컴포넌트 시작*/
+/* book 컴포넌트 종료*/
+/* Section 인기도서로 다시 독서를 시작 영역 종료 */
+/* Section 오늘 읽어야 할 단 한 권 영역 시작 */
+section article:nth-of-type(4) .title{height: 60px;}
+section article:nth-of-type(4) .title div h1{line-height: 60px; margin-left: 45px; font-size: 1.5em;}
+section article:nth-of-type(4) .title a{line-height: 60px; margin-left: 200px;}
+section article:nth-of-type(5) {width: 90%; height: 600px; border-radius: 24px; margin: 0 auto; background-color: #F58787;}
+section article:nth-of-type(5) div{display: flex; height: 600px; justify-content: center; align-items: center;}
+section article:nth-of-type(5) div div:nth-of-type(1){width: 375px; height: 375px; margin-right: 5px; border-radius: 24px; background-color: #fff;}
+section article:nth-of-type(5) div div:nth-of-type(1) > div:nth-of-type(1) img{width: 136px; height: 200px;}
+section article:nth-of-type(5) div div:nth-of-type(2){width: 375px; height: 375px; margin-left: 5px; border-radius: 24px; background-color: #fff;}
+section article:nth-of-type(5) .text_box{font-size: 2rem;text-align: center;}
+section article:nth-of-type(5).blink {animation: blink 0.5s infinite;font-size: 2.5rem;}
+@keyframes blink { to {opacity: 0;} }
+/* Section 오늘 읽어야 할 단 한 권 영역 종료 */
+/* Section 따끈따끈 새로 들어온 책 영역 시작 */
+section article:nth-of-type(6) .title{height: 60px;}
+section article:nth-of-type(6) .title div h1{line-height: 60px; margin-left: 45px; font-size: 1.5em;}
+
+section article:nth-of-type(6) > .title > a{line-height: 60px; margin-left: 200px;}
+section article:nth-of-type(7) > #category{padding:0 50px;}
+section article:nth-of-type(7) {width: 90%; height: 400px; border-radius: 24px; margin: 0 auto;}
+section article:nth-of-type(7) > #category  .swiper-wrapper{width: 50%;}
+section article:nth-of-type(7) > #category  .swiper-wrapper .swiper-slide{width: 100px;}
+section article:nth-of-type(7) > #category  .swiper-wrapper .swiper-slide > div{width: 100px; height: 50px; margin: 10px; border: 1px solid #A9A9A9; border-radius: 150px; text-align: center; line-height: 50px; cursor: pointer; background-color: #d9d9d9;}
+section article:nth-of-type(7) > #category  .swiper-wrapper .swiper-slide > div > span{display: block; width: 100%; height: 100%; border-radius: 150px; color: #000;}
+/*section article:nth-of-type(7) > div a:nth-of-type(1){margin-left: 40px;}*/
+section #famous{padding:0 50px;}
+/*section article:nth-of-type(7) {width: 90%; height: 400px; border-radius: 24px; margin: 0 auto;}*/
+#famous .swiper-wrapper{width: 50%;}
+#famous {position: relative; top: 30px;}
+#famous .swiper-wrapper .swiper-slide{width: 100px;}
+#famous .swiper-wrapper .swiper-slide > div{width: 100px; height: 50px; margin: 10px; border: 1px solid #A9A9A9; border-radius: 150px; text-align: center; line-height: 50px; cursor: pointer; background-color: #d9d9d9;}
+#famous .swiper-wrapper .swiper-slide > div > span{display: block; width: 100%; height: 100%; border-radius: 150px; color: #000;}
+/* 종합, 20대, 30대 자기계발, 인문/교양, 경제/경영, 소설, 판타지/무협 영역 시작 */
+/*section article:nth-of-type(7) > .total, .twenty, .thirty, .mine, .education, .economy, .novel, .fantasy > .book_component > a{border: none;}*/
+/*section article:nth-of-type(7) > .total, .twenty, .thirty, .mine, .education, .economy, .novel, .fantasy > .book_component > a > div:nth-of-type(3){text-align: left;}*/
+/*section article:nth-of-type(7) > .total, .twenty, .thirty, .mine, .education, .economy, .novel, .fantasy > .book_component{margin: 20px 0;}*/
+/*section article:nth-of-type(7) > .total, .twenty, .thirty, .mine, .education, .economy, .novel, .fantasy > .book_component > div > img{width: 172px; height: 250px;}*/
+section article:nth-of-type(7) > .total, .twenty, .thirty, .mine, .education, .economy, .novel, .fantasy{width: 1140px; margin: 0 auto; padding: 30px; border: solid 1px #000; border-radius: 24px;}
+/*section article:nth-of-type(7) > .total, .twenty, .thirty, .mine, .education, .economy, .novel, .fantasy > .book_component:nth-of-type(1){margin-left: 50px;}*/
+/* 종합, 20대, 30대 자기계발, 인문/교양, 경제/경영, 소설, 판타지/무협 영역 종료 */
+/* Section 따끈따끈 새로 들어온 책 영역 종료 */
+/* Section 이걸 만화로 배워 영역 시작 */
+section article:nth-of-type(8) .title{height: 60px;}
+section article:nth-of-type(8) .title div h1{line-height: 60px; margin-left: 45px; font-size: 1.5em;}
+
+/*section article:nth-of-type(8) > .title > a{line-height: 60px; margin-left: 200px;}*/
+section article:nth-of-type(9) {width: 90%; height: 400px; border-radius: 24px;  margin: 0 auto;}
+/*section article:nth-of-type(9) > .cartoon > .book_component > a{border: none;}*/
+/*section article:nth-of-type(9) > .cartoon > .book_component > a > div:nth-of-type(3){text-align: left;}*/
+/*section article:nth-of-type(9) > .cartoon > .book_component{width: 172px; height: 300px; margin: 20px 0;}*/
+/*section article:nth-of-type(9) > .cartoon > .book_component > div > img{width: 172px; height: 250px;}*/
+/*section article:nth-of-type(9) > .cartoon{display: flex; justify-content: center;}*/
+/*section article:nth-of-type(9) > .cartoon > .book_component:nth-of-type(1){margin-left: 50px;}*/
+/* Section 이걸 만화로 배워 영역 종료 */
+/* Section 인기 키워드로 보는 책 */
+section article:nth-of-type(10) .title{height: 60px;}
+section article:nth-of-type(10) .title div h1{line-height: 60px; margin-left: 45px; padding-top: 100px; font-size: 1.5em;}
+
+section article:nth-of-type(10) > .title > a{line-height: 60px; margin-left: 200px;}
+section article:nth-of-type(11) {width: 90%; height: 400px; border-radius: 24px; margin: 0 auto;}
+section article:nth-of-type(11) > #famous{display: flex; justify-content: center; margin-top: 50px;}
+/*section article:nth-of-type(11) > #famous ul{display: flex; justify-content: center;}*/
+/*section article:nth-of-type(11) > #famous >  > li{display: block; width: 100px; height: 50px; margin: 10px; border: 1px solid #A9A9A9; border-radius: 150px; text-align: center; line-height: 50px; cursor: pointer; background-color: #d9d9d9;}*/
+/*section article:nth-of-type(11) > #famous > ul > li > span{display: block; width: 100%; height: 100%; border-radius: 150px; color: #000;}*/
+/*section article:nth-of-type(11) > #famous > ul{display: flex; width: 100px; height: 50px; margin: 10px; border: 1px solid #A9A9A9; border-radius: 150px; text-align: center; line-height: 50px; background-color: #d9d9d9;}*/
+/*section article:nth-of-type(11) > #famous > ul li{color: #000;}*/
+/*section article:nth-of-type(11) {width: 90%; height: 400px; border-radius: 24px; margin: 0 auto;}*/
+/*section article:nth-of-type(11) > #famous{display: flex; justify-content: center;}*/
+/*section article:nth-of-type(11) > #famous > ul li{display: block; width: 100px; height: 50px; margin: 10px; border: 1px solid #A9A9A9; border-radius: 150px; text-align: center; line-height: 50px; background-color: #d9d9d9;}*/
+/*section article:nth-of-type(11) > #famous > ul li span{color: #000;}*/
+/*section article:nth-of-type(7) > div a:nth-of-type(1){margin-left: 40px;}*/
+
+/* 종합, 20대, 30대 자기계발, 인문/교양, 경제/경영, 소설, 판타지/무협 영역 시작 */
+/*section article:nth-of-type(7) > .total, .twenty, .thirty, .mine, .education, .economy, .novel, .fantasy > .book_component > div > img{width: 172px; height: 250px;}*/
+section article:nth-of-type(11) > .cook, .world, .money, .health, .love, .travel, .history{width: 1140px; margin: 0 auto; padding-top: 35px; overflow: hidden;}
+/*section article:nth-of-type(11) > .cook > .book_component{width: 180px; height: 300px; border-radius: 24px; margin: 10px 20px; padding: 20px 20px 20px 23px;}*/
+/*section article:nth-of-type(11) > .cook > .book_component:nth-of-type(1){margin-left: 170px; background-color: #DCE5A4; border: solid 1px #C1C0C0;}*/
+/*section article:nth-of-type(11) > .cook > .book_component:nth-of-type(2){background-color: #60EEF8; border: solid 1px #C1C0C0;}*/
+/*section article:nth-of-type(11) > .cook > .book_component:nth-of-type(3){background-color: #9CF971; border: solid 1px #C1C0C0;}*/
+/*section article:nth-of-type(11) > .cook > .book_component:nth-of-type(4){background-color: #EBF1C2; border: solid 1px #C1C0C0;}*/
+/*section article:nth-of-type(11) > .cook > .book_component:nth-of-type(5){background-color: #AFA271; border: solid 1px #C1C0C0;}*/
+/*section article:nth-of-type(11) > .cook > .book_component:nth-of-type(6){background-color: #498166; border: solid 1px #C1C0C0;}*/
+/*section article:nth-of-type(11) > .cook > .book_component > a > div:nth-of-type(1){color: #444;}*/
+
+footer{width: 100%; height: 175px; background-color: #9e9e9e; margin-top: 80px;}
+footer #info, #address, #important{display: flex; justify-content: center;}
+footer #info li{width: 150px; height: 20px; text-align: center;margin-top: 40px; border-right: 1px solid #000;}
+footer #info li:nth-of-type(5){border: none;}
+footer #address li{width: 300px; height: 20px; margin-top: 20px; text-align: center;}
+footer #important li{width: 300px; height: 20px; margin-top: 20px; text-align: center;}
+#mobile{display: none; position: sticky; bottom: 0;  height: 80px; z-index: 1000; background-color: #fff;}
+#mobile div{display: flex; justify-content: space-evenly; text-align: center;}
+#mobile div a img{width: 50px; height: 50px;}
+
+/*.popup{display: none; position: fixed; width: 200px; height: 150px; left: 100px; bottom: 100px; z-index: 99999; background-color: #000;}*/
+/*#btn{float: right;}*/

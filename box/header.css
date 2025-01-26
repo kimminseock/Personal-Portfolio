@@ -1,0 +1,58 @@
+#header{
+    width: 1200px;
+    height: 100px;
+    background-color: aquamarine;
+}
+#logo{
+    float: left;
+    width: 200px;
+    height: 100px;
+    background-color: burlywood;
+}
+#nav{
+    float: left;
+    width: 1000px;
+    height: 100px;
+    background-color: cadetblue;
+}
+.gnb{
+    float: left;
+}
+.gnb>li>a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    top: 30px;
+    left: 350px;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: burlywood;
+}
+.lnb{
+    float: left;
+}
+.lnb>li>a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    top: 30px;
+    left: 350px;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: burlywood;
+}
+.gnb>li>a:hover{
+    background-color: white;
+    color: cornflowerblue;
+}
+.lnb>li>a:hover{
+    background-color: white;
+    color: cornflowerblue;
+}
+.lnb{
+    display: none;
+}

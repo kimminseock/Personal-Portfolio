@@ -1,0 +1,20 @@
+#footer>.logo>img{
+    margin-top:20px;
+}
+
+#footer > .copyright{
+    padding-top:20px;
+    padding-left:20px;
+    box-sizing: border-box;
+}
+
+#footer > .sns{
+    padding-left: 15px;
+    padding-top: 25px;
+    box-sizing: border-box;
+}
+
+#footer > .sns>.sns_list>li{
+    float:left;
+    margin:2px;
+}

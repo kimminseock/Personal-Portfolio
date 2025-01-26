@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		table 태그와 자손 선택자 주의 사항
+		웹 브라우저가 자동으로 tbody 태그를 추가
+		*/
+		tr > th{
+			text-decoration: underline;
+		}
+        table > tr > th{ /* table은 tbody 안적어주면 자동 생성 되어서 안먹힘*/
+            color: red;
+        }
+		table > tbody > tr > th{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Regions</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>대구광역시 중구</td>
+		</tr>
+	</table>
+</body>
+</html>

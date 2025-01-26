@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/* 매개 변수가 있는 함수 정의문*/
+		const myFun = function (name, area) {
+			document.write(`${name}입니다.<br>`);
+            document.write(`사는 곳은 ${area}입니다.`);
+        }
+        // const name = prompt('이름을 입력해주세요');
+        // const area = prompt('사는곳을 입력해주세요');
+        // myFun(name, area);
+        myFun(prompt('이름을 입력해주세요'), prompt('사는곳을 입력해주세요'));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

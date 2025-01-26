@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* 효과 메서드
+        1. 숨김
+        hide() : 요소를 숨김
+        fadeOut() : 요소가 점점 투명해지면서 사라짐
+        slideUp() : 요소가 위로 접히며 숨겨짐
+
+        2. 노출
+        show() : 숨겨진 요소가 노출
+        fadeIn() : 숨겨진 요소가 점점 선명해짐
+        slideDown() :  숨겨진 요소가 아래로 펼쳐짐
+
+        3. 노출, 숨김
+        toggle() : hide(), show() 효과를 적용
+        fadeToggle() : fadeIn(), fadeOut() 효과를 적용
+        slideToggle() : slideUp(), slideDown() 효과를 적용
+        fadeTo() : 지정한 투명도를 적용
+
+        * 효과 메서드의 기본형
+        $('요소 선택').효과 메서드(효과 소요 시간, 가속도, 콜백함수);
+
+        1) 효과 소요 시간 : 요소를 숨기거나 노출할 때 소요되는 시간
+        방법 1 : 'show', 'normal', 'fast'
+        'show': 기본 효과 시간, 약 400ms의 효과 시간. 요소가 서서히 보여지는 효과.
+        'normal': 약 600ms의 효과 시간. 'show'와 비슷하지만 조금 더 느리게 효과.
+        'fast': 약 200ms의 효과 시간. 요소가 빠르게 나타나게 되는 효과.
+
+        방법 2 : 1,000(1초). 500(0.5초)
+
+        2) 가속도 : 숨기거나 노출하는 동안의 가속도를 설정
+        'swing' : 시작과 끝은 느리게, 중간은 빠른 속도. 기본값
+        'linear' : 일정한 속도로 움직임
+
+        3) 콜백함수 : 노출과 숨김 효과가 끝난 후에 실행할 함수. 생략 가능
+
+        * fadeTo() 메서드의 기본형
+        $('요소 선택').fadeTo(효과 소요 시간, 투명도, 콜백함수);
+        투명도 : 0 ~ 1 까지의 값을 입력할 수 있음. 1에 가까울 수록 선명
+		 */
+		$(function () {
+			$('.btn2').hide(); // fadeIn 버튼을 숨김
+
+			$('.btn1').on('click', function () {
+				$('.box').slideUp(1000, 'linear', function () {
+                    $('.btn1').hide();
+					$('.btn2').show();
+                });
+            });
+
+            $('.btn2').on('click', function () {
+	           $('.box').fadeIn(2000, 'swing', function () {
+		           $('.btn1').show();
+                   $('.btn2').hide();
+               });
+            });
+
+            $('.btn3').on('click', function () {
+                // 1초 동안 동작하고, 속도는 균일하게
+	           $('.box').slideToggle(1000, 'linear');
+            });
+
+            $('.btn4').on('click', function () {
+	           $('.box').fadeTo('fast', 0.3); //.box의 빠른 시간(0.2초)으로 투명도 0.3으로 변경
+            });
+            $('.btn5').on('click', function () {
+                $('.box').fadeTo('fast', 1); //.box의 빠른 시간(0.2초)으로 투명도 1으로 변경
+            });
+        });
+	</script>
+	<style>
+		.content {width: 400px; background-color: #eee;}
+	</style>
+</head>
+<body>
+	<p>
+		<button class="btn1">slideUp</button>
+		<button class="btn2">fadeIn</button>
+	</p>
+	<p>
+		<button class="btn3">toggleSide</button>
+	</p>
+	<p>
+		<button class="btn4">fadeTo(0.3)</button>
+		<button class="btn5">fadeTo(1)</button>
+	</p>
+	<div class="box">
+		<div class="content">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat consectetur nibh, ut luctus urna
+			placerat non. Phasellus consectetur nunc nec mi feugiat egestas. Pellentesque et consectetur mauris, sed
+			rutrum est. Etiam odio nunc, ornare quis urna sed, fermentum fermentum augue. Nam imperdiet vestibulum ipsum
+			quis feugiat. Nunc non pellentesque diam, nec tempor nibh. Ut consequat sem sit amet ullamcorper sodales.
+		</div>
+	</div>
+</body>
+</html>

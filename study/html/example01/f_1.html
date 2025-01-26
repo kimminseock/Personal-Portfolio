@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="./css/f_style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+
+
+		$(function () {
+            $('header nav > ul  ul').css({display: 'none'});
+
+			$('header nav > ul > li').on({
+                click: function () {
+                    $(this).parent().find('a').removeClass('on');
+                    $(this).children('a').addClass('on');
+                    $(this).parent().find('ul').stop().slideUp()
+                    $('ul', this).stop().slideDown();
+                },
+			})
+        });
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="logo"></div>
+			<nav>
+				<ul>
+					<li>
+						<a href="#">MENU-1</a>
+						<ul>
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">MENU-2</a>
+						<ul>
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">MENU-3</a>
+						<ul>
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">MENU-4</a>
+						<ul>
+							<li><a href="#">SubMenu-1</a></li>
+							<li><a href="#">SubMenu-2</a></li>
+							<li><a href="#">SubMenu-3</a></li>
+							<li><a href="#">SubMenu-4</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="slide">
+			<div class="link"></div>
+		</div>
+		<section></section>
+		<footer></footer>
+	</div>
+</body>
+</html>

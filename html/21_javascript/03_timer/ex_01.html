@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        /*
+
+		*/
+        $(function () {
+            /* 1초마다 값을 증가시키며 화면에 표시 */
+            let count = 0;
+            let id = setInterval(function () {
+                // console.log(`1초마다 실행됩니다.(${count}번째)`);
+                // $('#timer').text(count); //제이쿼리 방법
+                document.querySelector('#timer').innerText = count; // 자바스크립트 방법
+                count++;  // 1씩 증가
+            }, 1000);
+
+        });
+	</script>
+	<style>
+        #timer { text-align: center; font-size: 100px; margin-top: 400px; }
+	</style>
+</head>
+<body>
+	<div id="timer">0</div>
+</body>
+</html>

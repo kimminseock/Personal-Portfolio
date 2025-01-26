@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+			$('.title a:first').on('click', function () {
+                $(this).addClass('on');
+                $('.title a:last').removeClass('on');
+                $('.tab1').show();
+                $('.tab2').hide();
+
+            });
+            $('.title a:last').on('click', function () {
+	            $(this).addClass('on');
+                $('.title a:first').removeClass('on');
+                $('.tab1').hide();
+                $('.tab2').show();
+            });
+            $('.pop_c').on('click', function () {
+				$('.modal').show();
+                $('.popup').show();
+            });
+            $('.popup button').on('click', function () {
+                $('.modal').hide();
+                $('.popup').hide();
+            });
+        });
+	</script>
+	<style>
+		*{margin: 0; padding: 0; box-sizing: border-box;}
+		.tab1, .tab2{width: 500px;border: 1px solid black;}
+		li{list-style: none;}
+		a{text-decoration: none; color: #000;}
+		section{width:600px; margin: 50px auto}
+		.title a:nth-of-type(1){display: inline-block; text-align: center; width: 100px; border: 1px solid black;}
+        .title a:nth-of-type(2){display: inline-block; text-align: center; width: 100px; border: 1px solid black;}
+        .tab1 ul li{margin-top: 5px; margin-bottom: 5px;}
+        .tab2{display: none;}
+		.tab2 ul{display: flex;}
+		.tab2 ul li{margin: 10px;}
+		.pop_c{cursor: pointer;}
+        .modal { display: none; position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #999; opacity: 0.7;
+        }
+
+        .popup{ display: none; position: absolute; z-index: 1; left: calc(50% - 200px); top: calc(50% - 200px); position: fixed;
+            width: 400px; height: 400px; padding: 10px;
+            background: #0a9b97; text-align: right;
+        }
+		.on{background: aqua;}
+	</style>
+</head>
+<body>
+	<div class="popup">
+		<button>닫기</button>
+	</div>
+	<div class="modal"></div>
+	<section>
+		<div class="box">
+			<div class="title">
+				<a href="#" class="on">공지사항</a>
+				<a href="#">갤러리</a>
+			</div>
+			<div class="tab1">
+				<ul>
+					<li class="pop_c">공지사항입니다! - click</li>
+					<li>공지사항입니다!</li>
+					<li>공지사항입니다!</li>
+				</ul>
+			</div>
+			<div class="tab2">
+				<ul>
+					<li><img src="https://placedog.net/100" alt="g1"></li>
+					<li><img src="https://placedog.net/100" alt="g1"></li>
+					<li><img src="https://placedog.net/100" alt="g1"></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

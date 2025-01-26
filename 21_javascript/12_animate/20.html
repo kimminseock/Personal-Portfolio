@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+
+		/*
+
+		* 스크롤과 애니메이션 조합하기
+		스크롤과 연동해서 요소가 나타나거나 동작하는 기능 구현.
+
+		* Intersection Observer API란?
+		이전에는 스크롤에 맞춰 요소를 조작하려면 scroll 이벤트를 사용.
+		단 이를 사용했을 때 화면 크기가 바뀌면 다시 계산해야 할 수 있고 스크롤할 때 마다 함수를 호출하므로
+		성능이 떨어질 우려가 있음.
+
+		대안으로 Intersection Observer가 있음.
+		특정 요소가 관찰 영역에 들어가면 어떤 동작을 함.
+		특정 요소가 지정 영역 내에 들어갔는지 탐지하는 자바스크립트의 기능 중 하나.
+		특정 요소가 지정 영역에 들어간 상태를 '교차하고 있다'고 표현.
+
+		Intersection Observer에서는 교차가 감지되면 미리 준비해둔 함수를 호출하여 동작을 실행.
+		scroll과 같이 스크롤할 때마다 반응하는 것이 아니므로 브라우저에 부담을 적게 주도록 구현할 수 있음.
+
+		* 기본 작성법 4단계
+		1) 관찰 로봇이 수행해야 하는 내용을 정해둠.
+		2) 새로운 이름을 붙여 관찰 로봇 도입
+		3) 관찰 로봇에게 1)에서 정해둔 동작 내용 지시
+		4) 관찰 로봇에게 관찰 대상을 알려주고 실행
+
+		1) 관찰 로봇이 수행해야 하는 내용을 정해둠.
+		-> 함수로 동작할 내용을 정의
+		 const showItem = item => {
+            const keyframes = {
+                opacity: [0, 1],
+                translate: ['200px 0', 0],
+            };
+            const options = {duration: 2000, easing: 'ease'};
+
+            item[0].target.animate(keyframes, options);
+        }
+
+		2) 새로운 이름을 붙여 관찰 로봇 도입
+		-> Intersection Observer의 객체 생성.
+		const observer = new IntersectionObserver();
+
+		3) 관찰 로봇에게 1)에서 정해둔 동작 내용 지시
+		-> 객체 생성시에 콜백함수 실행
+		const observer = new IntersectionObserver(showItem);
+
+		4) 관찰 로봇에게 관찰 대상을 알려주고 실행
+		-> 지금까지는 설정이고, 시작 버튼을 누르지 않음.
+		실제로 관찰을 시작하려면 객체의 observe() 메스드를 호출하고,
+		인수로 관찰대상을 넘김.
+
+		observer.observe(kirin);
+
+		* 콜백 함수가 실행되는 타이밍
+		1) 관찰이 시작될 때
+		2) 관찰 대상이 구역 안 (화면)에 들어갔을 때
+		3) 관찰 대상이 구역 안 (화면)에서 나왔을 때
+		 */
+	document.addEventListener("DOMContentLoaded", () => {
+        const kirin = document.getElementById('kirin');
+
+        const showItem = item => {
+            console.log(item)
+            const keyframes = {
+                opacity: [0, 1],
+                translate: ['200px 0', 0],
+            };
+            const options = {duration: 2000, easing: 'ease'};
+
+            item[0].target.animate(keyframes, options);
+        }
+        const observer = new IntersectionObserver(showItem);
+        observer.observe(kirin)
+	});
+	</script>
+	<style>
+		body {text-align: center; padding: 1rem;}
+		h1 {margin: 50vh 0 50vh;}
+		img {max-width: 100%;}
+	</style>
+</head>
+<body>
+	<h1>↓ 스크롤 ↓</h1>
+	<img src="image/kirin.jpg" id="kirin" alt="기린">
+</body>
+</html>

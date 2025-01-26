@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* 콜백함수를 활용하는 함수 : filter()
+		콜백함수에서 리턴하는 값이 true 인 것들만 모아서 새로운 배열을 만듬.
+		-> 콜백함수의 리턴 타입이 불 형 이어야 함
+		 */
+
+		const numbers = [11, 12, 13, 14, 15, 16];
+
+        // 짝수만 추출
+        const evenNumbers = numbers.filter(function (value) {
+	        return value % 2 === 0;
+        });
+
+        const evenIndexes = numbers.filter(function (value, index) {
+	        return index % 2 === 0;
+        })
+
+        console.log(`원래 배열: ${numbers}`); // 원래 배열: 11, 12, 13, 14, 15, 16
+        console.log(`값이 짝수만 추출: ${evenNumbers}`); // 값이 짝수만 추출: 12, 14, 16
+        console.log(`인덱스가 짝수만 추출: ${evenIndexes}`); // 인덱스가 짝수만 추출: 11,13,15
+
+		// 1의 자리가 3의 배수인 경우만 추출 -> 13, 16
+		const tmp = numbers.filter(function (value) {
+			return value % 10 % 3 === 0;
+        });
+        console.log(tmp);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

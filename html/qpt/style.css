@@ -1,0 +1,26 @@
+#wrap{
+    width: 865px;
+    height: 315px;
+    margin: 0 auto;
+    background-color: #666666;
+}
+#box1{
+    float: left;
+    width: 400px;
+    height: 250px;
+    border-top: solid 15px black;
+    background-color: #4965f1;
+    padding-bottom: 30px;
+    margin: 20px 25px 0px 40px;
+}
+
+#box2{
+    float: left;
+    width: 350px;
+    height: 150px;
+    border-bottom: solid 5px black;
+    background-color: #4965f1;
+    padding-right: 20px;
+    margin: 10px 0px 0px 30px;
+
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		/*
+		* 템플릿 문자열
+
+		문자열 결합 연산자를 사용하지 않고, 문자열 안에 따로 표현식을 사용할 수 있음.
+		쌍따옴표나 홀따옴표 대신 백틱(`)을 사용
+		 */
+
+		// 일반적인 방법 : 문자열 결합 연산자 사용
+        console.log('표현식은 273 + 52의 값은 ' + (273 + 52) + '입니다.');
+
+        // 템플릿 문자열 사용
+		console.log(`표현식은 273 + 52의 값은 ${273 + 52} 입니다.`); // 백틱(`)을 사용
+
+        let name = prompt('한글로 이름을 입력');
+        alert(`당신의 성은 ${name[0]} 입니다.`)
+	</script>
+</head>
+<body>
+
+</body>
+</html>

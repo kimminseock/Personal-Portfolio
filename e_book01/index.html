@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김/홍의 e_book</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="stylesheet" href="./css/mainstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+    <header>
+        <div id="header_wrap">
+            <h1><a href="#">로고</a></h1>
+            <nav>
+                <ul class="Main">
+                    <li class="on"><a href="#">투데이</a></li>
+                    <li><a href="#">검색</a></li>
+                    <li><a href="#">내서재</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                </ul>
+            </nav>
+            <div id="rightWrap">
+                <div><a href="#">알림아이콘</a></div>
+                <div><a href="#">로그인버튼</a></div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div id="Sub">
+            <div><a href="#">삼단바</a></div>
+            <ul class="submenu">
+                <li><a href="#">Now</a></li>
+                <li><a href="#">KH로드</a></li>
+                <li><a href="#">스토리</a></li>
+                <li><a href="#">오디오북</a></li>
+            </ul>
+        </div>
+        <div id="slide">
+            <div>
+                <ul class="sliderList">
+                    <li><img src="./images/slide1(1).jpg" alt="#"/></li>
+                    <li><img src="./images/slide2(2).jpg" alt="#"/></li>
+                    <li><img src="./images/slide3(3).jpg" alt="#"/></li>
+                </ul>
+                <div class="btnList">
+                    <span class="btn1 ">첫번째</span>
+                    <span class="btn2">두번째</span>
+                    <span class="btn3">세번째</span>
+                </div>
+            </div>
+        </div>
+        <article>
+            <div class="title">
+                <div><h1>최근 본 히스토리</h1></div>
+                <a href="#">아이콘 공간</a>
+            </div>
+        </article>
+        <article>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </article>
+        <article>
+            <div>
+                <h1 data-aos="fade-up"><span>노는걸 너무 좋아하는 뽀로로</span>님, 인기 도서로 다시 독서를 시작해보세요!</h1>
+            </div>
+            <div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="title">
+                <div data-aos="fade-up"><h1>오늘 읽어야 할 단 한권</h1></div>
+                <a href="#">아이콘 공간</a>
+            </div>
+        </article>
+        <article>
+            <div class="bg">
+                <div>
+                    <div>
+                        <img src="./images/village.png" alt="#">
+                    </div>
+                </div>
+                <div class="textBox"><span class="text"></span><span class="blink"></span></div>
+            </div>
+        </article>
+        <article>
+            <div class="title">
+                <div data-aos="fade-up"><h1>따끈따끈,새로 들어온 책</h1></div>
+            </div>
+        </article>
+        <article>
+            <div id="category">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="cate_Gory">
+                        <div class="swiper-slide"><div><span class="on">종합</span></div></div>
+                        <div class="swiper-slide"><div><span>20대</span></div></div>
+                        <div class="swiper-slide"><div><span>30대</span></div></div>
+                        <div class="swiper-slide"><div><span>자기계발</span></div></div>
+                        <div class="swiper-slide"><div><span>인문/교양</span></div></div>
+                        <div class="swiper-slide"><div><span>경제/경영</span></div></div>
+                        <div class="swiper-slide"><div><span>소설</span></div></div>
+                        <div class="swiper-slide"><div><span>판타지/무협</span></div></div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+<!--                <ul>-->
+<!--                    <li><span class="on">종합</span></li>-->
+<!--                    <li><span>20대</span></li>-->
+<!--                    <li><span>30대</span></li>-->
+<!--                    <li><span>자기계발</span></li>-->
+<!--                    <li><span>인문/교양</span></li>-->
+<!--                    <li><span>경제/경영</span></li>-->
+<!--                    <li><span>소설</span></li>-->
+<!--                    <li><span>판타지/무협</span></li>-->
+<!--                </ul>-->
+            </div>
+            <div class="total">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="twenty">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="thirty">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="mine">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="education">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="economy">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="novel">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="fantasy">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="title">
+                <div data-aos="fade-up"><h1>이걸 만화로 배워</h1></div>
+            </div>
+        </article>
+        <article>
+            <div class="cartoon">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div class="title">
+                <div><h1>인기 키워드로 보는 책</h1></div>
+            </div>
+        </article>
+        <article>
+            <div id="famous">
+                <ul>
+                    <li><span>요리</span></li>
+                    <li><span>세계사</span></li>
+                    <li><span>제테크</span></li>
+                    <li><span>건강</span></li>
+                    <li><span>연애</span></li>
+                    <li><span>여행</span></li>
+                    <li><span>한국사</span></li>
+                </ul>
+            </div>
+            <div class="cook">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                        <div class="swiper-slide"><img src="./images/village.png" alt="#"><div><span>간편낚시</span></div><div><p>문학상 홍준호</p></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <footer>
+
+    </footer>
+    <div class="popup">
+        <div><button id="btn">닫기</button></div>
+        <div></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- GSAP 및 ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="./js/mainPage.js"></script>
+</body>
+</html>

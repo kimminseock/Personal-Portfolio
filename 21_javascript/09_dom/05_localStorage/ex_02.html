@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+        /*
+	   사용자가 페이지의 테마 색상을 선택할 수 있도록 하고,
+	   선택된 색상이 localStorage에 저장되어 페이지를 새로고침해도 이전에 선택한 테마가 유지되도록 구현하세요.
+
+	   요구사항:
+
+	   1. HTML에서 제공되는 색상 버튼 중 하나를 클릭하면 페이지의 배경색이 해당 색상으로 변경됩니다.
+	   2. 사용자가 선택한 색상을 localStorage에 저장하여 페이지가 새로고침되더라도 마지막에 선택한 색상이 유지되도록 합니다.
+	   3. 배경색이 변경될 때마다 "Theme has been changed!"라는 메시지를 표시하며, 이 메시지는 2초 후 사라지도록 합니다.
+
+		*/
+        // 1) 요소 들고 오기
+        // 2) 메시지 노출
+        // 3) localStorage에 저장
+        // 4) localStorage 값 들고오기
+        document.addEventListener('DOMContentLoaded', () => {
+           // 1) 색상 버튼 중 하나를 클릭 -> 페이지의 배경색이 해당 색으로 변경
+	       const changeColor = document.querySelectorAll('.themeButton');
+           const status = document.getElementById('status');
+            // console.log(changeColor);
+	        // 4) 저장된 값을 들고오기
+	        if(localStorage.getItem('bg')){
+                document.body.style.backgroundColor = localStorage.getItem('bg')
+	        }
+	        // 3. 이벤트 리스너 등록
+           changeColor.forEach(value => {
+               value.addEventListener('click', evt => {
+                   const color = value.getAttribute('data-color');
+                   // console.log(value.getAttribute('data-color'));
+                   document.body.style.backgroundColor = color;
+                   // 2) 메시지 노출
+                   status.textContent = 'Them has been changed!';
+                   setTimeout(function () {
+	                   status.textContent = '';
+                   }, 2 * 1000);
+                   // 3) localStorage에 저장
+	               localStorage.setItem('bg', color);
+               });
+           });
+
+           // 2) 사용자가 선택한 색상 localStorage에 저장
+
+        });
+	</script>
+</head>
+<body>
+	<h1>Choose Your Theme</h1>
+	<button class="themeButton" data-color="lightblue">Light Blue</button>
+	<button class="themeButton" data-color="lightgreen">Light Green</button>
+	<button class="themeButton" data-color="lightcoral">Light Coral</button>
+	<button class="themeButton" data-color="lightgoldenrodyellow">Light Yellow</button>
+	<p id="status"></p>
+</body>
+</html>

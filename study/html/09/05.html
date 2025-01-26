@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		* 속성 선택자 Attribute selectors
+		특정 속성을 가진 태그를 선택
+		선택자 뒤에 대괄호([])를 사용하여 속성과 값을 입력
+
+		형태 : 선택자[속성=값] : 속성 안의 값이 특정값과 조건에 만족하는 문서 객테를 선택.
+		*/
+
+		input[type=text] {
+			/* input 태그 중에서 type 속성값을 text로 가지는 태그의 배경 색상을 지정 */
+			background-color: red;
+		}
+		input[type=password]{
+			/* input 태그 중에서 type 속성값을 password로 가지는 태그의 배경 색상을 지정 */
+			background-color: #4965f1;
+		}
+		input[name=password]{
+			color: yellow;
+		}
+
+		input[type=text], input[type=password] {
+			background: none;
+			border: none;
+			border-bottom: 1px solid #666666;
+			padding: 6px;
+			margin: 0 2px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text" name="id"/>
+		<input type="password" name="password"/>
+	</form>
+</body>
+</html>

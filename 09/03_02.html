@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*
+		태그 선택자와 클래스 선택자를 함께 사용하면 더 정확하게 태그를 선택할 수 있음
+		*/
+		/*
+		li 태그 중 class 속성값으로 select를 가지는 태드의 color를 red 적용
+		*/
+		ul .select{/* ul .select는 ul태그 안에 select의 이름을 가진 태그를 찾음, li.select는 li의 select이름을 가진 태그를 찾음 */
+			color: #ff3333;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="select">Lorem ipsum</h1>
+	<ul>
+		<li class="select">Lorem ipsum</li>
+		<li>Lorem ipsum</li>
+		<li>Lorem ipsum</li>
+		<li>Lorem ipsum</li>
+	</ul>
+</body>
+</html>

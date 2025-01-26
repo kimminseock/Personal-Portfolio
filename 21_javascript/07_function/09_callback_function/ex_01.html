@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		다음 배열은 각 학생의 이름과 점수를 나타냅니다.
+		이 배열을 forEach 메서드를 사용하여 점수가 60점 이상인 학생의 이름을 콘솔에 출력하는 코드를 작성하세요.
+		 */
+
+		const students = [
+            { name: "John", score: 55},
+            { name: "Jane", score: 78},
+            { name: "Tom", score: 62},
+            { name: "Anna", score: 90},
+		];
+        students.forEach(function (value) {
+	        if(value.score >= 60){
+                console.log(value.name);
+	        }
+        });
+	</script>
+</head>
+<body>
+
+</body>
+</html>

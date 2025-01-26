@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>텍스트 링크의 밑줄과 글자색 바꾸기</title>
+	<style>
+		a{
+			text-decoration: none; /* 텍스트 꾸미기 : 밑줄 사용 안함 */
+			color: #000000; /* 텍스트의 색상을 검정색으로 */
+		}
+	</style>
+</head>
+<body>
+	<!--
+	01. 도메인 url : https://도메인주소
+	02. 임시링크 : #
+	03. 문서/서브페이지전환 : /문서이름.html (경로인식동일)
+	04. 그외 연결
+	<a href="mailto:관리자 메일 주소"> : 아웃룩 메일 계정 연결 시 사용
+	<a href="tel:전화번호"> : 모바일 전화걸기 연결
+	<a href="sms:전화번호"> : 모바일 문자보내기 연결
+	-->
+	<p>
+		<!-- 같은 도메인이라도 http://와 https://의 홈페이지 주소가 다른 경우도 있음. 주의할 것-->
+		<a href="https://www.naver.com">네이버</a>
+	</p>
+	<p>
+		<!-- 같은 폴더 내의 html 페이지로 이동 -->
+		<a href="04.html">메인페이지로</a>
+	</p>
+	<p>
+		<!-- 아웃룩 메일 계정으로 연결할 때 -->
+		<a href="mailto:webmaster@abc.com">관리자(webmaster@abc.com)</a>
+	</p>
+	<p>
+		<!-- 모바일 전화걸기 연결 -->
+		<a href="tel:0012345678">전화걸기</a>
+	</p>
+	<p>
+		<!-- 빈 링크 또는 임시 링크로 표시-->
+		<a href="#">임시링크</a>
+	</p>
+
+	<!-- 빈 링크의 경우 문서의 탑으로 이동하는 성격이 있음 -->
+	<div style="height: 6000px; background-color: antiquewhite"></div>
+	<a href="#">임시링크</a><br>
+	<!-- #none으로 하면 탑으로 이동을 안함-->
+	<a href="#none">임시링크 2</a>
+</body>
+</html>

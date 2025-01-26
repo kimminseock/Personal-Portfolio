@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<script>
+		/*
+
+		* 배경이 늘어나는 제목
+		제목 배경을 CSS를 사용하여 경계선이 명확히 있는 두 가지색 (하늘색과 흰색)을 지정.
+		자바스크립트의 backgroundPosition 값으로 두 색의 경계선을 움직여 제목이 사각형으로 늘어난 것처럼 보이도록 함.
+		글자 색도 살짝 드러나도록 투명에서 흰색으로 지정.
+		 */
+        document.addEventListener('DOMContentLoaded', () => {
+            const heading = document.getElementById('heading');
+
+            const keyframes = {
+                backgroundPosition: ['100% 0', '0 0'],
+	            color: ['transparent', '#fff'],
+            };
+            const options = {
+                duration: 1000,
+	            easing: 'ease-in-out',
+            };
+
+
+            heading.animate(keyframes, options);
+        });
+	</script>
+	<style>
+		body {text-align: center;}
+		h1 {
+			color: #fff;
+			background-image: linear-gradient(90deg, #00bbdd, #00bbdd 50%, #fff 50%, #fff);
+			background-size: 200% 100%;
+			padding: .5rem 1rem;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="heading">자바스크립트로 애니메이션</h1>
+</body>
+</html>

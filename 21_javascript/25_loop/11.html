@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+		* for문의 주요 용도는 1) 일정한 횟수 반복 2) 배열 출력(순회)
+		배열 출력의 경우 패턴이 0 ~ 배열.length - 1 패턴이 동일해서 간편한 문자을 만듬.
+
+		* for in 반복문 : 인덱스 기반으로 출력
+		배열 요소를 하나하나 꺼내서 특정 문장을 실행할 때 사용.
+
+		for(const 반복변수(인덱스) in 배열 또는 객체){
+			문장
+		}
+		 */
+		const todos = ['우유구매', '업무 메일 확인하기', '필라테스 수업'];
+        const times = ['8시', '3시', '12시'];
+
+        // ex) 0번째 할 일: 8시: 우유구매
+		for(let i = 0; i < todos.length; i++){
+            console.log(`${i}번째 할 일: ${times[i]}: ${todos[i]}`);
+            console.log(typeof i);
+		}
+
+        for(const i in todos){ // i는 인덱스 번호를 가져옴
+            console.log(`${i}번째 할 일: ${times[i]}: ${todos[i]}`); // 인덱스 번호를 이용해 값에 접근.
+            console.log(i); // 0 1 2
+            console.log(typeof i); // string -> 인덱스 값이 문자열.
+        }
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

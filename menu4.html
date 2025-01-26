@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu4_C-2</title>
+    <script src="./script/jQuery.js"></script>
+    <script>
+        $(function(){
+            // nav
+            // $(".subMenu").hide()
+            $("#mainMenu > li").on({
+                mouseover: function(){
+                    $(this).children(".subMenu").stop().slideToggle();
+                },
+                mouseout: function(){
+                    $(this).children(".subMenu").stop().slideToggle();
+                }
+            })
+        })
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        #wrap { display: flex; width: 1000px; height: 650px; }
+
+        header { width: 200px; height: 100%; background-color: rgb(255, 230, 198); }
+        #logo { width: 100%; height: 100px; }
+
+        nav {  width: 180px; text-align: center; margin-left: 10px;}
+        nav li, a { text-decoration: none; list-style: none; color: #333; }
+
+        #mainMenu > li { width: 100%; height: 50px; background-color: rgb(211, 177, 133); line-height: 50px;}
+        .subMenu > li { width: 100%; height: 30px; background-color:rgb(211, 156, 133); line-height: 30px; }
+
+        .subMenu > li:hover { background-color:rgb(211, 139, 109);}
+        #mainMenu > li:hover { background-color: rgb(207, 158, 93);}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="logo"><a href="#"><img src="../images/logo.jpg"></a></div>
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#">menu1</a>
+                        <ul class="subMenu">
+                            <li><a href="#">submenu1-1</a></li>
+                            <li><a href="#">submenu1-2</a></li>
+                            <li><a href="#">submenu1-3</a></li>
+                            <li><a href="#">submenu1-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">menu2</a>
+                        <ul class="subMenu">
+                            <li><a href="#">submenu2-1</a></li>
+                            <li><a href="#">submenu2-2</a></li>
+                            <li><a href="#">submenu2-3</a></li>
+                            <li><a href="#">submenu2-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">menu3</a>
+                        <ul class="subMenu">
+                            <li><a href="#">submenu3-1</a></li>
+                            <li><a href="#">submenu3-2</a></li>
+                            <li><a href="#">submenu3-3</a></li>
+                            <li><a href="#">submenu3-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">menu4</a>
+                        <ul class="subMenu">
+                            <li><a href="#">submenu4-1</a></li>
+                            <li><a href="#">submenu4-2</a></li>
+                            <li><a href="#">submenu4-3</a></li>
+                            <li><a href="#">submenu4-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <section id="B">
+                <div id="slide">
+                    <div class="slideContainer">
+                        <div class="slideBlock">
+                            <a href="#">
+                                <img src="../images/slide1.jpg" alt="">
+                                <span>slide01</span>
+                            </a>
+                        </div>
+                        <div class="slideBlock">
+                            <a href="#">
+                                <img src="../images/slide2.jpg" alt="">
+                                <span>slide02</span>
+                            </a>
+                        </div>
+                        <div class="slideBlock">
+                            <a href="#">
+                                <img src="../images/slide3.jpg" alt="">
+                                <span>slide03</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="C">
+                <div class="sec1">
+                    <div class="box">
+                        <div><a href="#">공지사항</a></div>
+                        <div>
+                            <ul>
+                                <li><a href="#">공지사항 입니다.</a></li>
+                                <li><a href="#">공지사항 입니다.</a></li>
+                                <li><a href="#">공지사항 입니다.</a></li>
+                                <li><a href="#">공지사항 입니다.</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sec2">
+                    <div class="box"></div>
+                        <div><a href="#">공지사항</a></div>
+                        <div>
+                            <ul>
+                                <li><a href="#"><img src ="../images/g1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src ="../images/g1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src ="../images/g1.jpg" alt=""></a></li>                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sec3"></div>
+            </section>
+            <footer></footer>
+        </div>        
+    </div>
+    
+</body>
+</html>

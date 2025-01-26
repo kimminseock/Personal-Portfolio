@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+</head>
+<body>
+	<button>Click me!</button>
+	<script>
+        const btn = document.querySelector('button');
+		/*
+		* 이벤트 핸들러 제거.
+		addEventListener 메서드로 등록한 이벤트 핸들러를 제거할려면 EventTarget.prototype.removeEventListener() 메서드 사용.
+		removeEventListener 메서드에 전달할 인수는 addEventListener 메서드와 동일.
+		 */
+        const btnClick = function () {
+                console.log('button click');
+        };
+
+       btn.addEventListener('click', function () {
+           console.log('button click');
+       });
+
+       btn.removeEventListener('click', function () {
+           console.log('button click');
+       }); // 성공
+	</script>
+</body>
+</html>

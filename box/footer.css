@@ -1,0 +1,23 @@
+#footer{
+    width: 1200px;
+    height: 100px;
+    background-color: chocolate;
+}
+#logo1{
+    float: left;
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+}
+#cp{
+    float: left;
+    width: 800px;
+    height: 100px;
+    background-color: blueviolet;
+}
+#sns{
+    float: left;
+    width: 200px;
+    height: 100px;
+    background-color: darkcyan;
+}

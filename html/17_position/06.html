@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+    /* absolute로 특정 요소 위치를 변경하기 */
+    .wrap {
+        width: 800px;
+        border: 5px solid black;
+        margin: 50px auto;
+
+    }
+    .wrap::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .wrap .left {
+        width: 400px;
+        height: 400px;
+        background-color: lightgreen;
+        float: left;
+    }
+    .wrap .right {
+        width: 400px;
+        height: 400px;
+        background-color: lightblue;
+        float: left;
+
+    }
+    .wrap .right .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+        .wrap .right .box {
+            position: absolute;
+	        right: 20px;
+	        bottom: 30px;
+        }
+    .wrap .bottom {
+        width: 800px;
+        height: 100px;
+        background-color: pink;
+        float: left;
+    }
+    .wrap .right{
+        position: relative;
+    }
+</style>
+</head>
+<body>
+	<!--
+	position 요소를 자유롭게 배치하기
+	absolute : 부모 요소를 기준으로 절대 위치를 지정
+	-->
+	<div class="wrap">
+		<div class="left">
+		</div>
+
+		<div class="right">
+			<p class="box"></p>
+		</div>
+
+		<div class="bottom">
+		</div>
+	</div>
+</body>
+</html>

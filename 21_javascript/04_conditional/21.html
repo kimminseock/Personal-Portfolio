@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/*
+
+		* switch 조건문
+
+        switch 조건문의 괄호 안에는 비교할 값을 입력. 이때 입력한 값을 기준으로 특정 코드를 실행.
+        입력한 표현식과 case 키워드 옆의 표현식이 같다면 case 키워드 바로 다음에 오는 문장을 실행.
+        일반적으로 case 뒤에는 정수나 문자열이 오는 것으로 사용.
+
+        break 키워드는 switch 조건문이나 반복문을 빠져나가기 위해 사용하는 키워드.
+        코드를 읽다가 break 키워드를 만나면 break 키워드를 감싼 switch 조건문이나 반복문을 완전히 빠져 나감.
+
+		기본형:
+		switch (조건문) {
+		case 조건A :
+				조건이 A일때 실행할 명령문;
+				break;
+		case 조건B :
+				조건이 B일때 실행할 명령문;
+				break;
+		default :
+				break;
+		*/
+
+		// 변수를 선언.
+		const input = Number(prompt('숫자를 입력하세요.', '숫자'));
+
+        // 조건문
+		switch (input % 2) {
+			case 0:
+                alert('짝수');
+				break;
+			case 1:
+                alert('홀수');
+                break;
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
