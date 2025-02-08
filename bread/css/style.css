@@ -13,10 +13,10 @@ header{width: 1140px; max-width: 80%; margin: auto; height: 50px; display: flex;
 .slider .list .item .content .title,
 .slider .list .item .content .type{font-size: 5em; font-weight: bold; line-height: 1.3em;}
 .slider .list .item .content .type{color: #14ff72cb;}
-.slider .list .item .content .description{font-size: 14px;}
+.slider .list .item .content .description{font-size: 14px; color: #000; font-weight: bold;}
 .slider .list .item .content .button{margin-top: 20px;}
 .slider .list .item .content .button button{border: none; background-color: #eee; padding: 7px 14px; font-family: "Poppins", sans-serif; font-weight: 500; cursor: pointer; letter-spacing: 2px; transition: 0.4s;}
-.slider .list .item .content .button button:hover{background-color: #14ff72cb; color: #eee;}
+.slider .list .item .content .button button:hover{background-color: #14ff72cb; color: #000;}
 
 /* Thumbnail 영역 */
 .thumbnail{display: flex; gap: 20px; position: absolute; bottom: 50px; left: 50%; width: max-content; z-index: 100;}
