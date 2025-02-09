@@ -1,24 +1,76 @@
 /* 기본 스타일 */
-*{margin: 0; padding: 0; box-sizing: border-box;}
-body {background-color: #f8f8f8; color: #333;}
-a{text-decoration: none; color: #fff;}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
 
 /* header 영역*/
-.header {background-color: #d2691e; color: white; padding: 1rem 0; text-align: center; position: sticky; top: 0; z-index: 99;}
-.header h1 {margin: 20px 0 30px 0;font-size: 2rem;}
+.header {
+    background-color: #d2691e;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.header h1 {
+    margin: 20px 0 30px 0;
+    font-size: 2rem;
+}
 
 /* 기본 웹 화면 스타일 */
-.container nav {display: block;}
+.container nav {
+    display: block;
+}
 
 /* 모바일 버전 화면 스타일*/
-.mobile {display: none;}
-.mobile-menu-icon {display: block; position: absolute; top: 15px; left: 15px; color: white; background: none; border: none; cursor: pointer;}
+.mobile {
+    display: none;
+}
+.mobile-menu-icon {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
 /* 웹 크기의 네비게이션 바 영역*/
-nav ul {list-style: none; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; margin-top: 10px;}
-nav ul li {margin: 0 10px;}
-nav ul li a {color: white;text-decoration: none; padding: 8px 12px; border-radius: 5px; background-color: rgba(255, 255, 255, 0.2); transition: background 0.3s; z-index: 100;}
-nav ul li a:hover {background-color: rgba(255, 255, 255, 0.4);}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s; z-index: 100;
+}
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
 
 /* 빵 소개 영역 */
 .bakery-section {
