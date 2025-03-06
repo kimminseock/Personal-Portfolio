@@ -1,0 +1,251 @@
+/* 기본 스타일 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* header 영역*/
+.header {
+    background-color: #d2691e;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.header h1 {
+    margin: 20px 0 30px 0;
+    font-size: 2rem;
+}
+
+/* 기본 웹 화면 스타일 */
+.container nav {
+    display: block;
+}
+
+/* 모바일 버전 화면 스타일*/
+.mobile {
+    display: none;
+}
+.mobile-menu-icon {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 웹 크기의 네비게이션 바 영역*/
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s; z-index: 100;
+}
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 빵 소개 영역 */
+.bakery-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+article {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+article img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+article h2 {
+    color: #d2691e;
+    margin-top: 10px;
+}
+article p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+article span{
+    color: #f1092e;
+}
+/* fade-up 효과 */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* footer 영역 */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer ul li {
+    display: inline;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Mobile 메뉴 */
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 100;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-nav ul li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.mobile-nav ul li a:hover {
+    background-color: #ddd;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 50;
+}
+
+/* 1055px 이하에서 웹 네비게이션 숨기고 모바일 메뉴 활성화 */
+@media (max-width: 1055px) {
+    .container nav {
+        display: none; /* 웹 네비게이션 숨기기 */
+    }
+
+    .mobile {
+        display: block; /* 모바일 메뉴 활성화 */
+    }
+    .mobile nav {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .container nav {
+        display: none;
+    }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bakery-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+}
