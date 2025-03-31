@@ -13,7 +13,7 @@ a{
     color: #fff;
 }
 
-/* header 영역*/
+/* header 영역 */
 .header {
     background-color: #d2691e;
     color: white;
@@ -33,7 +33,7 @@ a{
     display: block;
 }
 
-/* 모바일 버전 화면 스타일*/
+/* 모바일 버전 화면 스타일 */
 .mobile {
     display: none;
 }
@@ -48,7 +48,7 @@ a{
     cursor: pointer;
 }
 
-/* 웹 크기의 네비게이션 바 영역*/
+/* 웹 크기의 네비게이션 바 영역 */
 nav ul {
     list-style: none;
     padding: 0;

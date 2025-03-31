@@ -261,6 +261,7 @@ header{
     }
 }
 
+/* 반응형 스타일 */
 @media screen and (max-width: 480px){
     .slider .list .item .content{
         padding-right: 0;

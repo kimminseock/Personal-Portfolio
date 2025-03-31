@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.img-item');
 
     const keyframes = {
-        filter: ['grayscale(100%)', 'grayscale(0%)'], // 처음에는 흑백상태에서 컬러상태로 변경
+        filter: ['grayscale(100%)', 'grayscale(0%)'], // 처음에는 흑백상태에서 컬러상태로 변경.
     };
 
     items.forEach((value, i) => {
