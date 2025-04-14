@@ -6,7 +6,7 @@ function slide() {
     let nextBtn = document.querySelector('.next'); // 다음 버튼 요소.
     let prevBtn = document.querySelector('.prev'); // 이전 버튼 요소.
 
-    let slider = document.querySelector('.slider'); // 슬라이드 전체 요소
+    let slider = document.querySelector('.slider'); // 슬라이드 전체 요소.
     let sliderList = slider.querySelector('.slider .list'); // 슬라이드 항목들이 담긴 리스트 요소
 
     let thumbnail = document.querySelector('.thumbnail'); // 하단의 작은 네모 썸네일의 전체 요소

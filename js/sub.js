@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleMobileNav() {
         if (mobileNav.style.left === "0px") {
             mobileNav.style.left = "-250px"; // 메뉴 숨김.
-            mobileOverlay.style.display = "none"; // 오버레이 제거
+            mobileOverlay.style.display = "none"; // 오버레이 제거.
         } else {
             mobileNav.style.left = "0px"; // 메뉴 표시
             mobileOverlay.style.display = "block"; // 오버레이 활성화
