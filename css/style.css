@@ -112,7 +112,7 @@ header{
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 다음/이전 버튼 영역 */
+/* 다음 / 이전 버튼 영역 */
 .nextPrevArrows{
     position: absolute;
     top: 80%;

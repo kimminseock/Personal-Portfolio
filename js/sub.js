@@ -78,6 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // 스크롤 시마다 checkVisibility 함수 실행
     window.addEventListener('scroll', checkVisibility);
 
-    // 페이지 로딩 시에도 즉시 체크
+    // 페이지 로딩 시에도 즉시 체크.
     checkVisibility();
 });

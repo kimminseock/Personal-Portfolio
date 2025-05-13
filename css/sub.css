@@ -194,7 +194,7 @@ article span{
     z-index: 50;
 }
 
-/* 1055px 이하에서 웹 네비게이션 숨기고 모바일 메뉴 활성화 */
+/* 1055px 이하에서 웹 네비게이션 숨기고, 모바일 메뉴 활성화 */
 @media (max-width: 1055px) {
     .container nav {
         display: none; /* 웹 네비게이션 숨기기 */
