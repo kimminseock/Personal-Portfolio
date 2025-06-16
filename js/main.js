@@ -53,7 +53,7 @@ function slide() {
                     slider.classList.remove('prev'); // slider에 prev 클래스 제거
                 }
             },
-            { once: true } // 이벤트 리스너가 한번 실행되고 나면 자동으로 제거되도록 설정하는 옵션.
+            { once: true } // 이벤트 리스너가 한번 실행되고 나면 자동으로 제거되도록 설정하는 옵션
         );
     }
 }
