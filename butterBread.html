@@ -1,38 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="./css/sub.css?v=1.3">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BakeryClass 버터톱식빵</title>
+  <link rel="stylesheet" href="css/sub.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Pretendard&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="header">
-    <div class="container">
-        <h1><a href="bakery.html">BakeryClass 버터톱식빵</a></h1>
-        <nav>
-            <ul>
-                <li><a href="#ready">재료준비</a></li>
-                <li><a href="#mixed">재료혼합</a></li>
-                <li><a href="#mixing_machine">반죽하기</a></li>
-                <li><a href="#dough_takeEffect">1차발효</a></li>
-                <li><a href="#dividing_bread">분할</a></li>
-                <li><a href="#shaping_bread">둥글리기</a></li>
-                <li><a href="#rolling_bread">성형1차</a></li>
-                <li><a href="#cylindrical_bread_being">팬닝및2차발효</a></li>
-                <li><a href="#rolling_bread_2">성형2차</a></li>
-                <li><a href="#oven">굽기</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="mobile">
-        <span class="mobile-menu-icon">☰</span>
-    </div>
-</header>
-
-<div class="mobile-overlay"></div>
-<div class="mobile-nav">
-    <ul>
+  <div class="container">
+    <h1><a href="bakery.html">BakeryClass 버터톱식빵</a></h1>
+    <nav>
+      <ul>
         <li><a href="#ready">재료준비</a></li>
         <li><a href="#mixed">재료혼합</a></li>
         <li><a href="#mixing_machine">반죽하기</a></li>
@@ -43,146 +23,165 @@
         <li><a href="#cylindrical_bread_being">팬닝및2차발효</a></li>
         <li><a href="#rolling_bread_2">성형2차</a></li>
         <li><a href="#oven">굽기</a></li>
-    </ul>
+      </ul>
+    </nav>
+  </div>
+  <div class="mobile">
+    <span class="mobile-menu-icon">☰</span>
+  </div>
+</header>
+
+<div class="mobile-overlay"></div>
+<div class="mobile-nav">
+  <ul>
+    <li><a href="#ready">재료준비</a></li>
+    <li><a href="#mixed">재료혼합</a></li>
+    <li><a href="#mixing_machine">반죽하기</a></li>
+    <li><a href="#dough_takeEffect">1차발효</a></li>
+    <li><a href="#dividing_bread">분할</a></li>
+    <li><a href="#shaping_bread">둥글리기</a></li>
+    <li><a href="#rolling_bread">성형1차</a></li>
+    <li><a href="#cylindrical_bread_being">팬닝및2차발효</a></li>
+    <li><a href="#rolling_bread_2">성형2차</a></li>
+    <li><a href="#oven">굽기</a></li>
+  </ul>
 </div>
 
 <main>
-    <section class="bakery-section">
-        <article id="ready">
-            <div class="img-item"><img src="./images/ready.jpg" alt="준비단계"></div>
-            <div>
-                <h2>재료 준비하기</h2>
-                <p class="fade-up">강력분: 1200g</p>
-                <p class="fade-up">물: 480g</p>
-                <p class="fade-up">이스트: 48g</p>
-                <p class="fade-up">제빵 개량제: 12g</p>
-                <p class="fade-up">소금: 22g</p>
-                <p class="fade-up">설탕: 72g</p>
-                <p class="fade-up">버터: 240g</p>
-                <p class="fade-up">탈지분유: 36g</p>
-                <p class="fade-up">달걀: 240g</p>
-            </div>
-        </article>
+  <section class="bakery-section">
+    <article id="ready" class="layout-row" style="background-color:#fff9f3">
+      <div class="img-item"><img src="./images/ready.jpg" alt="준비단계"></div>
+      <div>
+        <h2>재료 준비하기</h2>
+        <p class="fade-up">강력분: 1200g</p>
+        <p class="fade-up">물: 480g</p>
+        <p class="fade-up">이스트: 48g</p>
+        <p class="fade-up">제빵 개량제: 12g</p>
+        <p class="fade-up">소금: 22g</p>
+        <p class="fade-up">설탕: 72g</p>
+        <p class="fade-up">버터: 240g</p>
+        <p class="fade-up">탈지분유: 36g</p>
+        <p class="fade-up">달걀: 240g</p>
+      </div>
+    </article>
 
-        <article id="mixed">
-            <div class="img-item"><img src="./images/mixed.jpg" alt="재료 혼합하기"></div>
-            <div>
-                <h2>각 재료를 혼합하기</h2>
-                <p class="fade-up">준비한 재료들을 한 곳에 모아 혼합한다</p>
-                <span class="fade-up">주의할 점!!!</span>
-                <p class="fade-up">버터는 처음부터 혼합하지 않고 따로 빼둔다</p>
-            </div>
-        </article>
+    <article id="mixed" class="layout-row-reverse" style="background-color:#fff9f3">
+      <div class="img-item"><img src="./images/mixed.jpg" alt="재료 혼합하기"></div>
+      <div>
+        <h2>각 재료를 혼합하기</h2>
+        <p class="fade-up">준비한 재료들을 한 곳에 모아 혼합한다</p>
+        <span class="fade-up">주의할 점!!!</span>
+        <p class="fade-up">버터는 처음부터 혼합하지 않고 따로 빼둔다</p>
+      </div>
+    </article>
 
-        <article id="mixing_machine">
-            <div class="img-item"><img src="./images/mixing_machine.jpg" alt="반죽하기"></div>
-            <div>
-                <h2>반죽하기</h2>
-                <p class="fade-up">준비한 재료들을 반죽기계에 넣고 반죽을 한다</p>
-                <span class="fade-up">주의할 점!!!</span>
-                <p class="fade-up">반죽이 한 덩어리로 뭉치면(클린업 단계)버터를 넣고 반죽한다</p>
-            </div>
-        </article>
+    <article id="mixing_machine" class="layout-column" style="background-color:#f0f7f9">
+      <div class="img-item"><img src="./images/mixing_machine.jpg" alt="반죽하기"></div>
+      <div>
+        <h2>반죽하기</h2>
+        <p class="fade-up">준비한 재료들을 반죽기계에 넣고 반죽을 한다</p>
+        <span class="fade-up">주의할 점!!!</span>
+        <p class="fade-up">반죽이 한 덩어리로 뭉치면(클린업 단계)버터를 넣고 반죽한다</p>
+      </div>
+    </article>
 
-        <article id="dough_takeEffect">
-            <div class="img-item"><img src="./images/dough_takeEffect.jpg" alt="1차 발효하기"></div>
-            <div>
-                <h2>1차 발효하기</h2>
-                <p class="fade-up">1. 가스빼기를 한 후, 표면이 마르지 않도록 비닐을 덮어 발효실에 넣는다</p>
-                <p class="fade-up">2. 부피의 3 ~ 3.5배가 되면 꺼낸다</p>
-            </div>
-        </article>
+    <article id="dough_takeEffect" class="layout-column" style="background-color:#f0f7f9">
+      <div class="img-item"><img src="./images/dough_takeEffect.jpg" alt="1차 발효하기"></div>
+      <div>
+        <h2>1차 발효하기</h2>
+        <p class="fade-up">1. 가스빼기를 한 후, 표면이 마르지 않도록 비닐을 덮어 발효실에 넣는다</p>
+        <p class="fade-up">2. 부피의 3 ~ 3.5배가 되면 꺼낸다</p>
+      </div>
+    </article>
 
-        <article id="dividing_bread">
-            <div class="img-item"><img src="./images/dividing_bread.jpg" alt="분할하기"></div>
-            <div>
-                <h2>분할</h2>
-                <p class="fade-up">발효가 된 반죽을 460g씩 분할한다</p>
-            </div>
-        </article>
+    <article id="dividing_bread" class="layout-row" style="background-color:#f7f3ef">
+      <div class="img-item"><img src="./images/dividing_bread.jpg" alt="분할하기"></div>
+      <div>
+        <h2>분할</h2>
+        <p class="fade-up">발효가 된 반죽을 460g씩 분할한다</p>
+      </div>
+    </article>
 
-        <article id="shaping_bread">
-            <div class="img-item"><img src="./images/shaping_bread.jpg" alt="둥글리기"></div>
-            <div>
-                <h2>둥글리기</h2>
-                <p class="fade-up">분할된 반죽을 둥글리기 한다</p>
-                <p class="fade-up">반죽을 비닐로 덮어 약 15분 ~ 20분정도 실온에서 중간 발효 한다</p>
-            </div>
-        </article>
+    <article id="shaping_bread" class="layout-row-reverse" style="background-color:#f7f3ef">
+      <div class="img-item"><img src="./images/shaping_bread.jpg" alt="둥글리기"></div>
+      <div>
+        <h2>둥글리기</h2>
+        <p class="fade-up">분할된 반죽을 둥글리기 한다</p>
+        <p class="fade-up">반죽을 비닐로 덮어 약 15분 ~ 20분정도 실온에서 중간 발효 한다</p>
+      </div>
+    </article>
 
-        <article id="rolling_bread">
-            <div class="img-item"><img src="./images/rolling_bread.jpg" alt="성형 1단계"></div>
-            <div>
-                <h2>성형 1단계</h2>
-                <p class="fade-up">반죽을 밀대로 밀면서 가스를 제거해 가면서 타원형으로 만든다</p>
-            </div>
-        </article>
+    <article id="rolling_bread" class="layout-column" style="background-color:#f0f7f9">
+      <div class="img-item"><img src="./images/rolling_bread.jpg" alt="성형 1단계"></div>
+      <div>
+        <h2>성형 1단계</h2>
+        <p class="fade-up">반죽을 밀대로 밀면서 가스를 제거해 가면서 타원형으로 만든다</p>
+      </div>
+    </article>
 
-        <article>
-            <div class="img-item"><img src="./images/roll_the_dough.jpg" alt="성형 2단계"></div>
-            <div>
-                <h2>성형 2단계</h2>
-                <p class="fade-up">위쪽 좁은 부분부터 돌돌 말아 준다</p>
-            </div>
-        </article>
+    <article id="rolling_bread_2" class="layout-column" style="background-color:#f0f7f9">
+      <div class="img-item"><img src="./images/roll_the_dough.jpg" alt="성형 2단계"></div>
+      <div>
+        <h2>성형 2단계</h2>
+        <p class="fade-up">위쪽 좁은 부분부터 돌돌 말아 준다</p>
+      </div>
+    </article>
 
-        <article>
-            <div class="img-item"><img src="./images/cylindrical_bread.jpg" alt="성형 3단계"></div>
-            <div>
-                <h2>성형 3단계</h2>
-                <p class="fade-up">반죽의 끝을 꼬집으면서 봉합해준다</p>
-            </div>
-        </article>
+    <article id="rolling_bread_3" class="layout-row" style="background-color:#f7f3ef">
+      <div class="img-item"><img src="./images/cylindrical_bread.jpg" alt="성형 3단계"></div>
+      <div>
+        <h2>성형 3단계</h2>
+        <p class="fade-up">반죽의 끝을 꼬집으면서 봉합해준다</p>
+      </div>
+    </article>
 
-        <article id="cylindrical_bread_being">
-            <div class="img-item"><img src="./images/cylindrical_bread_being.jpg" alt="팬닝 및 2차 발효"></div>
-            <div>
-                <h2>팬닝 및 2차 발효</h2>
-                <p class="fade-up">1. 식빵틀에 반죽을 넣어준다</p>
-                <p class="fade-up">2. 발효실 기계에 2차 발효를 시켜준다</p>
-                <span class="fade-up">주의할 점!</span>
-                <p class="fade-up">봉합면은 무조건 바닥을 향하게 넣어준다</p>
-                <p class="fade-up">봉합면이 아래가 아니면 갈라짐이 생긴다</p>
-            </div>
-        </article>
+    <article id="cylindrical_bread_being" class="layout-row-reverse" style="background-color:#f7f3ef">
+      <div class="img-item"><img src="./images/cylindrical_bread_being.jpg" alt="팬닝 및 2차 발효"></div>
+      <div>
+        <h2>팬닝 및 2차 발효</h2>
+        <p class="fade-up">1. 식빵틀에 반죽을 넣어준다</p>
+        <p class="fade-up">2. 발효실 기계에 2차 발효를 시켜준다</p>
+        <span class="fade-up">주의할 점!</span>
+        <p class="fade-up">봉합면은 무조건 바닥을 향하게 넣어준다</p>
+        <p class="fade-up">봉합면이 아래가 아니면 갈라짐이 생긴다</p>
+      </div>
+    </article>
 
-        <article id="rolling_bread_2">
-            <div class="img-item"><img src="./images/straight_slash_bread.jpg" alt="2차 성형"></div>
-            <div>
-                <h2>2차 성형</h2>
-                <p class="fade-up">2차 발효가 끝난 반죽을 윗부분에 0.3 ~ 0.5cm 칼집을 내준다</p>
-            </div>
-        </article>
+    <article id="rolling_bread 2" class="layout-column" style="background-color:#f0f7f9">
+      <div class="img-item"><img src="./images/straight_slash_bread.jpg" alt="2차 성형"></div>
+      <div>
+        <h2>2차 성형</h2>
+        <p class="fade-up">2차 발효가 끝난 반죽을 윗부분에 0.3 ~ 0.5cm 칼집을 내준다</p>
+      </div>
+    </article>
 
-        <article>
-            <div class="img-item"><img src="./images/straight_slash_butter_bread.jpg" alt="2차 성형"></div>
-            <div>
-                <h2>2차 성형</h2>
-                <p class="fade-up">칼집을 낸 부분에 버터가 들어있는 짤주머니로 버터를 짜준다</p>
-            </div>
-        </article>
+    <article id="rolling_bread 2-1" class="layout-row" style="background-color:#fff9f3">
+      <div class="img-item"><img src="./images/straight_slash_butter_bread.jpg" alt="2차 성형"></div>
+      <div>
+        <h2>2차 성형</h2>
+        <p class="fade-up">칼집을 낸 부분에 버터가 들어있는 짤주머니로 버터를 짜준다</p>
+      </div>
+    </article>
 
-        <article id="oven">
-            <div class="img-item"><img src="./images/bread_baking.jpg" alt="굽기"></div>
-            <div>
-                <h2>굽기</h2>
-                <p class="fade-up">1. 오븐 아래 온도: 190°C, 윗 온도: 170°C 시간: 30분간 구워준다</p>
-                <p class="fade-up">2. 15분후 갈색으로 색나면 윗불 10°C 내리고 위치 교환해준다</p>
-            </div>
-        </article>
-    </section>
+    <article id="oven" class="layout-row-reverse" style="background-color:#fff9f3">
+      <div class="img-item"><img src="./images/bread_baking.jpg" alt="굽기"></div>
+      <div>
+        <h2>굽기</h2>
+        <p class="fade-up">1. 오븐 아래 온도: 190°C, 윗 온도: 170°C 시간: 30분간 구워준다</p>
+        <p class="fade-up">2. 15분후 갈색으로 색나면 윗불 10°C 내리고 위치 교환해준다</p>
+      </div>
+    </article>
+  </section>
 </main>
 
 <footer class="footer">
-    <div>
-        <ul>
-            <li>이용약관</li>
-            <li>개인정보처리방침</li>
-            <li>이메일무단수집거부</li>
-        </ul>
-        <p>이름 김민석</p>
-        <p>전화번호 010-6656-7464</p>
-    </div>
+  <ul>
+    <li>이용약관</li>
+    <li>개인정보처리방침</li>
+    <li>이메일무단수집거부</li>
+  </ul>
+  <p>이름 김민석</p>
+  <p>전화번호 010-6656-7464</p>
 </footer>
 <script src="js/sub.js?v=1.3"></script>
 </body>

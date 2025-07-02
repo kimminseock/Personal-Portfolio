@@ -40,18 +40,27 @@ document.addEventListener("DOMContentLoaded", function () {
         threshold: 0.5, // 요소가 50% 보일 때 애니메이션 실행
     };
 
+    // IntersectionObserver 생성 (화면에 요소가 보이는지 감지)
     const observer = new IntersectionObserver((entries, observer) => {
+        // entries: 현재 관찰 중인 모든 요소의 상태 배열을 반복
         entries.forEach(entry => {
+
+            // 만약 해당 요소가 화면에 나타났다면
             if (entry.isIntersecting) {
                 const keyframes = {
-                    filter: ['grayscale(100%)', 'grayscale(0%)'],
+                    filter: ['grayscale(100%)', 'grayscale(0%)'], // 회색 → 원래 색상
                 };
+
+                // options: 애니메이션 설정
                 const options = {
-                    duration: 5000,
-                    easing: 'ease',
-                    fill: 'forwards',
+                    duration: 5000, // 애니메이션 지속 시간: 5000ms (5초)
+                    easing: 'ease', // 애니메이션 속도 곡선: 부드럽게 시작하고 끝남
+                    fill: 'forwards', // 애니메이션 끝난 뒤에도 최종 상태 유지
                 };
+                // 해당 요소에 애니메이션 적용
                 entry.target.animate(keyframes, options);
+
+                // 애니메이션이 끝나면 해당 요소는 다시 관찰하지 않음 (한 번만 실행되도록)
                 observer.unobserve(entry.target); // 애니메이션 후 observer를 멈추기
             }
         });
